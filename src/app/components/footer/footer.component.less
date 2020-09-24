@@ -1,0 +1,258 @@
+@import "functions.less";
+
+footer {
+  background-color: #4D5862;
+	padding: 20px 20px 5px 20px;
+
+	.footer-container {
+		max-width: 100%;
+		margin: 0px auto;
+	}
+
+  .foot-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    display: inline-block;
+
+  	.foot-col {
+  		flex: 1 1 50%;
+      display: inline-block;
+      vertical-align: top;
+
+      &.m-top {
+        margin-top: 5px;
+      }
+  	}
+  }
+
+  .logo {
+    width: 93px;
+    height: 15px;
+    background: url("~assets/svg/logo.svg") no-repeat top center;
+    background-size: 100%;
+    margin: 10px 75px 10px 0;
+    display: inline-block;
+    vertical-align: top;
+
+    body.mobile & {
+      float: none;
+      margin: 0 0 30px 0;
+      height: 15px;
+    }
+  }
+
+  .recipiente {
+    margin: 0 auto;
+    display: block;
+    vertical-align: top;
+
+  }
+
+  nav.paginas {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 32px;
+    display: block;
+    margin-right: 10px;
+
+    ul {
+      body.mobile & {
+        height: auto;
+      }
+
+      li {
+        width: fit-content;
+        a {
+          color: white;
+          display: block;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 30px;
+          font-family: 'Lato', sans-serif;
+        }
+      }
+    }
+
+  }
+
+  .list-icon {
+	  width: 100%;
+	  padding: 0px;
+	  margin-bottom: 10px;
+
+	  &:after {
+	  	display: table;
+	  	content: " ";
+	  	clear: both;
+	  }
+
+  	li {
+	    font-weight: 300;
+	    float: left;
+      margin-right: 10px;
+
+  		a {
+		    display: block;
+		    width: 18px;
+		    height: 21px;
+		    text-indent: -2000px;
+		    overflow: hidden;
+		    background-size: 100% 100%!important;
+				text-align: left;
+  		}
+  	}
+  }
+
+  .redes-sociais,
+  .aplicativo {
+  	margin-bottom: 20px;
+		max-width: 400px;
+    display: block;
+    vertical-align: top;
+
+  	h5 {
+			color: #ccc;
+	    font-size: .8em;
+	    font-weight: 300;
+  	}
+  }
+
+  .facebook {
+    background: url("~assets/img/ico-facebook.png") no-repeat center center;
+  }
+
+  .twitter {
+    background: url("~assets/img/ico-twitter.png") no-repeat center center;
+  }
+
+  .instagram {
+    background: url("~assets/img/ico-instagram.png") no-repeat center center;
+  }
+
+  .linkedin {
+    background: url("~assets/img/ico-linkedin.png") no-repeat center center;
+  }
+
+  .android {
+    background: url("~assets/img/ico-android.png") no-repeat center center;
+  }
+
+  .ios {
+    background: url("~assets/img/ico-ios.png") no-repeat center center;
+  }
+
+  .site-seguro {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+  }
+
+  .site-seguro a {
+    display: block;
+    width: 108px;
+    height: 86px;
+    background: url("~assets/img/ico-site-seguro.png") no-repeat center center;
+    background-size: contain;
+    text-indent: -2000px;
+    overflow: hidden;
+
+  }
+}
+
+.f-right {
+  float: right;
+}
+
+.f-left {
+  float: left;
+}
+
+div.copyright {
+	width: 100%;
+  height: auto;
+  margin-top: 22px;
+  padding: 10px 0px;
+  color: #FFFFFF;
+  font-family: Lato;
+	font-size: .7em;
+  text-align: center;
+  border-top: 3px solid #536069;
+  font-weight: 300;
+}
+
+@media (max-width: 760px) {
+  footer {
+    .foot-container {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 760px) {
+  footer {
+    .foot-container {
+      width: 100%;
+    }
+  }
+}
+@media (min-width: 760px) {
+  footer {
+    .logo {
+      margin: 5px 25px 30px 0 !important;
+    }
+
+    nav.paginas {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+
+  .f-right {
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: 960px) {
+  footer {
+    .logo {
+      margin: 5px 75px 30px 0 !important;
+    }
+    nav.paginas {
+      display: inline-block;
+      margin-right: 0px;
+
+      ul {
+        li {
+          width: 180px;
+        }
+      }
+    }
+
+    .footer-container {
+      width: fit-content;
+    }
+
+    .redes-sociais, .aplicativo, .recipiente {
+      display: inline-block;
+    }
+
+    .redes-sociais, .aplicativo {
+      margin-left: 50px;
+    }
+
+    .recipiente {
+      margin-left: 100px;
+      margin-top: -15px;
+    }
+  }
+
+  .f-right {
+    margin-left: 0px;
+  }
+}

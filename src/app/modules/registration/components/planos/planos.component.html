@@ -1,0 +1,34 @@
+<div class="view planos-view">
+
+	<h1>Agora escolha o <strong>plano</strong><br /> ideal para você!</h1>
+
+  <div class="spinner-container" *ngIf="loading">
+    <cc-spinner size="100" stroke="2" color="#fff"></cc-spinner>
+  </div>
+
+  <div id="card-slider" (swiperight)="next()" (swipeleft)="prev()">
+    <cc-plano
+      *ngFor="let produto of produtos | async; let i = index"
+      to="/comprar/credito"
+      [@slideInOut]="slideInOut(i)"
+      (click)="swipeClick(i)" 
+      [produto]="produto"
+      [index]="i" 
+      [offline]="true"
+    ></cc-plano>
+  </div>
+
+	<div class="container-fluid container-boxs">
+  	<div class="box-como-funciona">
+  		<div class="image ic_como_funcionam_os_planos"></div>
+  		<div class="informacoes">
+  			<h4>Como funcionam os planos?</h4>
+  			<p>Você faz o primeiro crédito de R$ 50,00 na sua Conta ConectCar de onde são descontados a sua mensalidade e suas passagens em pedágios e estacionamentos.</p>
+  			<p>Quando o saldo atingir, R$30,00 um novo crédito é feito automaticamente.</p>
+  		</div>
+  		<div class="btns">
+  			<button (click)="openModalComoFuncionam()" class="btn btn-boxed">Saiba mais</button>
+  		</div>
+  	</div>
+	</div>
+</div>

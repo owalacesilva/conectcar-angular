@@ -1,0 +1,49 @@
+<div class="view modal-axle-view">
+  <h2>
+    Qual a <strong>Categoria</strong> <br/> do seu veículo?
+  </h2>
+
+  <div class="content">
+    <div
+       class="carroussel"
+       layout-align="center center"
+       layout="row"
+       layout-wrap
+    >
+      <div
+        class="veiculo"
+        *ngFor="let axle of axles; let i = index"
+        [ngClass]="{'selected': isSelected(axle) }"
+      >
+        <div class="axle">
+          <div
+            class="image axle-line-{{axle}}"
+            (click)="changePlaque(axle)"
+          >
+          </div>
+          <div class="description">
+            <div class="title">
+              {{getAxleTitle(axle)}}
+            </div>
+            <div>
+              {{getAxleDescription(axle)}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="action">
+
+    <button
+      id="close-button"
+      class="cancelar"
+      (click)="close()"
+    >Cancelar</button>
+
+    <button
+      [ngClass]="{ confirmar: true, disabled: disabled }"
+      (click)="savePlaque()"
+    >Confirmar</button>
+  </div>
+</div>

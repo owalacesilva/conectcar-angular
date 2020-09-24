@@ -1,0 +1,119 @@
+<div>
+	<cc-header [restrict]="true"></cc-header>
+
+	<div class="form-group form-group-search hide-desktop">
+    <input required #filtroInput
+      name="filtro"
+      id="filtro"
+      type="text"
+      class="form-control form-search"
+      placeholder="Buscar"
+      (input)="onFilter($event)"
+    >
+		<span class="ic_search"></span>
+	</div>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<h2 class="title">{{ R.R('meus_pedidos_titulo') }}</h2>
+				</div>
+				<div class="col-lg-6">
+					<div class="form-group form-group-search hide-mobile">
+			      <input required #filtroInput
+			        name="filtro"
+			        id="filtro"
+			        type="text"
+			        class="form-control form-search"
+			        [cc-placeholder]="'Buscar por código do pedido'"
+			        (input)="onFilter($event)"
+			      >
+						<span class="ic_search"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel">
+				<div class="panel-body">
+					<div class="listagem-pedidos">
+						<div class="wrap-pedido" *ngFor="let pedido of filteredPedidos" >
+							<div class="row100 hide-desktop">
+								<div class="col50">
+									<h5>{{ R.R('meus_pedidos_panel_label_codigo') }}</h5>
+									<span class="codigo">{{pedido.NumeroPedido}}</span>
+								</div>
+								<div class="col50 text-center">
+									<span class="data">{{ pedido.DataHoraAceite | date:'shortDate' }}</span>
+								</div>
+							</div>
+							<div class="rowstatus hide-desktop">
+								<h5 style="margin-bottom: 10px;">{{R.R('meus_pedidos_panel_label_status')}}</h5>
+								<div class="container-status">
+									<span class="ic_status"
+                    [ngClass]="{
+                      'ic_status_realizado': pedido.Status === 'PedidoRealizado',
+                      'ic_status_caminho': pedido.Status === 'EsperandoAprovacao',
+                      'ic_status_cancelado': pedido.Status === 'Cancelado',
+                      'ic_status_erro': pedido.Status === 'Erro'
+                    }">
+                  </span>
+                  <span class="status">{{ normalizeStatus(pedido.Status) }}</span>
+								</div>
+							</div>
+							<div class="text-center hide-desktop">
+								<button type="button" class="btn btn-boxed" [routerLink]='["/pedidos", pedido.NumeroPedido]'>{{R.R('meus_pedidos_panel_button')}}</button>
+							</div>
+							<div class="hide-mobile">
+								<div class="row ">
+									<div class="col-lg-2">
+										<h5>{{ R.R('meus_pedidos_panel_label_codigo') }}</h5>
+										<span class="codigo">{{pedido.NumeroPedido}}</span>
+									</div>
+									<div class="col-lg-3">
+										<h5>{{R.R('meus_pedidos_panel_label_status')}}</h5>
+										<div class="container-status">
+											<span class="ic_status"
+											[ngClass]="{
+												'ic_status_realizado': pedido.Status === 'PedidoRealizado',
+												'ic_status_caminho': pedido.Status === 'EsperandoAprovacao',
+												'ic_status_cancelado': pedido.Status === 'Cancelado',
+												'ic_status_erro': pedido.Status === 'Erro'
+											}">
+										  </span> <span class="status">{{ normalizeStatus(pedido.Status) }}</span>
+										</div>
+									</div>
+									<div class="col-lg-2">
+										<h5>{{R.R('meus_pedidos_panel_label_data')}}</h5>
+										<span class="data">{{ pedido.DataHoraAceite | date:'shortDate' }}</span>
+									</div>
+									<div class="col-lg-5 text-right">
+										<button type="button" class="btn btn-boxed" routerLink="/pedidos/{{pedido.NumeroPedido}}">{{R.R('meus_pedidos_panel_button')}}</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center text-vazio">
+	      <div *ngIf="!pedidos || pedidos.length === 0" class="pedido">
+	      	<div class="ic_sem_pedidos"></div>
+	        <p class="box">{{R.R('meus_pedidos_sem_pedido_texto_1')}}<br>{{R.R('meus_pedidos_sem_pedido_texto_2')}}</p>
+	        <p class="btn-container">
+	          <button class="btn detalhe" [routerLink]='["/"]'>
+	            {{R.R('meus_pedidos_sem_pedido_button')}}
+	          </button>
+	        </p>
+	      </div>
+			</div>
+			<div class="text-center text-vazio">
+	      <div *ngIf="filteredPedidos && pedidos && filteredPedidos.length === 0 && pedidos.length > 0" class="search-not-found">
+	      	<div class="ic_lupa"></div>
+	        <p class="box">{{R.R('meus_pedidos_busca_nao_encontrada_texto_1')}}<br>{{R.R('meus_pedidos_busca_nao_encontrada_texto_2')}}</p>
+	      </div>
+			</div>
+		</div>
+	</div>
+
+	<cc-footer></cc-footer>
+</div>

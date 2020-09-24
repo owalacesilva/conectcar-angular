@@ -1,0 +1,112 @@
+<div class="view payment">
+  <div class="form-group">
+    <div class="cartao-header">
+      <h2 [innerHtml]="R.R('cadastro_payment_seu_cartao')"></h2>
+      <div class="itau">
+  			<span class="ic ic_itau"></span>
+      	<div class="itau_right">
+      		Sabia que pagando com seu <strong>Cartão Itaú</strong><br/>você ganha desconto na mensalidade?
+		      <div
+		        class="info-ico"
+		        placement="left"
+		        triggers="hover"
+		        ngbTooltip="{{ R.R('tooltip_payment') }}"
+		      ></div>
+      	</div>
+      </div>
+    </div>
+
+    <div class="cartao">
+    	<span class="ic_band" [ngClass]="bandeirasClasses()"></span>
+      <div class="form-group" [ngClass]="{'has-danger': !useOwnCreditCard && numeroBlurred && numeroError !== null }">
+        <label for="numero" [innerHTML]="R.R('cadastro_pagamento_campo_numero_cartao')"></label>
+        <input
+          #numeroInput
+          [formControl]="numero"
+          placeholder="Número"
+          id="card-number"
+          class="numero card-height"
+          type="tel"
+          name="numero"
+          [attr.disable]="useOwnCreditCard"
+          (input)="onNumeroInput()"
+          (blur)="onNumeroBlur()"
+        />
+
+        <div *ngIf="!useOwnCreditCard && numeroBlurred && numeroError !== null">
+          <small class="help-block">{{ numeroError }}</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nome" [innerHTML]="R.R('cadastro_pagamento_campo_nome_titular')"></label>
+        <input
+          #nomeInput
+          (input)="afterInput()"
+          [formControl]="nome"
+          placeholder="Digite seu nome"
+          id="card-owner"
+          class="nome"
+          type="text"
+          name="nome"
+          (input)="onNomeInput()"
+        />
+      </div>
+
+      <div class="form-group vencimento" [ngClass]="{'has-danger': !useOwnCreditCard && vencimentoBlurred && vencimentoError !== null }">
+        <label for="vencimento" [innerHTML]="R.R('cadastro_pagamento_campo_validade')"></label>
+        <input
+          #vencimentoInput
+          [formControl]="vencimento"
+          placeholder="MM/AA"
+          id="card-expire-date"
+          class="vencimento"
+          type="tel"
+          name="vencimento"
+          maxlength="7"
+          (input)="onVencimentoInput()"
+          (blur)="onVencimentoBlur()"
+        />
+
+        <div *ngIf="!useOwnCreditCard && vencimentoBlurred && vencimentoError !== null">
+          <small *ngIf="vencimentoBlurred && vencimentoError !== null" class="help-block">{{ vencimentoError }}</small>
+        </div>
+      </div>
+
+      <div class="form-group" [ngClass]="{'has-danger': !useOwnCreditCard && cvcBlurred && cvcError !== null }">
+        <label for="cvc" [innerHTML]="R.R('cadastro_pagamento_campo_cvv')"></label>
+        <input
+          #cvcInput
+          [formControl]="cvc"
+          placeholder="XXX"
+          id="card-cvv"
+          class="cvc"
+          type="tel"
+          name="cvc"
+          (input)="onCVCInput()"
+          (blur)="onCVCBlur()"
+        />
+
+        <div *ngIf="!useOwnCreditCard && cvcBlurred && cvcError !== null">
+          <small class="help-block">{{ cvcError }}</small>
+        </div>
+      </div>
+    </div>
+
+    <br class="clearfix">
+
+    <div *ngIf="ownCreditCard">
+      <p
+        (click)="toggleCartao()"
+        id="change-card"
+        class="outro-cartao text-center">
+        {{ cartaoLabel }}
+      </p>
+    </div>
+
+    <div class="disclaimer" *ngIf="useOwnCreditCard">
+    	<p class="text-left">
+    		<strong>Atenção: </strong> alterando a forma de pagamento você estará sujeito às regras de cobrança do novo cartão, podendo com isso perder benefícios promocionais relacionados a sua atual forma de pagamento.
+    	</p>
+    </div>
+</div>

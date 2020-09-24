@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Mobile</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile">
+            <g id="Group">
+                <g id="Page-1" transform="translate(1.000000, 1.000000)" stroke="#D8DBDE" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5.72916667,3.7984375 L5.72916667,11.4194438 C5.72916667,13.8692125 7.14908333,16.1080563 9.39583333,17.2046875" id="Stroke-1"></path>
+                    <path d="M21.3125,7.8203125 C21.3125,8.5603375 20.6965,9.1609375 19.9375,9.1609375 L19.4791667,9.1609375 L19.4791667,5.5859375 L19.9375,5.5859375 C20.6965,5.5859375 21.3125,6.1865375 21.3125,6.9265625 L21.3125,7.8203125 Z" id="Stroke-3"></path>
+                    <path d="M3.89583333,3.7984375 L2.97916667,3.7984375 C1.46116667,3.7984375 0.229166667,4.99874375 0.229166667,6.4796875 L0.229166667,8.2671875 C0.229166667,9.7472375 1.46116667,10.9484375 2.97916667,10.9484375 L3.89583333,10.9484375 C12.0789167,10.9484375 15.4366667,12.7314687 19.4791667,14.5234375 L19.4791667,0.2234375 C15.4458333,2.0109375 12.0835,3.7984375 3.89583333,3.7984375 Z" id="Stroke-5"></path>
+                </g>
+                <rect id="Rectangle" x="0" y="0" width="24" height="20"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

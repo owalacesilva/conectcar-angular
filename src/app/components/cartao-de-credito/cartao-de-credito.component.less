@@ -1,0 +1,272 @@
+@import "functions.less";
+
+.payment {
+  .form-group {
+    margin-bottom: 8px;
+
+    .box {
+      border: 1px solid #D8DBDE;
+      border-radius: 10px;
+      padding: 4px 0;
+
+      div {
+        padding: 10px 16px;
+      }
+    }
+
+    .help-block {
+    	color: #FF6269;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      .normal-weight();
+      .lightgray();
+      font-size: 10px;
+      margin-bottom: 0;
+    }
+
+    select {
+      width: 100%;
+      border-bottom: 1px solid #292F36;
+      border-radius: 0;
+      .normal-weight();
+      font-size: 14px;
+      padding: 2px 0 6px 0;
+    }
+
+    .cartao-header {
+      margin: 24px 0 0 0;
+      text-align: left;
+      .normal-weight();
+      .info-ico {
+		    //position: absolute;
+		    //top: 0px;
+		    //right: 0px;
+      }
+      h2,
+      .h2 {
+        color: #292F36;
+        font-family: Lato;
+        font-size: 18px;
+        line-height: 22px;
+            font-weight: 300;
+      }
+      p {
+        font-size: 13px;
+        strong {
+          .bold-weight();
+        }
+      }
+    }
+
+    .cartao {
+    	position: relative;
+      height: 196px;
+      border-radius: 4px;
+      background-image: url('~assets/img/fundo_cartao.png');
+      background-repeat: no-repeat;
+      background-color: #4D5862;
+      background-position: center;
+      background-size: 100%;
+      box-shadow: 0 0 20px 0 #D8DBDE;
+      padding: 16px;
+      text-align: left;
+      width: 315px;
+
+      label {
+        color: #B5BDC4;
+        margin: 0;
+        padding: 0;
+      }
+
+      input {
+        width: 182px;
+        color: #fff;
+        font-size: 16px;
+        line-height: 19px;
+        height: 23px !important;
+        border: 0;
+
+        margin: 0 0 10px 0;
+        padding-bottom: 1px;
+
+        .normal-weight();
+        .placeholder-color(#fff);
+
+        &:focus {
+          border-bottom: 1px solid #FFF !important;
+        }
+        &.cvv, &.vencimento {
+          width: 55px;
+        }
+      }
+
+      div.form-group.vencimento {
+        float: left;
+        display: block;
+        margin-right: 40px;
+      }
+
+      div.form-group.has-danger {
+        input {
+          margin-bottom: 0px;
+          border-bottom: 2px solid #FF6269;
+        }
+      }
+
+		  .ic_band {
+		    width: 40px;
+		    height: 40px;
+		    display: block;
+		    position: absolute;
+		    top: 16px;
+		    right: 16px;
+		  	background-size: 100%;
+		  	background-position: center;
+		  	background-repeat: no-repeat;
+
+		  	&.ic_band_visa {
+		  		background-image: url("~assets/svg/band_visa.svg");
+		  	}
+
+		  	&.ic_band_mastercard {
+		  		background-image: url("~assets/svg/band_mastercard.svg");
+		  	}
+
+		  	&.ic_band_amex {
+		  		background-image: url("~assets/svg/band_amex.svg");
+		  	}
+
+		  	&.ic_band_hipercard {
+		  		background-image: url("~assets/svg/band_hipercard.svg");
+		  	}
+
+		  	&.ic_band_diners {
+		  		background-image: url("~assets/svg/band_diners.svg");
+		  	}
+		  }
+    }
+
+    h2, .h2 { text-align: left;     font-weight: 300;}
+    ul {
+      text-align: left;
+      color: #FF6A38;
+      font-family: Lato;
+      font-size: 14px;
+      line-height: 17px;
+      padding: 0;
+      margin: 0.5rem 0;
+
+      .info-ico {
+        background-image: url("~assets/svg/ic_tooltip_question.svg");
+        margin: 2px 0 0 2px;
+      }
+    }
+
+    table {
+      width: 100%;
+      th, td {
+        padding: 8px 16px;
+        width: 50%;
+        font-family: Lato;
+        font-size: 14px;
+        line-height: 17px;
+        .normal-weight();
+        &:first-child { text-align: left; }
+        &:last-child { text-align: right; }
+      }
+      th {
+	      .lightgray();
+        .normal-weight();
+      }
+      td {
+        .orange();
+        .bold-weight();
+      }
+    }
+
+    .action {
+      margin: auto;
+      position: relative;
+      width: 100%;
+      text-align: center;
+
+      button {
+        display: inline-block;
+        margin-top: 0px !important;
+      }
+      .voltar {
+        margin: 0;
+      }
+      .aceitar-pagar {
+        background-position: 128px;
+      }
+    }
+
+
+    small {
+      font-size: 10px;
+      .lightgray();
+      .normal-weight();
+    }
+
+    p.fee {
+      .normal-weight();
+      margin: 10px auto 48px auto;
+      width: 280px;
+      opacity: 0.8;
+      color: #7C878F;
+      font-family: Lato;
+      font-size: 11px;
+      line-height: 13px;
+      text-align: center;
+      a {
+        .orange();
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .disclaimer {
+  	margin: 20px 0px;
+
+  	p {
+	    font-size: 11px;
+	    font-weight: 300;
+  	}
+  }
+
+  .itau {
+    margin-bottom: 10px;
+
+	  .ic {
+	    width: 30px;
+	    height: 30px;
+	    display: block;
+	    float: left;
+	  	background-size: 100%;
+	  	background-position: center;
+	  	background-repeat: no-repeat;
+
+	  	&.ic_itau {
+	  		background-image: url("~assets/svg/ic_itau.svg");
+	  	}
+	  }
+
+	  .itau_right {
+	  	position: relative;
+    	padding-left: 40px;
+	  }
+  }
+}
+
+.outro-cartao {
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #FF6A38 !important;
+  margin: auto;
+  width: 190px;
+}

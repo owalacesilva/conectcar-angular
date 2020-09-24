@@ -1,0 +1,243 @@
+<header class="cc-header" [ngClass]="{ 'border-bottom': restrict }">
+  <nav class="navbar navbar-default" [ngClass]="{ 'navbar-fixed-top': navIsFixed, 'fixed-top': restrict }">
+    <div class="container-fluid" [ngClass]="{ 'container-opened': !openedNavBar, 'container-home': !restrict }">
+      <div class="navbar-header">
+        <!-- Logo ConectCar -->
+        <a routerLink="/" class="navbar-brand" *ngIf="!restrict && !minimal">
+          <span class="ic_logo w"></span>
+        </a>
+
+        <!-- Logo ConectCar Laranja -->
+        <a routerLink="/" class="navbar-brand" *ngIf="restrict" [collapse]="!openedNavBar">
+          <span class="ic_logo orange"></span>
+        </a>
+
+        <a routerLink="/" style="background-color: white;" class="navbar-brand" *ngIf="minimal" [collapse]="!openedNavBar">
+          <span class="ic_logo grey"></span>
+        </a>
+
+        <!-- Profile infos -->
+        <a *ngIf="!!cliente && restrict" class="navbar-brand-menu" [collapse]="openedNavBar">
+          <h5>{{cliente.NomeCompleto}}</h5>
+          <p>{{cliente.Email}}</p>
+        </a>
+
+        <!-- Toggle navigation bars -->
+        <a href="javascript:;" class="collapsed navbar-toggle home-toggle-bars" (click)="onOpenedNavBar()" *ngIf="!restrict && !minimal">
+          <span class="st-only"></span>
+        </a>
+
+        <!-- Toggle navigation profile image -->
+        <a href="javascript:;" class="collapsed navbar-toggle avatar-toggle" (click)="onOpenedNavBar()" *ngIf="restrict">
+          <img #avatarMobileEl class="ic_logo_bar" />
+        </a>
+      </div>
+      <div #el class="collapse navbar-collapse" [collapse]="openedNavBar" (collapsed)="setHeight(el, 0)" (expanded)="setHeight(el, 0);setHeight(el, documentHeight)">
+        <!-- Menu área aberta -->
+        <ul class="nav navbar-nav navbar-home menu" *ngIf="!restrict">
+          <li class="search-link">
+            <a href="javascript:;" class="icon_search" (click)="searchInputVisible = true">
+              <span class="ic_search"></span>
+            </a>
+            <div class="search-control" [ngClass]="{ 'show': searchInputVisible }">
+              <input type="text" class="search-input" name="query" (keyup.enter)="send()" [(ngModel)]="query" />
+              <span class="ic_close" (click)="searchInputVisible = false"></span>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a
+            	routerLink="{{ R.R('url_header_link_planos') }}"
+            	class="dropdown-toggle">
+
+              {{R.R('header_link_planos')}} <span class="caret" [ngClass]="{ 'up': !subItemPlanos, 'down': subItemPlanos }" (click)="subItemPlanos = !subItemPlanos"></span>
+            </a>
+            <ul class="dropdown-menu menu" [collapse]="subItemPlanos">
+              <li><a routerLink="{{ R.R('url_header_link_para_voce') }}" >{{R.R('header_link_para_voce')}}</a></li>
+              <li><a routerLink="{{ R.R('url_header_link_para_empresas') }}" >{{R.R('header_link_para_empresas')}}</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" ngbDropdown #headerMenuDrop="ngbDropdown">
+            <a
+              routerLink="{{ R.R('url_header_link_servicos') }}"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              ngbDropdownToggle
+              (mouseenter)="mouseEnterHeaderMenuDrop($event)"
+              (mouseleave)="mouseLeaveHeaderMenuDrop($event)">
+
+              {{R.R('header_link_como_servicos')}} <span class="caret" [ngClass]="{ 'up': !subItemServicos, 'down': subItemServicos }" (click)="subItemServicos = !subItemServicos"></span>
+            </a>
+            <ul
+              class="dropdown-menu menu"
+              ngbDropdownMenu
+              (mouseenter)="mouseEnterHeaderMenuDrop($event)"
+              (mouseleave)="mouseLeaveHeaderMenuDrop($event)"
+              [collapse]="subItemServicos">
+
+              <li><a routerLink="{{ R.R('url_header_link_ponto_a_ponto') }}" >{{R.R('header_link_ponto_a_ponto')}}</a></li>
+              <li><a routerLink="{{ R.R('url_header_link_vincular_rntrc') }}" >{{R.R('header_link_vincular_rntrc')}}</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" ngbDropdown #headerMenuDrop="ngbDropdown">
+            <a
+              routerLink="{{ R.R('url_header_link_como_funciona') }}"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              ngbDropdownToggle
+              (mouseenter)="mouseEnterHeaderMenuDrop($event)"
+              (mouseleave)="mouseLeaveHeaderMenuDrop($event)">
+
+              {{R.R('header_link_como_funciona')}} <span class="caret" [ngClass]="{ 'up': !subItemComoFunciona, 'down': subItemComoFunciona }" (click)="subItemComoFunciona = !subItemComoFunciona"></span>
+            </a>
+            <ul
+              class="dropdown-menu menu"
+              ngbDropdownMenu
+              (mouseenter)="mouseEnterHeaderMenuDrop($event)"
+              (mouseleave)="mouseLeaveHeaderMenuDrop($event)"
+              [collapse]="subItemComoFunciona">
+
+              <li><a routerLink="{{ R.R('url_header_link_como_comecar') }}" >{{R.R('header_link_como_comecar')}}</a></li>
+              <li><a routerLink="{{ R.R('url_header_link_como_instalar') }}" >{{R.R('header_link_como_instalar')}}</a></li>
+              <li><a routerLink="{{ R.R('url_header_link_como_usar') }}" >{{R.R('header_link_como_usar')}}</a></li>
+            </ul>
+          </li>
+          <li>
+            <a routerLink="{{ R.R('url_header_link_ativar_adesivo') }}">{{R.R('header_link_ativar_adesivo')}}</a>
+          </li>
+          <li>
+            <a routerLink="{{ R.R('url_header_link_ajuda') }}">{{R.R('header_link_ajuda')}}</a>
+          </li>
+          <li class="dropdown last-dropdown" ngbDropdown #headerMenuDrop="ngbDropdown">
+            <a
+              routerLink="{{ R.R('url_header_link_entrar') }}"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              ngbDropdownToggle
+              (mouseenter)="mouseEnterHeaderMenuDrop($event)"
+              (mouseleave)="mouseLeaveHeaderMenuDrop($event)">
+
+              {{R.R('header_link_entrar')}} <span class="caret" [ngClass]="{ 'up': !subItemEntrar, 'down': subItemEntrar }" (click)="subItemEntrar = !subItemEntrar"></span>
+            </a>
+            <ul
+              class="dropdown-menu last-dropdown-menu menu"
+              ngbDropdownMenu
+              (mouseenter)="mouseEnterHeaderMenuDrop($event)"
+              (mouseleave)="mouseLeaveHeaderMenuDrop($event)"
+              [collapse]="subItemEntrar">
+
+              <li><a routerLink="{{ R.R('url_header_link_pessoa_fisica') }}">{{R.R('header_link_pessoa_fisica')}}</a></li>
+              <li><a routerLink="{{ R.R('url_header_link_empresas') }}">{{R.R('header_link_empresas')}}</a></li>
+              <li><a routerLink="{{ R.R('url_header_link_conveniado') }}">{{R.R('header_link_conveniado')}}</a></li>
+            </ul>
+          </li>
+          <li class="search-link-mobile">
+            <div class="search-input">
+              <input type="text" />
+            </div>
+            <a href="javascript:;" class="icon_search">
+              <span class="ic_search"></span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Menu área restrita -->
+        <ul class="nav navbar-nav navbar-restrict menu" *ngIf="restrict" >
+          <li>
+            <a routerLink="{{ R.R('url_header_logged_link_extrato') }}">
+              {{R.R('header_logged_link_extrato')}}
+            </a>
+          </li>
+          <li>
+            <a routerLink="{{ R.R('url_header_logged_link_meus_pedidos') }}">
+              {{R.R('header_logged_link_meus_pedidos')}}
+            </a>
+          </li>
+          <li>
+            <a routerLink="{{ R.R('url_header_logged_link_ativar_adesivo') }}">
+              {{R.R('header_logged_link_ativar_adesivo')}}
+            </a>
+          </li>
+          <li *ngIf="showRecarga">
+            <a routerLink="{{ R.R('url_header_logged_link_recarga_avulsa') }}">
+              {{R.R('header_logged_link_recarga_avulsa')}}
+            </a>
+          </li>
+          <li>
+            <a routerLink="{{ R.R('url_header_logged_link_ponto_a_ponto') }}">
+              {{R.R('header_logged_link_ponto_a_ponto')}}
+            </a>
+          </li>
+          <li role="separator" class="divider navbar-m-item"></li>
+          <li class="navbar-m-item">
+            <a routerLink="{{ R.R('url_header_logged_dropdown_link_dados_pessoais') }}">
+              {{R.R('header_logged_dropdown_link_dados_pessoais')}}
+            </a>
+          </li>
+          <li class="navbar-m-item">
+            <a routerLink="{{ R.R('url_header_logged_dropdown_link_alterar_senha') }}">
+              {{R.R('header_logged_dropdown_link_alterar_senha')}}
+            </a>
+          </li>
+          <li class="navbar-m-item">
+            <a routerLink="{{ R.R('url_header_logged_dropdown_link_redes_sociais') }}">
+              {{R.R('header_logged_dropdown_link_redes_sociais')}}
+            </a>
+          </li>
+          <li role="separator" class="divider navbar-m-item"></li>
+          <li class="navbar-m-item">
+            <a routerLink="{{ R.R('url_header_logged_dropdown_link_sair') }}">
+              {{R.R('header_logged_dropdown_link_sair')}}
+            </a>
+          </li>
+          <li class="dropdown header-avatar">
+            <a href="javascript:;" class="dropdown-toggle">
+              <span #avatarEl class="avatar"></span>
+            </a>
+            <ul *ngIf="!!cliente" class="dropdown-menu menu">
+              <li class="header">
+                <h5>{{cliente.NomeCompleto}}</h5>
+                <p>{{cliente.Email}}</p>
+                <span class="caret"></span>
+              </li>
+              <li>
+                <a routerLink="{{ R.R('url_header_logged_dropdown_link_dados_pessoais') }}">
+                  {{R.R('header_logged_dropdown_link_dados_pessoais')}}
+                </a>
+              </li>
+              <li>
+                <a routerLink="{{ R.R('url_header_logged_dropdown_link_alterar_senha') }}">
+                  {{R.R('header_logged_dropdown_link_alterar_senha')}}
+                </a>
+              </li>
+              <li>
+                <a routerLink="{{ R.R('url_header_logged_dropdown_link_redes_sociais') }}">
+                  {{R.R('header_logged_dropdown_link_redes_sociais')}}
+                </a>
+              </li>
+              <li>
+                <a routerLink="{{ R.R('url_header_logged_dropdown_link_sair') }}">
+                  {{R.R('header_logged_dropdown_link_sair')}}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="barra-sucesso">
+      <div class="clearfix">
+        <p>Suas alterações foram salvas</p>
+        <div class="icone-check ic_check"></div>
+      </div>
+    </div>
+  </nav>
+</header>

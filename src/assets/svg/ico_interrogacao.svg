@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Tooltip icon close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Tooltip-icon-close" stroke="#A0A7AE">
+            <g id="?">
+                <path d="M12,6 C12,9.31363636 9.31363636,12 6,12 C2.68636364,12 0,9.31363636 0,6 C0,2.68636364 2.68636364,0 6,0 C9.31363636,0 12,2.68636364 12,6 Z" id="Stroke-43" stroke-linecap="round"></path>
+                <path d="M4.60000006,4.43966071 C4.60000006,3.66686074 5.22673337,3.03966077 6,3.03966077 C6.77279996,3.03966077 7.39999994,3.66686074 7.39999994,4.43966071 C7.39999994,5.21339401 6.77279996,5.83966064 6,5.83966064 L6,7.23966058" id="Stroke-45" stroke-linecap="round"></path>
+                <path d="M6.27272727,9.27272727 C6.27272727,9.42327273 6.15054545,9.54545455 6,9.54545455 C5.84945455,9.54545455 5.72727273,9.42327273 5.72727273,9.27272727 C5.72727273,9.12218182 5.84945455,9 6,9 C6.15054545,9 6.27272727,9.12218182 6.27272727,9.27272727 Z" id="Stroke-47" fill="#A0A7AE"></path>
+            </g>
+        </g>
+    </g>
+</svg>

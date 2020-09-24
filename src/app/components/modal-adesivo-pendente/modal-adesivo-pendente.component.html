@@ -1,0 +1,43 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-title">Parece que você fez uma compra no site<br />e tem um outro <strong>adesivo pendente</strong> de ativação.</h4>
+</div>
+<div class="modal-body">
+	<div class="wrapper">
+		<div class="col-wrapper">
+			<div class="col-icon">
+				<span class="icon ic_ja_recebeu_adesivo"></span>
+			</div>
+			<h4>
+				<span class="icon ic_ja_recebeu_adesivo"></span> <span [innerHTML]="R.R('ativar_adesivo_label_ja_recebeu_adesivo')"></span>
+			</h4>
+			<div class="wrapper-xs">
+				<span class="icon ic_ja_recebeu_adesivo"></span>
+				<div class="wrapper-xs-content">
+					<span [innerHTML]="R.R('ativar_adesivo_label_ja_recebeu_adesivo')"></span>
+				</div>
+			</div>
+      <button type="button" class="btn btn-primary" (click)="onClick()" [innerHTML]="R.R('ativar_adesivo_btn_ativar')"></button>
+		</div>
+
+		<div class="divisoria">
+			<span>ou</span>
+		</div>
+
+		<div class="col-wrapper">
+			<div class="col-icon">
+				<span class="icon ic_comprou_um_adesivo"></span>
+			</div>
+			<h4>
+				<span class="icon ic_comprou_um_adesivo"></span> <span [innerHTML]="R.R('ativar_adesivo_label_comprou_adesivo')"></span>
+			</h4>
+			<div class="wrapper-xs">
+				<span class="icon ic_comprou_um_adesivo"></span>
+				<div class="wrapper-xs-content add">
+					<span [innerHTML]="R.R('ativar_adesivo_label_comprou_adesivo')"></span>
+				</div>
+			</div>
+			<button type="button" class="btn btn-vazado btn-comprou" (click)="onClick()" [innerHTML]="R.R('ativar_adesivo_btn_ativar_offline')"></button>
+		</div>
+	</div>
+</div>

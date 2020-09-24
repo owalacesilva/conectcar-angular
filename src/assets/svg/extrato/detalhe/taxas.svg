@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="71px" height="71px" viewBox="0 0 71 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>ic Taxas Detalhe</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-Taxas-Detalhe">
+            <g id="Group-2" transform="translate(22.000000, 18.000000)">
+                <g id="Page-1" stroke-linecap="round" stroke-linejoin="round" stroke="#FFFFFF">
+                    <path d="M22.1428571,4.42857143 C22.1428571,1.98277833 24.1255203,0 26.5714286,0 C29.0173368,0 31,1.98277833 31,4.42857143 L22.1428571,4.42857143" id="Stroke-1"></path>
+                    <path d="M0,4.42857143 C0,1.98277833 1.90380042,0 4.25241981,0 L26.5714286,0" id="Stroke-3"></path>
+                    <path d="M22.1428571,4.42857143 L22.1428571,31.4748758 L19.3748464,33.952381 L16.6074501,31.4748758 L13.8394394,33.952381 L11.0714286,31.4748758 L8.30341779,33.952381 L5.53602157,31.4748758 L2.76801078,33.952381 L0,31.4748758 C0,31.4748758 0,4.42857143 0,4.42857143" id="Stroke-5"></path>
+                    <path d="M5.9047619,6.52631579 L16.2380952,6.52631579" id="Stroke-7"></path>
+                </g>
+                <g id="Group" transform="translate(6.526316, 13.052632)">
+                    <path d="M7.32123089,3.16300071 C6.69016301,2.31504596 5.86954695,1.63157895 3.99411345,1.63157895 C2.11867996,1.63157895 0.529391321,2.38658218 0.529391321,3.91937088 C0.529391321,5.5615143 1.75461986,5.97934047 3.52890024,6.20716281 C5.76429303,6.49421895 7.44790011,6.62271075 7.71536354,8.71320854 C7.91037946,10.23734 6.17938533,11.356859 4.1271617,11.356859 C2.01980506,11.356859 0.78546363,10.5070816 0.0928837195,9.45818758" id="Stroke-5" stroke="#FFFFFF"></path>
+                    <g id="Rectangle" transform="translate(3.000000, 11.000000)">
+                        <g id="path-1-link" fill="#FFFFFF">
+                            <rect id="path-1" x="0.67785088" y="0.4210526" width="1.1625" height="1.63157895"></rect>
+                        </g>
+                        <rect id="Rectangle-path" x="1.17785088" y="0.9210526" width="1" height="1"></rect>
+                    </g>
+                    <g id="Rectangle" transform="translate(3.000000, 0.000000)">
+                        <g id="path-2-link" fill="#FFFFFF">
+                            <rect id="path-2" x="0.61666667" y="-1.84741111e-13" width="1.22368421" height="1.63157895"></rect>
+                        </g>
+                        <rect id="Rectangle-path" x="1.11666667" y="0.5" width="1" height="1"></rect>
+                    </g>
+                </g>
+            </g>
+            <circle id="Oval-2" stroke="#FF6A38" cx="35.3052515" cy="35.3052515" r="34.8052515"></circle>
+        </g>
+    </g>
+</svg>

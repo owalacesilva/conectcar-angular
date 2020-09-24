@@ -1,0 +1,56 @@
+<div class="container-fluid container-flux" style="background-color:#fff">
+	<div class="row">
+		<div class="col-lg-6">
+      <div class="view authentication-view">
+        <h2>
+          Olá!
+        </h2>
+        <h3>
+          Faça seu login para continuar
+        </h3>
+
+        <div class="form-group">
+          <input required #cpfInput
+            focus-watcher
+            [formControl]="cpf"
+            [textMask]="{mask: mask}"
+            novalidate
+            tabindex="0"
+            type="tel"
+            name="cpf"
+            id="cpf"
+            class="form-control"
+            placeholder='Digite seu CPF'
+          >
+
+          <input required #passInput
+            focus-watcher
+            [formControl]="password"
+            novalidate
+            tabindex="0"
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+            placeholder="xxxxxxxxxx"
+          >
+        </div>
+
+        <div class="action mobile-init">
+          <button
+            (click)="back($event)"
+            (touchstart)="back($event)"
+            class="voltar"
+          >Voltar</button>
+
+          <button
+            class="avancar"
+            [ngClass]="{ disabled: disabled }"
+            (click)="submit($event)"
+            id="next-button"
+          >Avançar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

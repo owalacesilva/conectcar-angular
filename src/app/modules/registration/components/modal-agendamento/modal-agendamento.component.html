@@ -1,0 +1,57 @@
+<div class="modal-header text-center">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<button type="button" class="close-mobile" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-title" [innerHTML]="R.R('cadastro_address_agendar_entrega_titulo')"></h4>
+	<p>{{ R.R('cadastro_address_agendar_entrega_subtitulo') }}</p>
+</div>
+<div class="modal-body">
+	<div class="loading text-center" *ngIf="minDate === null && maxDate === null">
+		<cc-spinner stroke="6" size="50" color="#999"></cc-spinner>
+	</div>
+	<div *ngIf="!lastStep && minDate != null && maxDate != null">
+	  <ngb-datepicker
+	    #dp
+	    class="date"
+	    [(ngModel)]="model.date"
+	    (ngModelChange)="showDatePick()"
+	    [firstDayOfWeek]="7"
+	    (navigate)="date = $event.next"
+	    [minDate]="minDate"
+	    [maxDate]="maxDate"
+	  ></ngb-datepicker>
+	</div>
+	<div *ngIf="lastStep">
+		<div class="agenda-data">
+			<p class="text-center">{{ format1Passo }}<br>{{ format2Passo }}</p>
+		</div>
+		<div class="agenda-periodo">
+			<p class="text-center" [innerHTML]="R.R('cadastro_address_agendar_entrega_escolher_periodo')"></p>
+			<div class="radio">
+			  <label>
+			    <input [(ngModel)]="model.hour" (ngModelChange)="enableSubmit()" type="radio" name="periodo" id="manha" value="Manha" />
+			    Manhã (Das 7h ás 11h)
+			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+			    <input [(ngModel)]="model.hour" (ngModelChange)="enableSubmit()" type="radio" name="periodo" id="tarde" value="Tarde" />
+			    Tarde (Das 12h ás 18h)
+			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+			    <input [(ngModel)]="model.hour" (ngModelChange)="enableSubmit()" type="radio" name="periodo" id="noite" value="Noite" />
+			    Noite (Das 19h ás 22h)
+			  </label>
+			</div>
+		</div>
+	</div>
+	<div class="row row-btns">
+		<div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
+			<button class="btn btn-link" (click)="_activeModal.dismiss()">{{ R.R('cadastro_address_agendar_entrega_btn_cancelar') }}</button>
+		</div>
+		<div class="col-xs-6 col-sm-7 col-md-7 col-lg-7">
+			<button class="btn btn-default" [ngClass]="{ 'disabled': disabled }" (click)="nextStep()">{{ R.R('cadastro_address_agendar_entrega_btn_confirmar') }}</button>
+		</div>
+	</div>
+</div>

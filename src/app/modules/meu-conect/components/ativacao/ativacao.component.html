@@ -1,0 +1,57 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="container-fluid container-page">
+	<div class="container">
+		<h1 class="page-title">{{ R.R('ativar_adesivo_titulo') }}</h1>
+    <p class="page-subtitle">Verificamos que você tem <strong>{{ count }}</strong><br />pendente para ser ativado.</p>
+		<div class="row row-wrapper">
+
+      <div *ngIf="count > 0" class="col-lg-4">
+				<div class="col-wrapper">
+					<div class="col-icon">
+						<span class="icon ic_ja_recebeu_adesivo"></span>
+					</div>
+					<h4>
+						<span class="icon ic_ja_recebeu_adesivo"></span> <span>{{ R.R('ativar_adesivo_label_ja_recebeu_adesivo') }}</span>
+					</h4>
+					<div class="wrapper-xs">
+						<span class="icon ic_ja_recebeu_adesivo"></span>
+						<div class="wrapper-xs-content">
+							<span>{{ R.R('ativar_adesivo_label_ja_recebeu_adesivo') }}</span>
+						</div>
+					</div>
+          <button
+            type="button"
+            class="btn btn-boxed"
+            routerLink="/meu-conect/placa"
+            >{{ R.R('ativar_adesivo_btn_ativar') }}</button>
+				</div>
+				<div class="divisoria"></div>
+			</div>
+
+			<div *ngIf="count < 1" class="col-lg-4">
+				<div class="col-wrapper">
+					<div class="col-icon">
+						<span class="icon ic_comprou_um_adesivo"></span>
+					</div>
+					<h4>
+						<span class="icon ic_comprou_um_adesivo"></span> <span>{{ R.R('ativar_adesivo_label_comprou_adesivo') }}</span>
+					</h4>
+					<div class="wrapper-xs">
+						<span class="icon ic_comprou_um_adesivo"></span>
+						<div class="wrapper-xs-content add">
+							<span>{{ R.R('ativar_adesivo_label_comprou_adesivo') }}</span>
+						</div>
+					</div>
+          <button
+            type="button"
+            class="btn btn-vazado btn-comprou"
+            routerLink="/ativar/cpf"
+            >{{ R.R('ativar_adesivo_btn_ativar_offline') }}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<cc-footer></cc-footer>

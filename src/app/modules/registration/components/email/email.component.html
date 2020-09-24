@@ -1,0 +1,57 @@
+<div class="view email-view">
+  <h2 [innerHTML]="R.R('cadastro_email_titulo')">
+
+  </h2>
+  <h3>
+  	{{ R.R('cadastro_email_subtitulo') }}
+  </h3>
+
+  <div class="form-group"
+    [ngClass]="{'has-danger': (showValidation && email.value.length && email.invalid) }">
+
+    <input required #emailInput
+      [formControl]="email"
+      focus-watcher
+      name="email"
+      id="email"
+      type="text"
+      class="form-control"
+      tabIndex="1"
+      [cc-placeholder]="'E-mail'"
+      (input)="disabled = (email.value.length === 0 || !email.valid)"
+      (blur)="showValidation = true"
+      (keydown.enter)="submit($event)"
+    >
+
+    <div *ngIf="showValidation && email.invalid && (email.dirty || email.touched)">
+      <small *ngIf="email.value.length > 0 && email.errors.email" class="help-block">Email inválido</small>
+    </div>
+
+    <div class="form-check">
+      <label>
+        <input #ofertasInput tabIndex="2" [formControl]="ofertas" type="checkbox" checked class="form-check-input">
+        <small>{{ R.R('cadastro_email_notificacoes_sms') }}</small>
+      </label>
+    </div>
+
+    <div class="action mobile-init">
+      <button
+        (click)="back($event)"
+        tabIndex="4"
+        (touchstart)="back($event)"
+        class="voltar"
+      >Voltar</button>
+
+      <button
+        class="avancar"
+        tabIndex="3"
+        [ngClass]="{ disabled: disabled }"
+        (click)="submit($event)"
+        (touchstart)="submit($event)"
+        id="next-button"
+      >Avançar</button>
+    </div>
+  </div>
+
+  <div></div>
+</div>

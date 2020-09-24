@@ -1,0 +1,138 @@
+<cc-header #header [restrict]="true"></cc-header>
+
+<div class="meu-perfil">
+  <div class="titulo">
+    <h1>Meus dados</h1>
+  </div>
+
+  <div class="avatar-container">
+    <div
+      #avatar 
+      ngfDrop
+      [uploader]="uploader"
+      (click)="fileInput.click($event)"
+      class="avatar">
+
+      <div *ngIf="!!avatarLoading" class="avatar-loading">
+        <cc-progress-arc stroke="5" size="150" [progress]="progress / 100.0" emptyStrokeColor="#9EA7AE"></cc-progress-arc>
+      </div>
+
+      <div [ngClass]="(!!file || !!avatarUrl) ? '' : 'ic_avatar'" class="icone"></div>
+      <div class="trocar-avatar ic_camera"></div>
+
+      <input
+        ngf
+        #fileInput
+        selectable="1"
+        [(file)]="file"
+        [maxSize]="4096 * 1024"
+        (filesChange)="onFile($event)"
+        class="file-input"
+        type="file"
+        />
+
+      <ngfUploadStatus
+        [(percent)]="progress"
+        [httpEvent]="httpEvent">
+      </ngfUploadStatus>
+    </div>
+  </div>
+
+  <div class="clearfix container-wraper">
+    <div class="dados-pessoais info-container">
+      <h2>dados pessoais</h2>
+      <div class="form-group">
+        <input required #nomeInput
+          [formControl]="nome"
+          name="nome"
+          id="nome"
+          type="text"
+          class="form-control"
+          [cc-placeholder]="'Nome completo'"
+          (blur)="showValidation = true"
+          (focus)="showValidation = false"
+        >
+        <input required #maeInput
+          [formControl]="mae"
+          name="mae"
+          id="mae"
+          type="text"
+          class="form-control"
+          [cc-placeholder]="'Nome da mãe'"
+          (blur)="showValidation = true"
+          (focus)="showValidation = false"
+        >
+        <input required #emailInput
+          [formControl]="email"
+          name="email"
+          id="email"
+          type="email"
+          class="form-control"
+          [cc-placeholder]="'Email'"
+          (blur)="showValidation = true"
+          (focus)="showValidation = false"
+        >
+        <div class="clearfix">
+          <input required #dddInput
+            [formControl]="ddd"
+            name="ddd"
+            id="ddd"
+            type="text"
+            class="form-control ddd"
+            [cc-placeholder]="'DDD'"
+            (blur)="showValidation = true"
+            (focus)="showValidation = false"
+          >
+          <div class="celular">
+            <input required #celularInput
+              [formControl]="celular"
+              name="celular"
+              id="celular"
+              type="text"
+              class="form-control"
+              [cc-placeholder]="'Celular'"
+              [textMask]="{ mask: mask_celular }"
+              (blur)="showValidation = true"
+              (focus)="showValidation = false"
+            >
+          </div>
+        </div>
+        <input required #nascimentoInput
+          [formControl]="nascimento"
+          name="nascimento"
+          id="nascimento"
+          type="text"
+          class="form-control"
+          [cc-placeholder]="'Data de nascimento'"
+          (blur)="showValidation = true"
+          (focus)="showValidation = false"
+        >
+        <input required #cpfInput
+          [formControl]="cpf"
+          name="cpf"
+          id="cpf"
+          type="text"
+          class="form-control cpf"
+          [textMask]="{ mask: mask_cpf }"
+          [cc-placeholder]="'Cpf'"
+          (blur)="showValidation = true"
+          (focus)="showValidation = false"
+        >
+      </div>
+    </div>
+    <div class="endereco info-container">
+      <h2>endereço de cobrança</h2>
+      <div class="clearfix">
+        <cc-address-form
+          #addressForm
+          [dadosEndereco]="endereco"
+          tipoEndereco="Cobrança">
+        </cc-address-form>
+      </div>
+    </div>
+  </div>
+
+  <div class="action">
+    <button (click)="submit()"> SALVAR </button>
+  </div>
+</div>

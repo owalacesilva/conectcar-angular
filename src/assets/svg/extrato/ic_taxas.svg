@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="23px" viewBox="0 0 21 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>ic Mensalidade</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="2" y="7" width="1" height="1"></rect>
+        <rect id="path-2" x="2" y="0" width="1" height="1"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-Mensalidade" transform="translate(-6.000000, -5.000000)">
+            <g transform="translate(-2.000000, 0.000000)">
+                <g id="Group-2" transform="translate(9.000000, 6.000000)">
+                    <g id="Page-1" stroke="#7C878F" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13.5714286,2.71428571 C13.5714286,1.21525123 14.7866092,0 16.2857143,0 C17.7848193,0 19,1.21525123 19,2.71428571 L13.5714286,2.71428571" id="Stroke-1"></path>
+                        <path d="M0,2.71428571 C0,1.21525123 1.16684542,0 2.60632182,0 L16.2857143,0" id="Stroke-3"></path>
+                        <path d="M13.5714286,2.71428571 L13.5714286,19.2910529 L11.8749058,20.8095238 L10.1787598,19.2910529 L8.48223702,20.8095238 L6.78571429,19.2910529 L5.08919155,20.8095238 L3.39304548,19.2910529 L1.69652274,20.8095238 L0,19.2910529 C0,19.2910529 0,2.71428571 0,2.71428571" id="Stroke-5"></path>
+                        <path d="M3.61904762,4 L9.95238095,4" id="Stroke-7"></path>
+                    </g>
+                    <g id="Group" transform="translate(4.000000, 8.000000)">
+                        <path d="M4.48720603,1.93861334 C4.10042249,1.41889914 3.59746426,1 2.44800502,1 C1.29854578,1 0.324465648,1.46274392 0.324465648,2.40219505 C0.324465648,3.40867005 1.07541217,3.66475706 2.16287434,3.80439011 C3.53295379,3.98032775 4.56484201,4.05908078 4.7287712,5.34035362 C4.84829709,6.2744987 3.7873652,6.96065549 2.52955072,6.96065549 C1.23794504,6.96065549 0.481413193,6.43982423 0.0569287313,5.79695368" id="Stroke-5" stroke="#7C878F"></path>
+                        <g id="Rectangle">
+                            <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <rect stroke="#7C878F" stroke-width="1" x="2.5" y="7.5" width="1" height="1"></rect>
+                        </g>
+                        <g id="Rectangle">
+                            <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-2"></use>
+                            <rect stroke="#7C878F" stroke-width="1" x="2.5" y="0.5" width="1" height="1"></rect>
+                        </g>
+                    </g>
+                </g>
+                <rect id="Rectangle" x="0" y="0" width="36" height="32"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

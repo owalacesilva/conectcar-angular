@@ -1,0 +1,341 @@
+@import "./../../functions.less";
+
+.modal-backdrop {
+	background-color: #4D5862;
+
+	&.show {
+	  opacity: .9;
+	}
+}
+
+.modal-detalhes-plano {
+  .info-ico {
+    position: absolute;
+    background: url("~assets/svg/ic_tooltip_question.svg") no-repeat center center;
+  }
+
+  .tooltip {
+  	left: 0px !important;
+  	right: 0px !important;
+
+  	&.show {
+  		opacity: 1;
+  	}
+
+	  .tooltip-inner {
+	  	max-width: 100% !important;
+	    width: 100% !important;
+	    text-align: left;
+	    background-color: #4D5862;
+	    font-size: .85em;
+
+	    &::before {
+    		left: 90% !important;
+	    	border-top-color: #4D5862;
+    	}
+	  }
+  }
+
+  .image {
+    display: inline-block;
+    height: 160px;
+    width: 160px;
+    background: no-repeat center center;
+
+	  &.plano-livre {
+	    background-image: url("~assets/svg/planos/plano_livre.svg");
+	  }
+
+  	&.plano-urbano {
+    	background-image: url("~assets/svg/planos/plano_urbano.svg");
+    }
+  }
+
+	.image-c {
+		margin-top: 30px;
+		text-align: center;
+	}
+
+  .informacoes {
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+
+  	h2 {
+			font-size: 22px;
+			font-weight: bold;
+			color: #4D5862;
+  	}
+
+  	p {
+			max-width: auto;
+			font-size: 14px !important;
+  	}
+  }
+
+	.preco {
+	  text-align: center;
+	  color: #FF6A38;
+	  padding: 15px 0;
+
+	  .moeda {
+	    .normal-weight();
+	    vertical-align: top;
+	  }
+
+	  .reais {
+	    font-size: 72px;
+	    line-height: 50px;
+	  }
+
+	  .centavos {
+	    vertical-align: bottom;
+	  }
+
+	  .mensal {
+	    vertical-align: bottom;
+	  }
+	}
+
+  .ajuda {
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    //background: url("~assets/svg/tooltip-open.svg") no-repeat center bottom;
+    background: url("~assets/svg/planos/ic_como_empresa.svg") no-repeat center bottom;
+    vertical-align: baseline;
+    cursor: pointer;
+
+    .ajuda-texto {
+      font-size: 10px;
+      line-height: 13px;
+      color: #ffffff;
+      background-color: #4D5862;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      .transform(translate(-50%,0));
+      width: 170px;
+      padding: 5px;
+      .border-radius(3px);
+      text-align: center;
+
+      &:after {
+        content: "";
+        .arrow-down(10px, #4D5862);
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        .transform(translate(-50%, 0));
+      }
+      display: none;
+    }
+
+    &:hover {
+      .ajuda-texto {
+        display: block;
+      }
+    }
+  }
+
+  .lista {
+    .clearfix;
+    margin: 0px auto;
+    border-left: solid 1px #ddd;
+    padding-left: 40px;
+
+    li {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 15px;
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+      color: #7C878F;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url("~assets/svg/checkmark_text_input.svg") no-repeat center center;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .row {
+  	padding-bottom: 10px;
+  }
+
+  ul {
+    margin-top: 20px;
+
+    &.icones {
+      width: 300px;
+      margin: 0px auto;
+
+      li {
+        display: inline-block;
+        width: 25%;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 300;
+        line-height: 13px;
+        color: #7C878F;
+
+        .ico {
+          width: 100%;
+          height: 60px;
+        }
+
+        &.pedagios > .ico {
+          background: transparent url("~assets/svg/planos/ico-pedagios.svg") no-repeat center center;
+        }
+
+        &.aeroportos > .ico {
+          background: transparent url("~assets/svg/planos/ico-aeroportos.svg") no-repeat center center;
+        }
+
+        &.shoppings > .ico {
+          background: transparent url("~assets/svg/planos/ico-shoppings.svg") no-repeat center center;
+        }
+
+        &.estacionamentos > .ico {
+          background: transparent url("~assets/svg/planos/ico-estacionamentos.svg") no-repeat center center;
+        }
+      }
+    }
+  }
+
+  .servicos {
+		position: relative;
+    text-align: center;
+    color: #FF6A38;
+    padding: 0px;
+    height: 70px;
+
+    p {
+    	font-size: 12px !important;
+    }
+  }
+
+  .text-footer {
+  	p {
+	    max-width: 220px;
+	    font-size: 16px;
+	    margin: 0px auto;
+  	}
+  }  
+
+  .list-anchor {
+  	display: none;
+  }
+
+  .list-below {
+  	display: block;
+  	text-align: left;
+  	border: none;
+    padding: 0px 0px 0px 30px;
+    margin-top: 40px;
+  }
+
+  p {
+  	margin-bottom: 5px;
+  }
+
+  no-p {
+  	padding: 0px !important;
+  }
+
+  .btn-back {
+		display: block;
+    margin: 0px auto;
+    color: #4D5862;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (min-width: 768px) {
+//@media (min-width: 992px) {
+	.modal-detalhes-plano {
+		.modal-dialog {
+			max-width: 642.77px;
+			height: 555.45px;
+			padding-top: 30px;
+
+			.modal-content {
+				.modal-header {
+					.close {
+						right: 0px;
+					}
+				}
+
+				.modal-body {
+					padding: 10px 30px;
+		    	height: ~"calc(100% - 69px)";
+				}
+			}
+
+		  .servicos {
+				position: relative;
+		    text-align: center;
+		    color: #FF6A38;
+		    padding: 0px;
+		    height: 70px;
+
+		    p {
+		    	font-size: 12px;
+		    }
+		  }
+
+		  .text-footer {
+		  	p {
+			    max-width: 220px;
+			    font-size: 16px;
+			    margin: 0px auto;
+		  	}
+		  }
+
+			.image-c {
+				margin: 0px;
+				text-align: right;
+			}
+
+		  .informacoes {
+		    padding-top: 50px;
+		    text-align: left;
+
+		  	p {
+					max-width: 200px;
+		  	}
+		  }
+
+		  .list-anchor {
+		  	display: block;
+		  }
+
+		  .list-below {
+		  	display: none;
+		  }
+
+		  .btn-back {
+		  	display: none;
+		  }
+		}
+
+	  .row {
+	  	padding-bottom: 30px;
+	  }
+	}
+}

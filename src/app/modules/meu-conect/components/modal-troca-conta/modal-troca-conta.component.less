@@ -1,0 +1,429 @@
+@import "functions.less";
+
+.close {
+  position: absolute;
+  background: url("~assets/svg/ic_modal_close.svg") no-repeat center center;
+  background-size: contain;
+  top: 25px;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+}
+
+.modal-body{
+  .conta-wraper {
+  }
+
+	.conta .meio .info-conta.color1 { background-color: #6777BF; }
+	.conta .meio .info-conta.color2 { background-color: #00B599; }
+	.conta .meio .info-conta.color3 { background-color: #4BC6DD; }
+	.conta .meio .info-conta.color4 { background-color: #BE59AF; }
+	.conta .meio .info-conta.color5 { background-color: #DB3030; }
+	.conta .meio .info-conta.color6 { background-color: #DB3030; }
+
+  .conta{
+    margin: 0 auto;
+    border: 2px solid #A0A7AE;
+    border-radius: 6px;
+    background-color: #fff;
+    width: 290px;
+    height: 170px;
+    padding: 12px 21px 12px 21px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    .plano{
+      float: left;
+      height: 40px;
+
+      .titulo{
+        color: #A0A7AE;
+        font-family: Lato;
+        font-size: 10px;
+        font-weight: 300;
+        margin-bottom: 2px;
+      }
+      .nome-plano{
+        color: #A0A7AE;
+        font-family: Lato;
+        font-size: 12px;
+        line-height: 11px;
+      }
+    }
+
+    .pagamento {
+      float: right;
+      height: 40px;
+
+      .titulo{
+        color: #A0A7AE;
+        font-family: Lato;
+        font-size: 10px;
+        font-weight: 300;
+        margin-bottom: 2px;
+      }
+
+      .card-wraper {
+        .ico_card {
+          background-image: url('~assets/svg/extrato/conta_cartao.svg');
+          width: 13px;
+          height: 10px;
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 2px;
+        }
+        .numeros {
+          color: #A0A7AE;
+          font-family: Lato;
+          font-size: 12px;
+          vertical-align: top;
+          display: inline-block;
+          line-height: 13px;
+        }
+      }
+    }
+
+    .meio{
+      text-align: center;
+      padding-top: 12px;
+      
+      .info-conta {
+        border-radius: 12px;
+        //background-color: #6777BF;
+        margin: 0 auto;
+        width: 80px;
+        padding: 5px 0px 5px  0px;
+
+
+        p {
+          color: #FFFFFF;
+          font-family: Lato;
+          font-size: 10px;
+          font-weight: bold;
+          line-height: 12px;
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+
+      .saldo {
+        color: #7C878F;
+        font-family: Lato;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 22px;
+        text-align: center;
+        padding-top: 5px;
+      }
+    }
+
+    .footer {
+
+      .ico_carro{
+        background-image: url("~assets/svg/extrato/mini_car.svg");
+        width: 18px;
+        height: 10px;
+      }
+      .codigo {
+        text-align: left;
+        color: #A0A7AE;
+        font-family: Lato;
+        font-size: 10px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .active {
+    border: 2px solid #FF6A38 !important;
+
+    .meio {
+      .info-conta {
+      	background-color: #FF6A38 !important;
+      }
+    }
+  }
+}
+
+.modal-backdrop {
+	background-color: #4D5862 !important;
+
+	&.show {
+	  opacity: 1;
+	}
+}
+
+.modal-troca-conta {
+
+	.modal-dialog {
+
+		.modal-content {
+			height: 100vh;
+
+			.modal-header {
+				position: relative;
+				display: block;
+				z-index: 99;
+				border-bottom: none;
+
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+83,000000+100&0.8+76,0+100 */
+        background: -moz-linear-gradient(top,  rgba(77,88,98,0.8) 50%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(77,88,98,0.8) 50%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(77,88,98,0.8) 50%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc4d5862', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+				.modal-title {
+					font-weight: 300;
+          color: #fff;
+          font-size: 25px;
+          padding-bottom: 10px;
+				}
+        h5 {
+          color: #fff;
+          font-weight: 200;
+          font-size: 16px;
+        }
+			}
+
+      .modal-trocar-conta {
+        background: transparent;
+				width: 100%;
+				height: 99vh;
+				padding: 0px;
+				margin: 0px auto;
+				border-radius: 0px;
+
+		    position: absolute;
+		    top: 0px;
+		    bottom: 0px;
+      }
+
+			.modal-footer {
+				z-index: 99;
+		    position: absolute;
+		    bottom: 0;
+		    left: 0px;
+		    right: 0px;
+		    border-top: none;
+		    z-index: 99;
+		    justify-content: center;
+
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+0&0+0,0.8+24 */
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(77,88,98,0.65) 58%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(77,88,98,0.65) 58%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(77,88,98,0.65) 58%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a64d5862',GradientType=0 ); /* IE6-9 */
+      }
+		}
+	}
+
+  .content {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+
+    .carroussel {
+      display: inline-block;
+      text-align: center;
+      margin-top: 80px;
+      padding-bottom: 100px;
+    }
+  }
+
+  .row {
+  	width: 100%;
+
+  	.col-xs-6 {
+  		width: 50%;
+  	}
+  }
+
+  .btn {
+    cursor: pointer;
+    height: 50px;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 100px;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+    outline: none;
+    width: 100%;
+
+    &.btn-link {
+			color: #fff;
+
+			&:focus,
+			&:hover {
+				outline: none;
+			}
+    }
+
+    &.btn-default {
+      background-color: #FF6A38;
+      color: #fff;
+    }
+
+    &.disabled {
+      transition: background-color 0.5s;
+      background-color: #D7DBDE;
+    }
+  }
+
+	/* Let's get this party started */
+	::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.modal-backdrop {
+		background-color: #4D5862;
+
+		&.show {
+		  opacity: .9;
+		}
+	}
+
+
+
+  .modal-trocar-conta {
+    background: transparent;
+    width: 100%;
+    height: 99vh;
+    padding: 0px;
+    margin: 0px auto;
+    border-radius: 0px;
+
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+  }
+
+	.modal-troca-conta {
+
+    h5 {
+      color: #FFFFFF;
+      font-family: Lato;
+      font-size: 14px;
+      font-weight: 300;
+      text-align: center;
+    }
+
+		.modal-dialog {
+			max-width: 100%;
+			//max-width: 700px;
+			padding: 0px;
+
+			.modal-content {
+				height: 100vh;
+
+				.modal-header {
+					z-index: 99;
+					/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4d5862+0,000000+100&0.65+0,0.8+0,0+100 */
+					background: -moz-linear-gradient(top,  rgba(77,88,98,0.8) 50%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(top,  rgba(77,88,98,0.8) 50%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to bottom,  rgba(77,88,98,0.8) 50%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc4d5862', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+					.modal-title {
+    				position: relative;
+						max-width: 700px;
+    				margin: 0px auto;
+				    height: 60px;
+				    line-height: 3;
+            padding-bottom: 0px;
+					}
+
+					p {
+						color: #fff;
+					}
+
+					.close {
+    				top: 35px;
+    				right: 10px;
+					}
+				}
+
+				.modal-body {
+					background: transparent;
+					width: 100%;
+					height: 99vh;
+					padding: 0px;
+					margin: 0px auto;
+					border-radius: 0px;
+
+			    position: absolute;
+			    top: 0px;
+			    bottom: 0px;
+				}
+
+        .conta {
+          border: 2px solid #fff;
+        }
+				.modal-footer {
+			    position: absolute;
+			    bottom: 0;
+			    left: 0px;
+			    right: 0px;
+			    border-top: none;
+			    z-index: 99;
+			    justify-content: center;
+
+					/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,4d5862+100&0+0,0.8+100,0.65+100 */
+					background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(77,88,98,0.65) 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(77,88,98,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(77,88,98,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a64d5862',GradientType=0 ); /* IE6-9 */
+				}
+			}
+		}
+
+		.row {
+			width: auto;
+		}
+
+	  .btn {
+	    cursor: pointer;
+	    height: 50px;
+	    padding: 0 15px;
+	    border: 0;
+	    border-radius: 100px;
+	    text-transform: uppercase;
+	    line-height: 15px;
+	    font-family: Lato;
+	    font-size: 12px;
+	    outline: none;
+	    width: 100%;
+
+	    &.btn-link {
+				color: #fff;
+
+				&:focus,
+				&:hover {
+					outline: none;
+				}
+	    }
+
+	    &.btn-default {
+	      background-color: #FF6A38;
+	      color: #fff;
+	    }
+
+	    &.disabled {
+	      transition: background-color 0.5s;
+	      background-color: #D7DBDE;
+	    }
+	  }
+	}
+
+  .carroussel {
+    margin-top: 100px !important;
+  }
+}

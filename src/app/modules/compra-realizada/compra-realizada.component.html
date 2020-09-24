@@ -1,0 +1,62 @@
+<div class="container-fluid container-flux">
+	<div class="row">
+		<div class="col-lg-6 col-bg">
+			<div class="bg-img image"></div>
+			<div class="logconectcar"></div>
+			<div class="txt-content">
+				<div class="valign">
+          <div class="text">
+            <h2>Baixe nosso <b>app</b><br /> para administrar sua conta ConectCar</h2>
+            <p>Faça a ativação do seu adesivo, gestão do seu consumo e abasteça com desconto</p>
+          </div>
+        </div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="justify-content">
+				<div class="valign">
+					<div class="text-center">
+						<span class="logo_conectcar"></span>
+					</div>
+					<div class="image-checked"></div>
+					<h4>{{ R.R('compra_realizada_titulo') }}</h4>
+					<p>{{ R.R('compra_realizada_estamos_felizes') }}</p>
+
+				  <div *ngIf="temAgendamento">
+				    <p>
+              {{ R.R('compra_realizada_seu_conectcar_nodia') }} <br />
+              <strong>{{ dataDeEntrega | date:'dd/MM/yyyy'}}</strong> no período da <strong>{{ periodo }}</strong>
+				    </p>
+				  </div>
+
+				  <div *ngIf="!temAgendaemnto">
+				    <p>
+              {{ R.R('compra_realizada_seu_conectcar_enate') }} <br />
+              <strong>7 dias úteis</strong>.
+				    </p>
+				  </div>
+
+				  <p>
+            {{ R.R('compra_realizada_numero_pedido') }} 
+            <strong>{{ numeroDoPedido }}</strong>
+				  </p>
+					<div class="text-center m-b-md">
+						<button class="btn btn-boxed" routerLink="/pedidos">Acompanhar pedido</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<cc-baixe-app></cc-baixe-app>
+
+<div class="div-voltar text-left">
+	<div class="container">
+		<a routerLink="/">
+			<span class="set_esq"></span> voltar para home
+		</a>
+	</div>
+</div>
+
+<cc-footer></cc-footer>

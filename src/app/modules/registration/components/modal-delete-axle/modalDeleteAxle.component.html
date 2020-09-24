@@ -1,0 +1,29 @@
+<div class="view modal-delete-axle-view">
+
+  <div class="form-group">
+    <div class="axle">
+      <div
+        class="image"
+        [style.background] = "'url(' + getAxleImage() + ')'"
+      >
+      </div>
+      <h2>
+        Tem certeza que deseja <br/> <strong>excluir</strong> o veículo?
+      </h2>
+    </div>
+
+    <div class="action">
+
+      <button
+        id="close-button"
+        class="cancelar"
+        (click)="close()"
+      >Cancelar</button>
+
+      <button
+        class="excluir"
+        (click)="deletePlaque()"
+      >SIM, EXCLUIR</button>
+    </div>
+  </div>
+</div>

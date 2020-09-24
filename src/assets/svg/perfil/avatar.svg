@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="81px" height="80px" viewBox="0 0 81 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>avatar off</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Logada-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logada-Perfil" transform="translate(-140.000000, -224.000000)" stroke-width="2" stroke="#C3CED5">
+            <g id="avatar-off" transform="translate(140.000000, 225.000000)">
+                <g>
+                    <path d="M57.5733064,17.374743 C57.5733064,7.77956137 49.7943556,0.00632195724 40.2048854,0.00632195724 C30.6097037,0.00632195724 22.8364643,7.77956137 22.8364643,17.374743 C22.8364643,26.9699247 30.6097037,34.7431641 40.2048854,34.7431641 C49.7943556,34.7431641 57.5733064,26.9699247 57.5733064,17.374743 Z" id="Stroke-3"></path>
+                    <path d="M79.9401213,77.2105263 C73.4348234,60.6428478 58.2075002,49.0150376 40.4591929,49.0150376 C22.7181298,49.0150376 7.49805081,60.6350439 0.992752878,77.1871146" id="Stroke-5" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

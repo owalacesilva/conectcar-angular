@@ -1,0 +1,36 @@
+<div class="view cuidados-view">
+
+	<div class="container-fluid container-page">
+		<div class="container">
+			<div class="row-content">
+				<h3 class="alert-title">{{ R.R('ativacao_titulo_atencao') }}</h3>
+				<div class="icon">
+					<span></span>
+				</div>
+				<p class="alert-desc">A ativação realiza o vínculo do veículo com o adesivo. Se houver divergência, você está <strong>sujeito a multa</strong> por evasão de pedágio, por parte dos órgãos reguladores.</p>
+				<div class="row row-btns">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+						<button 
+							type="button" 
+							class="btn btn-vazado"
+							(click)="back($event)"
+        			(touchstart)="back($event)">
+        			{{ R.R('ativacao_btn_voltar') }}
+        		</button>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+						<button 
+							type="button" 
+							class="btn btn-boxed"
+        			(click)="submit($event)"
+        			(touchstart)="submit($event)">
+							<span class="txt">{{ R.R('ativacao_btn_avancar') }}</span>
+							<span class="ic_avancar"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="24px" viewBox="0 0 26 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>ic central de atendimento</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Ajuda-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Ajuda-interna-1-Não-Porque-Obrigado" transform="translate(-497.000000, -894.000000)" stroke="#78878F">
+            <g id="ic-central-de-atendimento" transform="translate(498.000000, 895.000000)">
+                <g id="Page-1">
+                    <path d="M3,7.80320984 C3.5887568,3.39943003 7.38726577,0 11.9873061,0 C16.6550474,0 20.4982873,3.50022499 21,8" id="Stroke-1" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M4,9.25114193 C4,8.42612853 3.31272727,7.78824369 2.65212121,8.06599429 C1.10666667,8.71682512 0,10.456297 0,12.4994115 C0,14.5425261 1.10666667,16.281998 2.65212121,16.9340057 C3.31272727,17.2117563 4,16.5738715 4,15.7488581 L4,9.25114193 Z" id="Stroke-3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20,9.25647279 C20,8.42780473 20.6872727,7.78682645 21.3490909,8.06659045 C22.8945455,8.71937312 24,10.4640617 24,12.5133035 C24,14.510606 22.9478788,16.2198814 21.4630303,16.9092577 C20.7624242,17.2338784 20,16.6495611 20,15.7606907 L20,9.25647279 Z" id="Stroke-5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M3,17 C3.28325011,19.1794108 4.56998033,21 8.80662733,21 L11,21" id="Stroke-7"></path>
+                    <path d="M13.0071211,22 L10.9928789,22 C10.4435402,22 10,21.5519126 10,21 L10,21 C10,20.4480874 10.4435402,20 10.9928789,20 L13.0071211,20 C13.5551034,20 14,20.4480874 14,21 L14,21 C14,21.5519126 13.5551034,22 13.0071211,22 Z" id="Stroke-9"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Perfil</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Perfil">
+            <g id="Group">
+                <rect id="Rectangle" x="0" y="0" width="42" height="42"></rect>
+                <path d="M24.5234228,16.0157471 C24.5234228,14.0696284 22.946104,12.4923096 20.9999853,12.4923096 C19.0538666,12.4923096 17.4758974,14.0696284 17.4758974,16.0157471 C17.4758974,17.9618658 19.0538666,19.5391846 20.9999853,19.5391846 C22.946104,19.5391846 24.5234228,17.9618658 24.5234228,16.0157471 Z" id="Stroke-1" stroke="#D8DBDE"></path>
+                <path d="M28.5219063,27.5456883 C27.2823962,24.5963368 24.3815076,22.5262451 21.000037,22.5262451 C17.6200162,22.5262451 14.7198525,24.5941477 13.4796175,27.54204" id="Stroke-3" stroke="#D8DBDE" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

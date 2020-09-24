@@ -1,0 +1,304 @@
+@import "functions.less";
+
+.container-fluid {
+  background-color: #fff;
+  min-height: 570px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.spinner{
+  text-align: center;
+  padding-top: 100px;
+}
+.spinner-page {
+  .spinner {
+    padding-top: 0px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: Lato;
+    color: #292F36;
+  }	
+}
+.title{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300;
+  font-family: Lato;
+  color: #292F36;
+  padding-top: 15px;
+}
+
+.total-label{
+  display: none;
+}
+.summary{
+  padding-top: 30px;
+  border-bottom: 0.5px solid #D8DBDE;
+}
+.account-name{
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Lato;
+  color: #B5BDC4;
+  float: left;
+  cursor: pointer;
+}
+
+.ic_expand {
+  background: url("~assets/svg/extrato/seta.svg") no-repeat right;
+  min-width: 113px;
+  padding-right: 20px;
+}
+
+.total{
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Lato;
+  color: #7C878F;
+  float: right;
+}
+
+.line-item {
+  cursor: pointer;
+}
+
+.extrato-wraper {
+  padding-top: 40px;
+}
+
+.extrato {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  .linha{
+    border-left: 0.5px solid #ccc;
+    position: absolute;
+    left: 4%;
+    height: 15px;
+    width: 1px;
+    z-index: 1;
+    margin-top: -5%;
+  }
+
+  .extrato-dia {
+    .dot{
+      width: 5px;
+      height: 5px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      background-color: #ccc;
+      margin-left: 10px;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    .dia-titulo {
+      font-size: 14px;
+      font-weight: 300;
+      font-family: Lato;
+      display: inline-block;
+    }
+
+    .extrato-item-icone{
+      width: 25px;
+      height: 33px;
+      display: inline-block;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: 0px;
+      position: absolute;
+      background-color: #fff;
+      z-index: 9;
+
+      &.ic_abastecimento {
+        background-image: url("~assets/svg/extrato/ic_abastecimento.svg");
+      }
+
+      &.ic_pedagio {
+        background-image: url("~assets/svg/extrato/ic_pedagio.svg");
+      }
+
+      &.ic_credito {
+        background-image: url("~assets/svg/extrato/ic_recarga.svg");
+      }
+
+      &.ic_estacionamento {
+        background-image: url("~assets/svg/extrato/ic_estacionamento.svg");
+      }
+
+      &.ic_taxas {
+        background-image: url("~assets/svg/extrato/ic_taxas.svg");
+      }
+
+      &.ic_outros {
+        background-image: url("~assets/svg/extrato/ic_outros.svg");
+      }	  	
+    }
+
+    .credit{
+      color: #35D282 !important;
+    }
+
+    .canceled{
+      color: #A0A7AE !important;
+      text-decoration: line-through;
+    }
+
+    .extrato-item{
+      float: left;
+      padding-bottom: 5px;
+      max-width: ~"calc(100% - 100px)";
+
+      .item-info{
+        display: inline-block;
+        height: 32px;
+        width: 100%;
+        padding-left: 39px;
+
+        h3{
+          font-size: 14px;
+          font-family: Lato;
+          margin-bottom: 2px !important;
+          color: #4D5862;
+        }
+      }
+
+      .details{
+        align-items: top;
+
+        p{
+          display: inline-block;
+          font-size: 10px;
+          color: #A0A7AE;
+          vertical-align: top;
+        }
+
+        .codigo {
+          color: #7C878F;
+        }
+      }
+    }
+
+    .extrato-item-valores{
+      float: right;
+      max-width: 100px;
+
+      .amount-paid{
+        font-size: 14px;
+        color: #FF6A38;
+        line-height: 18px;
+        margin-bottom: 0px;
+      }
+
+      .saldo{
+        font-size: 10px;
+        font-weight: bold;
+        color: #A0A7AE;
+        float: right;
+
+      }
+    }
+  }
+}
+
+@media (min-width: 786px) {
+  .extrato-wraper {
+    padding: 45px 0px;
+  }
+
+  .extrato{
+    width: 35%;
+    margin: 0 auto;
+
+    .linha{
+      margin-top: -4%;
+      left: 0%;
+      margin-left: 12px;
+      height: 20px;
+    }
+  }
+
+  .total-label {
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-left: 13px;
+    margin-top: -15px;
+    display: block;
+  }
+
+  .desktop-total {
+    float: left;
+  }
+
+  .desktop-conta {
+    float: right;
+  }
+
+  .desktop-titulo {
+    width: 42%;
+    float: left;
+    text-align: left;
+    vertical-align: bottom;
+    padding-top: 15px;
+    margin-bottom: 11px;
+    font-size: 32px;
+  }
+  .summary{
+    width: 58%;
+    float: right;
+    border-bottom: 0px;
+
+    .total, .account-name{
+      font-size: 19px;
+    }
+  }
+
+  .container{
+    width: 75%;
+    padding-top: 100px;
+    border-bottom: 0.5px solid #D8DBDE;
+
+  }
+
+  .extrato-dia{
+
+    .dot {
+      margin-right: 13px;
+    }
+
+    .dia-titulo{
+      margin-bottom: 13px;
+    }
+
+  }
+
+  .ic_expand {
+    min-width: 142px;
+  }
+
+  .extrato-item{
+    max-width: ~"calc(100% - 110px)";
+
+    .item-info{
+      margin-bottom: 24px;
+    }
+  }
+}
+
+cc-app-call-desktop {
+	position: absolute;
+	bottom: 0px;
+}

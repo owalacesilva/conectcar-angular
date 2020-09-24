@@ -1,0 +1,279 @@
+.cc-header {
+  background-color: #fff;
+}
+
+.meu-perfil {
+  background-color: #fff;
+
+  .avatar-container {
+    position: relative;
+    margin: auto;
+    width: 100%;
+  }
+
+  .avatar-loading {
+    display: none;
+    position: absolute;
+    width: 150px;
+    left: 0px;
+    top: 0px;
+  }
+
+  .titulo {
+    padding-top: 15px;
+    h1 {
+      color: #292F36;
+      font-family: Lato;
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 27px;
+      text-align: center;
+    }
+  }
+
+  .avatar {
+    cursor: pointer;
+    margin-top: 18px;
+    background-color: #9EA7AE;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: none;
+    background-size: cover; 
+    padding: 15px;
+    height: 230px;
+
+    .icone {
+      width: 80px;
+      height: 80px;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+
+      &.ic_avatar {
+        background-image: url('~assets/svg/perfil/avatar.svg');
+      }
+    }
+
+    .trocar-avatar {
+      width: 23px;
+      height: 17px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 1000;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &.ic_camera {
+        background-image: url('~assets/svg/perfil/camera.svg');
+      }
+    }
+  }
+
+  .info-container {
+    padding: 30px 22px 25px 22px;
+  }
+
+  .dados-pessoais {
+    h2 {
+      display: none;
+      color: #4D5862;
+      font-family: Lato;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 12px;
+      text-transform: uppercase;
+    }
+    .form-group {
+      input {
+        width: 100%;
+        height: 35px;
+        color: #7C878F;
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 18px;
+        border: 0;
+        border-radius: 0px;
+        border-bottom: 1px solid #7C878F;
+        padding-right: 0px;
+        padding-left: 0px;
+        text-align: left;
+        margin-bottom:  32px;
+
+        &:focus {
+          border-bottom: 2px solid #4D5862;
+          outline: 0;
+        }
+      }
+
+      .cpf {
+        border-bottom: 0px;
+        color: #7C878F;
+
+        &.disabled {
+          background-color: transparent;
+        }
+      }
+
+      .ddd {
+        width: 37%;
+        margin-right: 3%;
+        float: left;
+      }
+
+      .celular {
+        width: 60%;
+        float: right;
+      }
+    }
+
+    .form-control:disabled {
+      background-color: transparent;
+    }
+
+
+  }
+  .endereco {
+    border-top: 0.5px solid #D8DBDE;
+
+    h2 {
+      color: #4D5862;
+      font-family: Lato;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 12px;
+      text-transform: uppercase;
+    }
+    .form-group {
+      input {
+        height: 35px;
+        margin-bottom: 17px;
+      }
+
+      .full-address {
+
+        .complemento {
+          width: 47%;
+
+          input {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .action {
+    padding: 0px 22px 30px 22px;
+    button {
+      cursor: pointer;
+      height: 44px;
+      border: 1px solid #;
+      border-radius: 100px;
+      text-transform: uppercase;
+      line-height: 15px;
+      font-family: Lato;
+      font-size: 12px;
+      background-color: #FF6A38;
+      color: #fff;
+      width: 100%;
+    }
+  }
+}
+
+.file-input {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .meu-perfil {
+
+    .titulo {
+      padding-top: 55px;
+      width: 75%;
+      margin: 0 auto;
+      border-bottom: 0.5px solid #B5BDC4;
+
+      h1 {
+        color: #292F36;
+        font-family: Lato;
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 40px;
+        text-align: left;
+      }
+    }
+
+    .avatar-container {
+      width: 150px;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      margin-top: 35px;
+      border-radius: 100px;
+
+      .icone {
+        margin-top: 15px;
+      }
+
+      .trocar-avatar {
+        right: 0px;
+        height: 32px;
+        width: 32px;
+        background-color: #FF6A38;
+        border-radius: 20px;
+      }
+    }
+
+    .container-wraper {
+      width: 75%;
+      margin: 0 auto;
+      padding-top: 55px;
+
+      .info-container {
+        width: 48%;
+
+        h2 {
+          border-bottom: 0.5px solid #B5BDC4;
+          line-height: 19px;
+          padding-bottom: 2px;
+          margin-bottom: 20px;
+        }
+      }
+
+      .dados-pessoais {
+        float: left;
+        margin-right: 4%;
+
+        h2 {
+          display: block;
+          margin-bottom: 28px;
+        }
+      }
+
+      .endereco {
+        float: right;
+        border-top: 0px;
+      }
+    }
+
+    .action {
+      text-align: center;
+      margin-top: 80px;
+      button {
+        width: 293px;
+        height: 48px;
+      }
+    }
+
+    .avatar-loading {
+      display: block;
+    }
+  }
+}

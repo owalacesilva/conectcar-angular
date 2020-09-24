@@ -1,0 +1,195 @@
+@import "functions.less";
+
+.adesivo-view {	
+	.container-fluid {
+		background-color: #fff;
+	}
+
+	.container-page {
+		padding: 10px 0px 40px 0px;
+
+		.page-title {
+			text-align: center;
+			color: #292F36;
+			font-family: Lato;
+			font-size: 18px;
+			line-height: 25px;
+			font-weight: 300;
+			margin-bottom: 10px;
+			height: auto !important;
+		}
+
+		.page-subtitle {
+			text-align: center;
+			color: #7C878F;
+			font-family: Lato;
+			font-size: 14px;
+			line-height: 19px;
+			font-weight: 300;
+		}
+
+		.contadores {
+			float: inherit;
+			text-align: center;
+
+			.ativacao {
+		    position: relative;
+		    display: block;
+				color: #FF9268;
+				font-family: Lato;
+				font-size: 14px;
+				font-weight: normal;
+				line-height: 16px;
+		    top: 13px;
+		    line-height: 14px;
+			}
+
+			.contador {
+		    position: relative;
+		    display: block;
+				color: #B5BDC4;
+				font-family: Lato;
+				font-weight: normal;
+				font-size: 13px;
+		    top: 17px;
+				line-height: 14px;
+			}
+		}
+
+	  .num-adesivo {
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      input {
+      	font-size: 28px;
+      	letter-spacing: 8px;
+        text-align: center;
+        border-bottom: 2px solid #A0A7AE;
+
+        &:focus {
+          border-bottom: 2px solid #4D5862;
+        }
+      }
+	  }
+
+		.link-no-plaque {
+	    color: #FF6A38;
+	    font-size: 11px;
+	    font-weight: normal;
+	    text-decoration: underline;
+		}
+
+		.row-btns {
+	    max-width: 360px;
+	    margin: 0px auto;
+	    margin-top: 120px;
+
+			.col-xs-6 {
+				width: 50%;
+			}
+		}
+
+	  .btn {
+	  	cursor: pointer;
+	    position: relative;
+	    border-radius: 100px;
+	    -moz-border-radius: 100px;
+	    -webkit-border-radius: 100px;
+			min-width: 118px;
+			padding: 15px 0;
+	    font-size: 12px;
+			text-transform: uppercase;
+			outline: none;
+
+	    &.btn-boxed {
+	      border-color: #FF6A38;
+	      color: #fff;
+	      font-weight: bold;
+	      font-family: Lato;
+	      .transition;
+	      background-color: #FF6A38;;
+
+	      &:hover, body.mobile & {
+	        background-color: #FF6A38;
+	        color: #ffffff;
+	      }
+
+	      .txt {
+	      	margin-right: 20px;
+	      }
+
+		    .ic_avancar {
+					position: absolute;
+					right: 15px;
+					background: url("~assets/svg/ico_avancar.svg") no-repeat center center;
+			    width: 18px;
+			    height: 15px;
+			    background-size: 100%;
+		    }
+
+		    &.disabled {
+			    transition: background-color 0.5s;
+			    background-color: #D7DBDE !important;
+		    }
+	    }
+
+	    &.btn-vazado {
+	      border: none;
+	    	color: #7C878F;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.adesivo-view {
+
+	}
+}
+
+@media (min-width: 768px) {
+	.adesivo-view {	
+		.container-page {
+			padding: 60px 0px 80px 0px;
+
+			.container {
+				width: 960px;
+			}
+
+			.page-title {
+				height: auto;
+				font-size: 24px;
+			}
+
+			.page-subtitle {
+				font-size: 16px;
+			}
+
+			.contadores {
+				float: right;
+				text-align: right;
+
+				&.xs {
+					display: none;
+				}
+
+				.ativacao {
+					font-size: 14px;
+				}
+
+				.contador {
+					font-size: 11px;
+				}
+			}
+
+			.row-content {
+
+				.alert-title {
+					font-size: 24px;
+					font-weight: 300;
+				}
+			}
+		}
+	}
+}

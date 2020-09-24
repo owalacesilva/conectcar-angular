@@ -1,0 +1,22 @@
+<div class="modal-body">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+  <div class="frete-gratis">
+    <div class="image ico-frete-gratis"></div>
+    <h2>{{R.R('alerta_error_cadastro_endereco_subtitulo')}}</h2>
+  </div>
+  <div class="row">
+  	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <button
+        id="close-button"
+        class="btn cancelar"
+        (click)="_activeModal.dismiss()"
+      >Cancelar</button>
+  	</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <button
+        class="btn confirmar"
+				(click)="_activeModal.close()"
+      >Confirmar</button>
+  	</div>
+  </div>
+</div>

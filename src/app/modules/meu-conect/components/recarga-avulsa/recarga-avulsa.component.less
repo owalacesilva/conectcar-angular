@@ -1,0 +1,326 @@
+@import "functions.less";
+
+.container-fluid {
+  background-color: #fff;
+  min-height: 570px;
+
+  .title{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 300;
+    font-family: Lato;
+    color: #292F36;
+    padding-top: 15px;
+  }
+
+  .summary{
+    padding-top: 15px;
+    border-bottom: 0.5px solid #D8DBDE;
+  }
+
+  .account-name{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: Lato;
+    color: #B5BDC4;
+    float: left;
+    cursor: pointer;
+  }
+
+  .ic_expand {
+    background: url("~assets/svg/extrato/seta.svg") no-repeat right;
+    padding-right: 20px;
+  }
+
+  .recarga-avulsa {
+
+    margin-top: 25px;
+
+    .texto-recarga {
+      p {
+        color: #353C44;
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 19px;
+        text-align: center;
+        width: 223px;
+        margin: 0 auto;
+      }
+    }
+
+    .recargas {
+      margin-top: 25px !important;
+      width: 290px;
+      margin: 0 auto;
+
+      .recarga {
+        display: inline-block;
+        border: 1px solid #D8DBDE;
+        border-radius: 8px;
+        height: 65px;
+        padding: 10px;
+        margin: 0px 5px 10px 5px;
+        width: 290px;
+        cursor: pointer;
+
+        .valor-recarga {
+          display: inline-block;
+          vertical-align: top;
+          color: #4D5862;
+          font-family: Lato;
+          font-size: 19px;
+          line-height: 27px;
+          width: 103px;
+        }
+
+        .info-adicional {
+          display: inline-block;
+          p {
+            margin-bottom: 0px;
+            color: #7C878F;
+            font-family: Lato;
+            font-weight: 300;
+          }
+
+          .titulo {
+            font-size: 11px;
+            line-height: 13px;
+          }
+
+          .valor {
+            font-size: 14px;
+            line-height: 17px;
+          }
+
+          &.taxa {
+            width: 56px;
+            margin-right: 14px;
+          }
+
+          &.credito {
+            width: 80px;
+          }
+        }
+
+        &.active {
+          border-color: #FF6A38;
+
+          .valor-recarga {
+            color: #FF6A38;
+          }
+
+          .ic_checked {
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 15px;
+            height: 15px;
+            margin-left: 247px;
+            margin-top: -10px;
+            position: absolute;
+
+            &.ic_image {
+              background-image: url('~assets/svg/ic_check_laranja.svg');
+            }
+          }
+        }
+      }
+    }
+
+    .action {
+      padding: 0px 22px 30px 22px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      button {
+        cursor: pointer;
+        height: 44px;
+        border: 1px solid #D8DBDE;
+        border-radius: 100px;
+        text-transform: uppercase;
+        line-height: 15px;
+        font-family: Lato;
+        font-size: 12px;
+        background-color: #D8DBDE;
+        color: #fff;
+        width: 100%;
+
+        &.active {
+          background-color: #FF6A38;
+          border-color: #FF6A38;
+        }
+      }
+    }
+    .cartao-header {
+      display: none;
+    }
+
+    .payment {
+      .form-group {
+        .cartao {
+          input {
+            font-family: Lato;
+          }
+          input.cvc {
+            width: 70px;
+          }
+        }
+      }
+    }
+
+    .cartao-de-credito {
+      margin-top: 25px;
+
+    }
+  }
+
+  .spinner-page {
+    text-align: center;
+
+    .spinner {
+      padding-top: 0px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      font-family: Lato;
+      color: #292F36;
+    }	
+  }
+
+  .pagamento-processado {
+    .imagem-sucesso {
+      background-color: transparent;
+      background-image: url('~assets/svg/checkmark_sucesso.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 82px 82px;
+      width: 100%;
+      height: 82px;
+    }
+
+    .texto {
+      width: 90%;
+      margin: 0 auto;
+      .title {
+        color: #292F36;
+        font-family: Lato;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        font-weight: 400;
+      }
+
+      .description {
+        color: #7C878F;
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 19px;
+        text-align: center;
+      }
+    }
+
+    .action {
+      display: none;
+    }
+  }
+
+  .holders {
+    height: auto;
+    overflow-x: hidden;
+
+    .holder {
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .container-fluid {	
+    .summary{
+      width: 58%;
+      float: right;
+      border-bottom: 0px;
+      padding-top: 30px;
+
+      .account-name{
+        font-size: 19px;
+        float: right;
+        min-width: 142px;
+        margin-bottom: 0px;
+      }
+    }
+
+    .container{
+      width: 75%;
+      padding-top: 100px;
+      border-bottom: 0.5px solid #D8DBDE;
+      padding-left: 0px;
+      padding-right: 0px;
+
+      .title {
+        width: 42%;
+        float: left;
+        text-align: left;
+        vertical-align: bottom;
+        padding-top: 15px;
+        margin-bottom: 11px;
+        font-size: 32px;
+      }
+    }
+
+    .recarga-avulsa {
+      width: 610px;
+      margin: 0 auto;
+      margin-top: 45px;
+
+      .texto-recarga {
+        p {
+          font-size: 22px;
+          line-height: 24px;
+          width: 532px;
+          margin: 0 auto;
+        }
+      }
+
+      .recargas {
+        width: 610px;
+        margin: 0 auto;
+        margin-top: 45px !important;
+
+      }
+
+      .cartao-de-credito {
+        width: 330px;
+        margin: 0 auto;
+        margin-top: 40px;
+      }
+      .action {
+        width: 350px;
+        margin: 0 auto;
+        margin-top: 55px;
+      }
+    }
+
+    .pagamento-processado {
+      margin-top: 55px;
+      .action {
+        display: block;
+
+        button {
+          color: #000;
+          border-color: #000;
+          background-color: #fff;
+          margin-bottom: 15px;
+          text-transform: none;
+          font-size: 14px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

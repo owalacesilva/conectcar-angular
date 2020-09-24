@@ -1,0 +1,20 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-title">Não encontramos o<br />número do seu adesivo</h4>
+</div>
+<div class="modal-body">
+	<button id="btn-close" type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-body-header">{{ R.R('ativar_adesivo_modal_editar_adesivo_subtitulo') }}</h4>
+	<h4 class="text-center text-title">Não encontramos o<br />número do seu adesivo</h4>
+	<p>Digite o <strong>número completo do adesivo</strong><br />que você vai colar nesse veículo</p>
+  <input required #plaque2Input
+    name="plaque2"
+    id="plaque2"
+    type="tel"
+  >
+</div>
+<div class="row row-btns">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<button class="btn btn-boxed" [ngClass]="{ 'disabled': disabled }">{{ R.R('ativar_adesivo_modal_editar_adesivo_btn_salvar') }}</button>
+	</div>
+</div>

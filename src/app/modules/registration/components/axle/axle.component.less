@@ -1,0 +1,237 @@
+.axle-view {
+
+  .add {
+    height: 40px;
+    width: 97%;
+    border: 1px solid #353C44;
+    border-radius: 100px;
+  }
+
+	.icon {
+		display: inline-block;
+		width: 86px;
+		height: 40px;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center;
+
+		&.icon_veiculo {
+  		background-image: url("~assets/svg/ic_info_planos.svg");
+		}
+	}
+
+	.axle-box {
+		display: block;
+		width: 100%;
+		position: relative;
+
+		&:after {
+			clear: both;
+			display: table;
+			content: " ";
+		}
+
+		.axle-box-avatar {
+			width: ~"calc(100% - 50px)";
+			float: left;
+
+			&:after {
+				clear: both;
+				display: table;
+				content: " ";
+			}
+		}
+
+		.axle-box-action {
+			width: 40px;
+			float: right;
+		}
+
+		.image-container {
+			width: auto;
+			float: left;
+      margin-top: 12px;
+		}
+
+		.description {
+			float: left;
+	    margin: 0px !important;
+	    max-width: 126px;
+	    padding-left: 10px;
+      width: auto;
+      margin-left: 2%;
+      margin-right: 2%;
+      font-size: 13px;
+      color: #7C878F;
+      line-height: 16px;
+      vertical-align: middle;
+
+      .title {
+        font-weight: bold;
+        color: #4D5862;
+      }
+
+      span {
+        font-weight: 300;
+        margin-top: 5px;
+      }
+		}
+	}
+
+  .veiculos {
+    text-align: center;
+    margin-top: 40px;
+
+    .veiculo {
+      border: 1px solid silver;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      display: inline-block;
+      width: 97%;
+      position: relative;
+
+      .delete {
+        position: absolute;
+        right: -5px;
+        top: -5px;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        border: 1px solid silver;
+        border-radius: 50%;
+        cursor: pointer;
+        background: white url("~assets/svg/ic_Deletar.svg") no-repeat;
+        background-position: center center;
+
+         .selected {
+          background: white url("~assets/svg/ic_Deletar_Tap.svg") no-repeat !important;
+          background-position: center center !important;
+        }
+      }
+
+      .plaque {
+        color: #7C878F;
+        font-size: 40px;
+        letter-spacing: 11px;
+        height: 60px;
+        vertical-align: middle;
+        line-height: 60px;
+        text-align: center;
+        width: 100%;
+        font-weight: 300;
+        border-bottom: 1px solid silver;
+      }
+
+      .axle {
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        vertical-align: middle;
+        position: relative;
+        cursor: pointer;
+
+        .row {
+        	display: block;
+
+        	&:after {
+        		display: block;
+        		content: " ";
+        		clear: both;
+        	}
+
+        	.col-lg-4 {
+        		position: relative;
+        		float: left;
+        		width: 33.33%;
+        		padding: 0px;
+        	}
+        }
+
+
+
+
+        .image-container {
+          background-repeat: no-repeat !important;
+          background-position: center center !important;
+          height: 40px;
+          width: 102px;
+        }
+
+        .divr {
+			    position: relative;
+			    width: 100%;
+			    line-height: 34px;
+          vertical-align: middle;
+          padding-right: 5px;
+
+	        .info-ico {
+	          vertical-align: middle;
+	        }
+
+	        .edit-ico {
+	          vertical-align: middle;
+	        }
+        }
+      }
+    }
+  }
+
+}
+
+@media (min-width: 992px) {
+  .axle-view{
+    .axle-box {
+      .description {
+        max-width: 150px;
+    	}
+    }
+  }
+
+}
+
+ngb-tooltip-window {
+  line-height: 13px;
+  width: 240px;
+  &, .tooltip-inner {
+    max-width: 226px !important;
+  }
+  color: #4D5862;
+  .tooltip-inner {
+    color: #FFFFFF;
+    font-family: Lato;
+    font-size: 10px;
+    opacity: 1;
+    background-color: #4D5862;
+    &::before {
+      border-left-color: #4D5862 !important;
+    }
+  }
+}
+
+.axle-1 { background-image: url("~assets/svg/axle/2/2 eixos simples.svg") }
+.axle-2 { background-image: url("~assets/svg/axle/2/2 eixos dupla.svg") }
+.axle-3 { background-image: url("~assets/svg/axle/2/3 eixos dupla.svg") }
+.axle-4 { background-image: url("~assets/svg/axle/2/3 eixos dupla onibus.svg") }
+.axle-5 { background-image: url("~assets/svg/axle/2/5 eixos dupla.svg") }
+.axle-6 { background-image: url("~assets/svg/axle/2/6 eixos dupla.svg") }
+.axle-7 { background-image: url("~assets/svg/axle/2/3 eixos simples.svg") }
+.axle-8 { background-image: url("~assets/svg/axle/2/4 eixos simples.svg") }
+.axle-10 { background-image: url("~assets/svg/axle/2/2 eixos duplas onibus.svg") }
+.axle-11 { background-image: url("~assets/svg/axle/2/3 eixos dupla onibus.svg") }
+.axle-13 { background-image: url("~assets/svg/axle/2/7 eixos dupla.svg") }
+.axle-14 { background-image: url("~assets/svg/axle/2/8 eixos dupla.svg") }
+.axle-15 { background-image: url("~assets/svg/axle/2/9 eixos dupla.svg") }
+
+.axle-line-1 { background-image: url("~assets/svg/axle/1/2 eixos simples.svg") }
+.axle-line-2 { background-image: url("~assets/svg/axle/1/2 eixos dupla.svg") }
+.axle-line-3 { background-image: url("~assets/svg/axle/1/3 eixos dupla.svg") }
+.axle-line-4 { background-image: url("~assets/svg/axle/1/3 eixos dupla onibus.svg") }
+.axle-line-5 { background-image: url("~assets/svg/axle/1/5 eixos dupla.svg") }
+.axle-line-6 { background-image: url("~assets/svg/axle/1/6 eixos dupla.svg") }
+.axle-line-7 { background-image: url("~assets/svg/axle/1/3 eixos simples.svg") }
+.axle-line-8 { background-image: url("~assets/svg/axle/1/4 eixos simples.svg") }
+.axle-line-10 { background-image: url("~assets/svg/axle/1/2 eixos duplas onibus.svg") }
+.axle-line-11 { background-image: url("~assets/svg/axle/1/3 eixos dupla onibus.svg") }
+.axle-line-13 { background-image: url("~assets/svg/axle/1/7 eixos dupla.svg") }
+.axle-line-14 { background-image: url("~assets/svg/axle/1/8 eixos dupla.svg") }
+.axle-line-15 { background-image: url("~assets/svg/axle/1/9 eixos dupla.svg") }

@@ -1,0 +1,89 @@
+<div class="header-bg">
+  <cc-header [origin]="'home'"></cc-header>
+</div>
+
+<div class="view esqueci-view">
+  <h1 [innerHtml]="R.R('esqueci_senha_desktop_titulo')"></h1>
+
+  <div *ngIf="sent" class="sent">
+    <div class="valign">
+      <div class="text-center">
+        <div class="image-checked"></div>
+        <h4 [innerHtml]="R.R('esqueci_senha_enviamos_link_texto')"></h4>
+        <p>{{ R.R('esqueci_senha_enviamos_link_subtexto') }}</p>
+        <a routerLink="/" class="voltar-home">&lt; VOLTAR PARA HOME</a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!sent">
+    <h2 [innerHtml]="R.R('esqueci_senha_callback_titulo')"></h2>
+    <h3 [innerHtml]="R.R('esqueci_senha_callback_subtitulo')"></h3>
+
+    <div class="form-group" style="position: relative;"
+      [ngClass]="{'has-danger': password.length && password.invalid && (password.dirty || password.touched)}">
+
+      <input required #passwordInput
+        [formControl]="password"
+        focus-watcher
+        name="password"
+        id="password"
+        class="form-control"
+        [type]="passwordType"
+        [attr.disabled]="!!persisted ? '' : null"
+        [cc-placeholder]="'Senha'"
+        (input)="disabled = (password.value.length === 0 || !password.valid)"
+        (keydown.enter)="submit($event)"
+      >
+
+      <div>
+        <button
+          class="password-type-toggle"
+          (click)="passwordToggle($event)"
+          [ngClass]="{ active: passwordType === 'text' }">
+        </button>
+
+        <div class="password-criteria">
+          <button
+            class="password-type-toggle"
+            (click)="passwordToggle($event)"
+            [ngClass]="{ active: passwordType === 'text' }">
+          </button>
+
+          <ul class="first">
+            <li [ngClass]="{ ok: !password.errors || !password.errors.noUpperCase }">
+              <small>Uma maiúscula</small>
+            </li>
+            <li [ngClass]="{ ok: !password.errors || !password.errors.noLowerCase }">
+              <small>Uma minúscula</small>
+            </li>
+          </ul>
+
+          <ul>
+            <li [ngClass]="{ ok: !password.errors || !password.errors.noNumbers }">
+              <small>Um número</small>
+            </li>
+            <li [ngClass]="{ ok: !password.errors || !password.errors.minLength }">
+              <small>Mínimo de 8 caracteres</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="action">
+        <button
+          (click)="back($event)"
+          (touchstart)="back($event)"
+          class="voltar"
+        >Voltar</button>
+
+        <button
+          [ngClass]="{ avancar: true, disabled: disabled }"
+          (touchstart)="submit($event)"
+          (click)="submit($event)"
+          id="next-button"
+          >{{ R.R('esqueci_senha_callback_btn_enviar') }}</button>
+      </div>
+    </div>
+  </div>
+</div>

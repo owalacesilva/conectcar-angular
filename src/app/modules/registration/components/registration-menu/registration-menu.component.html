@@ -1,0 +1,83 @@
+<ul class="registration-menu">
+  <li
+    class="profile"
+    [ngClass]="{ 'active': progress.profileProgress > 0.0 }"
+  >
+    <cc-progress-arc [progress]="progress.profileProgress"></cc-progress-arc>
+
+    <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Perfil">
+                <g id="Group">
+                    <path d="M24.5234228,16.0157471 C24.5234228,14.0696284 22.946104,12.4923096 20.9999853,12.4923096 C19.0538666,12.4923096 17.4758974,14.0696284 17.4758974,16.0157471 C17.4758974,17.9618658 19.0538666,19.5391846 20.9999853,19.5391846 C22.946104,19.5391846 24.5234228,17.9618658 24.5234228,16.0157471 Z" id="Stroke-1" stroke="#D8DBDE"></path>
+                    <path d="M28.5219063,27.5456883 C27.2823962,24.5963368 24.3815076,22.5262451 21.000037,22.5262451 C17.6200162,22.5262451 14.7198525,24.5941477 13.4796175,27.54204" id="Stroke-3" stroke="#D8DBDE" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </svg>
+  </li>
+
+  <li
+    class="delivery"
+    [ngClass]="{ 'active': progress.deliveryProgress > 0 }"
+  >
+    <cc-progress-arc [progress]="progress.deliveryProgress"></cc-progress-arc>
+
+    <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Entrega">
+                <g id="Group-2">
+                    <polygon id="Stroke-25" stroke="#D8DBDE" stroke-linecap="round" stroke-linejoin="round" points="21.506021 19.4727259 10.1724747 14.8701105 10.1724747 26.8369104 21.506021 31.4395258"></polygon>
+                    <polygon id="Stroke-26" stroke="#D8DBDE" stroke-linecap="round" stroke-linejoin="round" points="21.5135428 19.480186 31.8600321 14.8842561 31.8600321 26.851056 21.5135428 31.4469859"></polygon>
+                    <polyline id="Stroke-27" stroke="#D8DBDE" stroke-linecap="round" stroke-linejoin="round" points="10.1798804 14.8665674 20.9994565 10.1354712 31.8498453 14.8150293"></polyline>
+                    <path d="M16.0048356,12.3310771 L26.8131211,17.02031" id="Stroke-28" stroke="#D8DBDE" stroke-linejoin="round"></path>
+                    <polygon id="Stroke-29" stroke="#D8DBDE" stroke-linecap="round" stroke-linejoin="round" points="18.4139025 21.7929356 12.7411501 19.551169 12.7411501 24.1537843 18.4139025 26.3955509"></polygon>
+                </g>
+            </g>
+        </g>
+    </svg>
+  </li>
+
+  <li
+    class="vehicle"
+    [ngClass]="{ 'active': progress.vehicleProgress > 0 }"
+  >
+    <cc-progress-arc [progress]="progress.vehicleProgress"></cc-progress-arc>
+
+    <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Veiculo">
+                <g id="Page-1" transform="translate(9.000000, 10.000000)" stroke="#D8DBDE" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19.6314977,17.1053225 L19.6314977,18.3671875 C19.6314977,18.9978245 20.1330358,19.5138002 20.7460268,19.5138002 L21.3998752,19.5138002 C22.0128662,19.5138002 22.5144043,18.9978245 22.5144043,18.3671875 L22.5144043,10.9606249 C22.5144043,9.67985844 22.3059874,8.40941153 21.8980697,7.19973509 L20.1961838,1.66534205 C19.973278,0.988840534 19.3491417,0.507263184 18.6135525,0.507263184 L6.35373264,0.507263184 C5.61814345,0.507263184 5.00515245,0.988840534 4.77110135,1.66534205 L3.06921544,7.19973509 C2.6612978,8.40941153 2.45288086,9.67985844 2.45288086,10.9606249 L2.45288086,18.3671875 C2.45288086,18.9978245 2.95441895,19.5138002 3.56740994,19.5138002 L4.21490327,19.5138002 C4.82789427,19.5138002 5.32943235,18.9978245 5.32943235,18.3671875 L5.32943235,17.2629994" id="Stroke-1"></path>
+                    <path d="M21.5552063,6.32333984 C21.5371327,7.28488769 20.8509783,7.50320435 20.4322787,7.50320435 L4.45308593,7.50320435 C3.98713743,7.50320435 3.36517324,7.3333496 3.34954834,6.32333984" id="Stroke-3"></path>
+                    <path d="M22.5129395,15.5874831 C22.5129395,16.481841 21.7526032,16.7673476 21.3006316,16.7673476 L3.61919461,16.7673476 C3.16610988,16.7673476 2.45141602,16.3522738 2.45141602,15.6012424" id="Stroke-5"></path>
+                    <path d="M5.74572754,12.2566074 C5.05406087,12.2566074 4.49572754,11.6982741 4.49572754,11.0066074 C4.49572754,10.3149407 5.05406087,9.75660741 5.74572754,9.75660741 C6.43739421,9.75660741 6.99572754,10.3149407 6.99572754,11.0066074 C6.99572754,11.6982741 6.43739421,12.2566074 5.74572754,12.2566074 Z" id="Stroke-7"></path>
+                    <path d="M19.2914429,12.2527622 C18.6006205,12.2527622 18.0429688,11.6951104 18.0429688,11.0042881 C18.0429688,10.3134657 18.6006205,9.75581395 19.2914429,9.75581395 C19.9822652,9.75581395 20.539917,10.3134657 20.539917,11.0042881 C20.539917,11.6951104 19.9822652,12.2527622 19.2914429,12.2527622 Z" id="Stroke-9"></path>
+                    <path d="M0.520233154,5.51132202 C0.520233154,5.51132202 1.09211222,5.51132202 2.23587036,5.51132202" id="Stroke-13"></path>
+                    <path d="M22.7942502,5.5015564 L24.5154114,5.5015564" id="Stroke-13-Copy"></path>
+                </g>
+            </g>
+        </g>
+    </svg>
+  </li>
+  <li
+    class="payment"
+    [ngClass]="{ 'active': progress.paymentProgress > 0 }"
+  >
+    <cc-progress-arc [progress]="progress.paymentProgress"></cc-progress-arc>
+    <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Pagamento">
+                <g id="Group-3" transform="translate(-0.260870, 0.000000)">
+                    <g id="Group" transform="translate(11.228155, 11.000000)" stroke="#D8DBDE" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1.2439782,1.39617428 L12.9146807,4.31336099 C14.3506958,4.67054428 15.5264331,6.15969652 15.5264331,7.62663586 L15.5264331,17.4157715 C15.5264331,18.8818223 14.3471057,19.8058786 12.9057056,19.4691312 L3.14939067,17.1685743 C1.70888807,16.8336039 0.528663206,15.3586679 0.528663206,13.8926171 L0.528663206,3.21496582 C0.528663206,1.74802647 1.7403009,0.549418857 3.22119142,0.549418857 L17.8511931,0.518510625 C19.3329812,0.518510625 20.5437214,1.71711824 20.5437214,3.18405759 L20.5437214,12.9577298 C20.5437214,14.4237806 19.3329812,15.6232768 17.8511931,15.6232768 L15.5264331,15.6232768" id="Stroke-39"></path>
+                        <path d="M9.69790976,3.4956665 L17.6018801,3.4956665" id="Stroke-41"></path>
+                        <path d="M15.5225919,7.50927734 L17.5796867,7.50927734" id="Stroke-45"></path>
+                        <path d="M11.767142,13.5 C10.797396,13.5 10.0145889,12.7183333 10.0145889,11.75 C10.0145889,10.7816667 10.797396,10 11.767142,10 C12.736888,10 13.519695,10.7816667 13.519695,11.75 C13.519695,12.7183333 12.736888,13.5 11.767142,13.5 Z" id="Stroke-9"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </svg>
+  </li>
+</ul>

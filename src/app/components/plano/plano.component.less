@@ -1,0 +1,403 @@
+@import "./../../functions.less";
+
+.planos .home-card {
+  .box {
+    margin-top: 10px;
+    .box-shadow(0 0 25px 0 rgba(0,0,0,0.1));
+    .border-radius(4px);
+  }
+}
+
+.home-card {
+  width: 280px;
+  position: absolute;
+  overflow-y: visible;
+  .modal-content & {
+    position: relative;
+    width: 100%;
+  }
+
+  .box-plano-empresa {
+    .image {
+      //background-image: url("~assets/svg/planos/ico-planos-empresa.svg");
+      background-image: url("~assets/svg/planos/ic_como_empresa.svg");
+    }
+  }
+
+  &.plano-livre {
+    .box {
+      .image {
+        background-image: url("~assets/svg/planos/plano_livre.svg");
+      }
+    }
+  }
+
+  &.plano-urbano {
+    .box {
+      .image {
+        background-image: url("~assets/svg/planos/plano_urbano.svg");
+      }
+    }
+  }
+
+  .box {
+    position: relative;
+    padding: 30px;
+    background-color: #ffffff;
+    .modal-content & { background-color: transparent; }
+
+    .image {
+      background: no-repeat center center;
+      height: 160px;
+    }
+
+      h2 {
+        color: #4D5862;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        .bold-weight();
+        margin: 15px 0 5px 0;
+      }
+
+      p {
+        //.normal-weight();
+        color: #7C878F;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+      }
+
+      .de-preco {
+        color: #FF9268;
+        font-size: 10px;
+        line-height: 12px;
+      }
+
+      .preco {
+        text-align: center;
+        color: #FF6A38;
+        padding: 15px 0;
+
+        .moeda {
+          .normal-weight();
+          vertical-align: top;
+        }
+
+        .reais {
+          font-size: 72px;
+          line-height: 50px;
+        }
+
+        .centavos {
+          vertical-align: bottom;
+        }
+
+        .mensal {
+          vertical-align: bottom;
+        }
+      }
+
+      .servicos {
+				position: relative;
+        text-align: center;
+        color: #FF6A38;
+		    padding: 0px;
+		    height: 70px;
+
+        p {
+          line-height: 5px;
+        }
+      }
+
+      .ajuda {
+        display: inline-block;
+        position: relative;
+        width: 12px;
+        height: 12px;
+        //background: url("~assets/svg/tooltip-open.svg") no-repeat center bottom;
+        background: url("~assets/svg/planos/ic_como_empresa.svg") no-repeat center bottom;
+        vertical-align: baseline;
+        cursor: pointer;
+
+        .ajuda-texto {
+          font-size: 10px;
+          line-height: 13px;
+          color: #ffffff;
+          background-color: #4D5862;
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          .transform(translate(-50%,0));
+          width: 170px;
+          padding: 5px;
+          .border-radius(3px);
+          text-align: center;
+
+          &:after {
+            content: "";
+            .arrow-down(10px, #4D5862);
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            .transform(translate(-50%, 0));
+          }
+          display: none;
+        }
+
+        &:hover {
+          .ajuda-texto {
+            display: block;
+          }
+        }
+      }
+  }
+
+  .desconto {
+    border-radius: 100px;
+    background-color: #FF9268;
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    .transform(translate(-50%,0));
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 15px;
+    width: 100px;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+
+  .btns {
+    margin-top: -22px;
+    position: relative;
+    button {
+      text-transform: uppercase;
+    }
+
+    .btn-boxed {
+      border-color: #FF6A38;
+      .bold-weight();
+      font-family: Lato;
+      font-size: 12px;
+      .transition;
+      background-color: #ffffff;
+
+      &:hover, body.mobile & {
+        background-color: #FF6A38;
+        color: #ffffff;
+      }
+    }
+
+    .btn-vazado {
+    	background-color: #fff;
+    	color: #FF6A38;
+
+      &:hover {
+        background-color: #FF6A38;
+        color: #ffffff;
+      }
+    }
+
+    .btn-flat {
+      color: #FF6A38;
+      font-weight: 400;
+    }
+  }
+
+  &.veja-mais {
+    .clearfix;
+    padding-top: 30px;
+    .modal-content & { padding-top: 0; }
+
+    ul {
+      margin-top: 20px;
+
+      &.icones {
+        width: 100%;
+        margin: 30px 0;
+
+        li {
+          display: inline-block;
+          width: 25%;
+          text-align: center;
+          font-size: 11px;
+          line-height: 13px;
+          color: #7C878F;
+
+          .ico {
+            width: 100%;
+            height: 60px;
+          }
+
+          &.pedagios > .ico {
+            background: transparent url("~assets/svg/planos/ico-pedagios.svg") no-repeat center center;
+          }
+
+          &.aeroportos > .ico {
+            background: transparent url("~assets/svg/planos/ico-aeroportos.svg") no-repeat center center;
+          }
+
+          &.shoppings > .ico {
+            background: transparent url("~assets/svg/planos/ico-shoppings.svg") no-repeat center center;
+          }
+
+          &.estacionamentos > .ico {
+            background: transparent url("~assets/svg/planos/ico-estacionamentos.svg") no-repeat center center;
+          }
+        }
+      }
+    }
+
+    .lista {
+      .clearfix;
+      margin: 40px auto;
+
+      li {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 15px;
+        padding-left: 30px;
+        position: relative;
+        color: #7C878F;
+
+        &:before {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: url("~assets/svg/checkmark_text_input.svg") no-repeat center center;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    div.fechar {
+      text-align: center;
+
+      button {
+        .normal-weight();
+        color: #7C878F;
+        font-family: Lato;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 50px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .credito {
+    position: relative;
+  }
+
+  .info-ico {
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    background: url("~assets/svg/ic_tooltip_question.svg") no-repeat center center;
+
+    &.info-ico-modal {
+    	right: initial;
+  		top: -5px;
+    }
+  }
+
+  .tooltip {
+  	left: 0px !important;
+  	right: -25px !important;
+
+  	&.show {
+  		opacity: 1;
+  	}
+
+	  .tooltip-inner {
+	  	max-width: 100% !important;
+	    width: 100% !important;
+	    text-align: left;
+	    background-color: #4D5862;
+	    font-size: .85em;
+
+	    &::before {
+    		left: 90% !important;
+	    	border-top-color: #4D5862;
+    	}
+	  }
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  .modal-dialog {
+    height: 100%;
+    margin: 0px auto !important;
+		padding-top: 60px;
+
+	  .modal-content {
+
+		  .modal-header {
+		  	display: block;
+		  	position: relative;
+
+		  	.modal-title {
+			    color: #fff;
+			    display: block;
+			    text-align: center;
+			    width: 100%;
+			    font-size: 32px;
+			    font-weight: 300;
+			    line-height: 39px;
+		  	}
+
+		  	.close {
+		  		position: absolute;
+					background: url("~assets/svg/bt_fechar.svg") no-repeat center center;
+					background-size: 100%;
+			    top: 25px;
+			    right: 15px;
+					width: 18px;
+					height: 19px;
+		  	}
+		  }
+
+		  .modal-body {
+		  	.close {
+		  	}
+		  }
+
+		  .car-adjust {
+				display: table;
+				min-height: 300px;
+				width: 100%;
+
+				.adjust-vertical {
+					display: table-cell;
+					vertical-align: middle;
+				}
+
+				.adjust-content {
+					text-align: left;
+				}
+		  }
+
+		  p {
+		     font-size: 17px;
+		  }
+
+			.btn-boxed {
+				display: none;
+			}
+	  }
+  }
+}

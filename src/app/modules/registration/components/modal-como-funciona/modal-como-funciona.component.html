@@ -1,0 +1,72 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-title">Como funcionam os planos?</h4>
+</div>
+<div class="modal-body">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+  <ngb-carousel #carousel interval="0" class="hide">
+    <ng-template ngbSlide>
+      <div class="row" (swiperight)="prev()" (swipeleft)="next()">
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical">
+        			<div class="ico conta"></div>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical adjust-content">
+			        <h3>1. Conta ConectCar</h3>
+			        <p>Ao se tornar um cliente ConectCar, criamos uma conta para você gerenciar suas movimentações com a gente: acompanhar as passagens em pedágios e estacionamentos, consumo do saldo dos veículos, cadastro de forma de pagamento, entre outros.</p>
+			        <div class="difer"></div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="row" (swiperight)="prev()" (swipeleft)="next()">
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical">
+        			<div class="ico credito"></div>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical adjust-content">
+			        <h3>2. Crédito Automático</h3>
+			        <p>Para começar a usar o seu ConectCar, você precisa inserir créditos na sua conta. Funciona assim: você escolhe um valor entre R$ 50,00 e R$ 500,00 que será debitado do seu cartão de crédito e creditado sua conta ConectCar, de forma automática, e sempre que o saldo atingir R$ 30,00. Prático, né?</p>
+			        <div class="difer"></div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="row" (swiperight)="prev()" (swipeleft)="next()">
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical">
+        			<div class="ico saldo"></div>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical adjust-content">
+			        <h3>3. Saldo na conta Conect car</h3>
+			        <p>O saldo da sua conta ConectCar será utilizado para pagar os pedágios, estacionamentos e a mensalidade do seu plano. As passagens em pedágios e estacionamentos serão descontadas do seu saldo assim que recebermos a informação dos parceiros, e a mensalidade será descontada do seu saldo sempre no último dia de cada mês.</p>
+			        <div class="btns">
+			        	<button type="button" class="btn btn-boxed" (click)="_activeModal.dismiss()">entendi</button>
+			        </div>
+			        <div class="difer"></div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

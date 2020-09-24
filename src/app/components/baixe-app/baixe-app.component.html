@@ -1,0 +1,19 @@
+<div class="section-baixe">
+  <div class="mobile">
+    <p>Baixe nosso <b>app</b><br /> para administrar sua conta ConectCar</p>
+  </div>
+
+  <div class="desktop">
+    <h2>Baixe nosso <b>app</b><br /> para administrar sua conta ConectCar</h2>
+    <p>Faça a ativação do seu adesivo, gestão do seu consumo e abasteça com desconto</p>
+  </div>
+
+  <div class="mkt-app text-center">
+    <a href="https://drive.google.com/open?id=0Bxp7flsbnxvOZlF3Y0xLNzlXN3c" target="_blank">
+      <span class="btn_app btn_google_play" *ngIf="both || userAgent === 'android' || userAgent === ''" ></span>
+    </a>
+    <a href="https://drive.google.com/open?id=0Bxp7flsbnxvOdEUtRUY2dzZwdmM" target="_blank">
+      <span class="btn_app btn_apple" *ngIf="both || userAgent === 'ios' || userAgent === ''"></span>
+    </a>
+  </div>
+</div>

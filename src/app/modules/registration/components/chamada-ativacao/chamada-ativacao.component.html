@@ -1,0 +1,36 @@
+<div class="view chamada-ativacao-view">
+
+	<div class="container-fluid container-page">
+		<div class="container">
+      <p class="page-subtitle">Você tem <strong>{{ countLabel }}</strong><br />para ativar.</p>
+
+      <div class="row row-wrapper">
+				<div *ngIf="count > 0" class="col-lg-12">
+					<div class="col-wrapper">
+						<div class="wrapper-xs">
+							<span class="icon ic_ja_recebeu_adesivo"></span>
+							<div class="wrapper-xs-content">
+								<span>{{ R.R('ativar_adesivo_label_ja_recebeu_adesivo') }}</span>
+							</div>
+						</div>
+						<button type="button" class="btn btn-boxed">{{ R.R('ativar_adesivo_btn_ativar') }}</button>
+					</div>
+					<div class="divisoria">ou</div>
+				</div>
+
+				<div *ngIf="count < 1" class="col-lg-12">
+					<div class="col-wrapper">
+						<div class="wrapper-xs">
+							<span class="icon ic_nao_recebeu_seu_adesivo"></span>
+							<div class="wrapper-xs-content">
+								<span>{{ R.R('ativar_adesivo_label_nao_recebeu_adesivo') }}</span>
+							</div>
+						</div>
+						<button type="button" class="btn btn-vazado">{{ R.R('ativar_adesivo_btn_acompanhar_pedido') }}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

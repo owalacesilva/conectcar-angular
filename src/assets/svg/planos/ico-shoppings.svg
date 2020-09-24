@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="31px" viewBox="0 0 35 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>ic shopping</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Planos-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="1-Plano-Livre-Expandido" transform="translate(-189.000000, -581.000000)">
+            <g id="ic-shopping" transform="translate(189.000000, 581.000000)">
+                <path d="M14.2100029,29.8884986 L5.22046861,29.8884986 C2.81549885,29.8884986 0.867498105,27.9404979 0.867498105,25.5355281 C0.867498105,23.1305583 2.81549885,21.1825576 5.22046861,21.1825576 L10.7412488,21.1825576 L21.6242943,9.57381064 L29.8881271,9.57381064 C32.2930969,9.57381064 34.242336,11.5218114 34.242336,13.9267811 C34.242336,16.3317509 32.2930969,18.2797517 29.8881271,18.2797517 L25.0930483,18.2797517 L14.2100029,29.8884986 Z" id="Stroke-1" stroke="#4D5862"></path>
+                <path d="M3.76906564,12.475502 L15.3778126,0.866755066" id="Stroke-3" stroke="#7A8BDB"></path>
+                <polyline id="Stroke-5" stroke="#7A8BDB" points="8.12228383 0.866878906 15.3780603 0.866878906 15.3780603 8.12265535"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,337 @@
+@import "./../../functions.less";
+
+#embrulho {
+  background: #fff url("~assets/img/planos/bg_desktop.png") no-repeat top center;
+  background-size: 100% 500px;
+  body.mobile & {
+    //background: #fff url("~assets/img/planos/bg_mobile.png") repeat-x top center;
+    //background-size: 640px 342px;
+  }
+}
+
+.planos.infos {
+  position: relative;
+  text-align: center;
+  margin: auto;
+
+  .col-info {
+    width: 300px;
+    margin: auto 20px;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+body.mobile {
+	section.planos {
+	  #card-slider {
+	    overflow-x: hidden;
+	    overflow-y: visible;
+
+	    > cc-plano {
+	      position: absolute;
+	      left: 50%;
+	      margin-left: -140px;
+	      transform: translateX(105%);
+	    }
+	  }
+	}
+}
+
+.principal-recipiente {
+  padding-top: 10px;
+}
+
+.recipient {
+  h3 {
+    color: #FFFFFF;
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: normal;
+    text-align: center;
+    padding: 0 20px 0px 20px;
+    margin: 0px auto 1.5rem auto;
+
+    body.mobile & {
+      font-size: 16px;
+      width: 300px;
+      margin: 0 auto 0.5rem auto;
+    }
+
+    strong {
+      font-weight: 400;
+    }
+  }
+}
+
+section.planos {
+  height: 590px;
+  min-width: 100%;
+
+  body.mobile & {
+    width: 100%;
+  }
+
+  margin: 0 auto;
+
+
+  #card-slider {
+    width: 100%;
+    height: 720px;
+    position: relative;
+    //overflow-x: hidden;
+    //overflow-y: visible;
+
+    text-align: center;
+
+    > cc-plano {
+      width: 300px;
+      height: 720px;
+    	transform: initial;
+      position: relative;
+	    display: inline-block;
+	    margin: 0px 20px;
+    }
+  }
+
+  .spinner-container {
+    position: relative;
+    text-align: center;
+    margin-top: 55px;
+  }
+}
+
+.box-como-funciona,
+.box-plano-empresa {
+  width: 300px;
+  margin: 0 auto 70px auto;
+
+  .image {
+    height: 62px;
+
+    &.ic_como_funcionam_os_planos {
+    	background: url("~assets/svg/planos/ic_como_funcionam_os_planos.svg") no-repeat center center;
+    }
+
+    &.ic_como_empresa {
+    	background: url("~assets/svg/planos/ic_como_empresa.svg") no-repeat center center;
+    }
+  }
+
+  .informacoes {
+    margin-bottom: 15px;
+
+    h4 {
+      line-height: 19px;
+      text-align: center;
+      padding: 15px 0 0 0;
+			color: #4D5862;
+			font-family: Lato;
+			font-size: 24px;
+			font-weight: 300;
+    }
+
+    p {
+      font-weight: 300;
+      color: #7C878F;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+    }
+  }
+
+  .btns {
+    width: 220px;
+    margin: 0 auto;
+
+    button {
+      color: #7C878F;
+      border: 1px solid #7C878F;
+      background-color: #ffffff;
+      font-family: Lato;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+#perguntas-frequentes {
+  max-width: 360px;
+  padding: 60px 15px;
+
+  h4 {
+    color: #4D5862;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .list-unstyled {
+    border-top: solid 1px #d2d4d6;
+
+    .header {
+      position: relative;
+      height: 0.78%;
+      color: #7C878F;
+      font-family: Lato;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 17px;
+      padding: 20px 0px;
+      border-bottom: solid 1px #d2d4d6;
+
+      .ic {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        right: 0px;
+        top: 17px;
+
+        &.ic_dropdown {
+          background: url("~assets/svg/ic_expand_down.svg") no-repeat center center;
+        }
+      }
+
+      &.expand {
+        .ic_dropdown {
+          background-image: url("~assets/svg/ic_expand_up.svg");
+        }
+      }
+    }
+
+    .body {
+      padding: 20px 0px;
+      font-weight: 300;
+    }
+  }
+}
+
+.box-pontos-de-venda {
+  position: relative;
+  margin-top: 0px;
+
+  .mapa {
+    width: 100%;
+    height: 220px;
+    background-color: #3b434b;
+    background-image: url('~assets/img/bg_quer_pagar.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    .transform(translate(-50%,-50%));
+    text-align: center;
+    color: #ffffff;
+
+    h5 {
+      font-size: 24px;
+      line-height: 19px;
+      font-weight: 300;
+      margin-top: 40px;
+    }
+
+    p {
+      padding: 15px 0;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 200;
+      margin: 0 auto 6px auto;
+      width: 300px;
+    }
+
+    button {
+      background-color: #ffffff;
+      border-color: #ffffff;
+      color: #7C878F;
+      text-transform: initial;
+      font-size: 14px;
+      font-weight: 200;
+      line-height: 17px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.div-voltar {
+  padding: 0px 10px 30px 10px;
+
+  .container {
+    max-width: 640px;
+    margin: auto;
+  }
+
+  a {
+    color: #7C878F;
+    text-transform: uppercase;
+    font-size: .7em;
+
+    .set_esq {
+      display: inline-block;
+      background-image: url('~assets/svg/ic_seta_esq.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      position: relative;
+      margin-right: 10px;
+      height: 12px;
+      width: 8px;
+      top: 2px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .box-como-funciona,
+  .box-plano-empresa {
+    .informacoes {
+      margin-bottom: 25px;
+
+      h4 {
+        line-height: 19px;
+        text-align: center;
+        padding: 15px 10px 0 0;
+        color: #4D5862;
+        font-family: Lato;
+        font-size: 24px;
+        font-weight: 300;
+      }
+
+      p {
+        font-weight: 300;
+        color: #A0A7AE;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+      }
+    }
+  }
+
+
+  .box-pontos-de-venda {
+    margin-top: 50px;
+  }
+
+	section.planos {
+		min-width: 720px;
+	}
+}
+
+@media (min-width: 992px) {
+  .principal-recipiente {
+    padding-top: 65px;
+  }
+
+	.recipient {
+		width: 100%;
+		overflow: hidden;
+	}
+}

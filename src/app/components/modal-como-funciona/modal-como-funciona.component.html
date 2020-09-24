@@ -1,0 +1,72 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-title">Como funcionam os planos?</h4>
+</div>
+<div class="modal-body">
+	<button id="btn-close" type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+  <ngb-carousel #carousel interval="0" class="hide">
+    <ng-template ngbSlide>
+      <div class="row" (swiperight)="prev()" (swipeleft)="next()">
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical">
+        			<div class="ico conta"></div>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical adjust-content">
+              <h3 [innerHTML]="R.R('planos_modal_como_funciona_1_titulo')"></h3>
+			        <p [innerHTML]="R.R('planos_modal_como_funciona_1_texto')"></p>
+			        <div class="difer"></div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="row" (swiperight)="prev()" (swipeleft)="next()">
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical">
+        			<div class="ico credito"></div>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical adjust-content">
+              <h3 [innerHTML]="R.R('planos_modal_como_funciona_2_titulo')"></h3>
+			        <p [innerHTML]="R.R('planos_modal_como_funciona_2_texto')"></p>
+			        <div class="difer"></div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="row" (swiperight)="prev()" (swipeleft)="next()">
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical">
+        			<div class="ico saldo"></div>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      		<div class="car-adjust">
+      			<div class="adjust-vertical adjust-content">
+              <h3 [innerHTML]="R.R('planos_modal_como_funciona_3_titulo')"></h3>
+			        <p [innerHTML]="R.R('planos_modal_como_funciona_3_texto')"></p>
+			        <div class="btns">
+			        	<button type="button" class="btn btn-boxed" (click)="_activeModal.dismiss()">entendi</button>
+			        </div>
+			        <div class="difer"></div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

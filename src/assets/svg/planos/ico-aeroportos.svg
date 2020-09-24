@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="27px" viewBox="0 0 41 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>ic aeroporto</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Planos-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="1-Plano-Livre-Expandido" transform="translate(-120.000000, -584.000000)">
+            <g id="ic-aeroporto" transform="translate(120.000000, 585.000000)">
+                <path d="M35.6072727,1.44534309 L14.7624242,10.5132219 L10.1866667,8.22473703 L4.84848485,10.5132219 L11.7127273,17.3762522 L15.4457473,15.8829651 L23.1515152,12.8004946 L18.5757576,25.0017067 L24.6763636,21.9520098 L30.7769697,9.75079763 L37.9418182,7.08170672 C39.4981818,6.43685824 40.2375758,4.65261581 39.5927273,3.09504006 C38.9478788,1.53867642 37.1636364,0.800494602 35.6072727,1.44534309 Z" id="Stroke-1" stroke="#4D5862"></path>
+                <path d="M11.7208215,23.030303 L7.27272727,25.2142519" id="Line-Copy" stroke="#7A8BDB" stroke-linecap="round"></path>
+                <path d="M4.44809422,16.969697 L0,19.1536458" id="Line-Copy-3" stroke="#7A8BDB" stroke-linecap="round"></path>
+                <path d="M4.44809422,6.06060606 L0,8.24455492" id="Line-Copy-2" stroke="#7A8BDB" stroke-linecap="round"></path>
+                <polyline id="Stroke-3" stroke="#4D5862" points="29.1224242 4.19151515 18.9684848 0 13.3333333 2.33575758 23.609697 6.58909091"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

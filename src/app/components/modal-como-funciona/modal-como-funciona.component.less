@@ -1,0 +1,214 @@
+@import "./../../functions.less";
+
+.modal-backdrop {
+	background-color: #4D5862;
+
+	&.show {
+	  opacity: .9;
+	}
+}
+
+.modal-como-funciona {
+
+	.carousel {
+
+	  .carousel-inner {
+	    //max-width: 460px;
+	    min-height: 330px;
+	    margin: 0px auto;
+	    padding: 20px 0px;
+	  }
+
+		.carousel-indicators {
+			li {
+		    border-radius: 100%;
+		    width: 7px;
+		    height: 7px !important;
+		    border: solid 1px #9E9E9E;
+		    max-width: 7px;
+
+		    &.active {
+		    	border-color: #FF9800;
+		    }
+			}
+		}
+
+	  .carousel-control-prev,
+	  .carousel-control-next {
+	  	display: none;
+	  }
+
+		.carousel-item {
+			// Calcula os time das transaions
+		  				transition: transform .6s ease-in-out;
+		  				transition: -o-transform .6s ease-in-out;
+		  				transition: -webkit-transform .6s ease-in-out;
+		       -o-transition: -o-transform .6s ease-in-out;
+		  -webkit-transition: -webkit-transform .6s ease-in-out;
+		  				backface-visibility: hidden;
+		  -webkit-backface-visibility: hidden;
+		  				perspective: 1000px;
+		  -webkit-perspective: 1000px;
+
+		  &.active {
+			  display: -webkit-box;
+			  display: -webkit-flex;
+			  display: -ms-flexbox;
+			  display: flex
+		  }
+		}
+	}
+
+  .difer {
+  	width: 100%;
+  	height: 45px;
+  }
+
+  .car-adjust {
+		display: block;
+		width: 100%;
+		text-align: center;
+
+		.adjust-vertical {
+			display: block;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+  }
+
+  .btns {
+    position: relative;
+    display: none;
+
+    button {
+      text-transform: uppercase;
+    }
+
+    .btn-boxed {
+    	display: block;
+      border-color: #FF6A38;
+      .bold-weight();
+      font-family: Lato;
+      font-size: 12px;
+      .transition;
+      background-color: #ffffff;
+      color: #FF6A38;
+
+      &:hover, body.mobile & {
+        background-color: #FF6A38;
+        color: #ffffff;
+      }
+    }
+
+    .btn-flat {
+      color: #FF6A38;
+      font-weight: 400;
+    }
+  }
+
+  .ico {
+    margin: 0 auto;
+		height: 150px;
+		background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.conta {
+			background-image: url("~assets/svg/ico_como_funciona_conta.svg");
+			background-size: 60px;
+			width: 150px;
+    }
+
+    &.credito {
+			background-image: url("~assets/svg/cm-credito.svg");
+	    background-size: 227px;
+	    width: 227px;
+	    margin-bottom: 20px;
+    }
+
+    &.saldo {
+			background-image: url("~assets/svg/cm-saldo.svg");
+	    background-size: 227px;
+	    width: 227px;
+	   	margin-bottom: 20px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+//@media (min-width: 992px) {
+	.modal-como-funciona {
+
+	  .car-adjust {
+			display: table;
+			min-height: 280px;
+			width: 100%;
+
+			.adjust-vertical {
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.adjust-content {
+				text-align: left;
+			}
+	  }
+
+	  .carousel {
+		  .carousel-indicators {
+				bottom: -30px !important;
+
+				li {
+			    width: 10px;
+			    height: 10px !important;
+			    max-width: 10px;
+			    background-color: transparent;
+			    margin: 0px 10px;
+
+			    &.active {
+				    border-color: #fff;
+				    background-color: #fff;
+			    }
+				}
+		  }
+
+	    .carousel-control-prev {
+	    	position: absolute;
+		    z-index: 5;
+	    	display: block;
+				opacity: 1;
+				left: -170px;
+
+	    	.carousel-control-prev-icon {
+		  		position: absolute;
+					background: url("~assets/svg/ic_modal_seta_esq.svg") no-repeat center center;
+					background-size: 100%;
+		    	top: 40%;
+					width: 20px;
+					height: 38px;
+	    	}
+	    }
+
+	    .carousel-control-next {
+	    	position: absolute;
+		    z-index: 5;
+	    	display: block;
+				opacity: 1;
+				right: -140px;
+
+	    	.carousel-control-next-icon {
+		  		position: absolute;
+					background: url("~assets/svg/ic_modal_seta_dir.svg") no-repeat center center ;
+					background-size: 100%;
+					top: 40%;
+					width: 20px;
+					height: 38px;
+	    	}
+	    }
+	  }
+
+		.btn-boxed {
+			display: none;
+		}
+	}
+}

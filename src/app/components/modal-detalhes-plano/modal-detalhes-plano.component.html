@@ -1,0 +1,72 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-title">Detalhes do Plano</h4>
+</div>
+<div class="modal-body">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="image-c">
+	    	<div class="image" [ngClass]="{
+	        'plano-livre': produto.TipoProduto === 'Plano Livre',
+	        'plano-urbano': produto.TipoProduto === 'Plano Urbano'
+	        }"><!-- css --></div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+	    <div class="informacoes">
+	      <h2>{{ R.R(produto.Titulo) }}</h2>
+	      <p>{{ R.R(produto.Descricao) }}</p>
+	    </div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6 no-p text-center">
+	    <div class="preco">
+	      <small class="moeda">R$</small>
+	      <span *ngIf="produto.MensalidadeSplit && produto.MensalidadeSplit[0]" class="reais">{{ produto.MensalidadeSplit[0] }}</span>
+	      <small *ngIf="!!produto.MensalidadeSplit && !!produto.MensalidadeSplit[1]" class="centavos">,{{ produto.MensalidadeSplit[1] }}</small>
+	      <small class="mensal">/mês</small>
+	    </div>
+	    <div class="servicos">
+	      <div *ngIf="produto.CreditoAutomatico > 0">
+	        <p class="credito">
+	        	{{ R.R('planos_modal_detalhes_plano_1_texto') }} {{produto.CreditoAutomatico | currency:'BRL':true}}&nbsp;
+	          <span
+		          class="info-ico"
+		          placement="top"
+		          triggers="hover"
+              ngbTooltip="{{ R.R('tooltip_home_plano') }}"
+	          ></span>
+	        </p>
+	      </div>
+        <p *ngFor="let tarifa of produto.TarifasNormalizado">
+          {{ R.R(tarifa.Descricao) }}
+
+          <span *ngIf="tarifa.Descricao && tarifa.Descricao.indexOf('PEDAGIO') > -1">
+            {{ tarifa.Valor | currency:'BRL':true }}
+          </span>
+        </p>
+	    </div>
+		</div>
+		<div class="col-lg-6 no-p">
+	    <ul class="lista list-anchor">
+	      <li *ngFor="let beneficio of produto.BeneficiosNormalizado">{{ R.R(beneficio) }}</li>
+	    </ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 text-center text-footer">
+	    <p>{{ R.R('planos_modal_detalhes_plano_6_texto') }}</p>
+	    <ul class="icones">
+	      <li *ngFor="let local of produto.Locais" class="{{ (R.R(local) | latinise) | slugify }}">
+          <div class="ico"><!--css--></div>{{ R.R(local) }}
+	      </li>
+	    </ul>
+	    <ul class="lista list-below">
+	      <li *ngFor="let beneficio of produto.BeneficiosNormalizado">{{ R.R(beneficio) }}</li>
+	    </ul>
+	    <button type="button" class="btn-back" (click)="_activeModal.dismiss()">voltar</button>
+		</div>
+	</div>
+</div>

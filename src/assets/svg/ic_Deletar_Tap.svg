@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>ic Deletar Tap</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="bt-Deletar-Tap" transform="translate(-5.000000, -4.000000)" stroke="#FFFFFF">
+            <g id="ic-Deletar-Tap" transform="translate(6.000000, 5.000000)">
+                <polygon id="Stroke-1" points="1.33667931 12.2864802 9.78595318 12.2864802 9.78595318 1.80267559 1.33667931 1.80267559"></polygon>
+                <polygon id="Stroke-3" points="3.38461538 1.78018188 7.50501672 1.78018188 7.50501672 0.235031383 3.38461538 0.235031383"></polygon>
+                <path d="M0.257525084,1.80267559 L10.7840201,1.80267559" id="Stroke-4"></path>
+                <path d="M3.38461538,4.23076923 L3.38461538,10.4113712" id="Stroke-6"></path>
+                <polyline id="Stroke-7" points="5.5 4.23076923 5.5 7.68154203 5.5 10.4113712"></polyline>
+                <path d="M7.61538462,4.23076923 L7.61538462,10.4113712" id="Stroke-8"></path>
+            </g>
+        </g>
+    </g>
+</svg>

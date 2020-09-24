@@ -1,0 +1,141 @@
+@import "functions.less";
+
+.container-fluid {
+	background-color: #fff;
+  position: relative;
+  width: 100%;
+  height: 100%;
+ 	padding: 30px 10px 30px 10px;
+
+ 	.container {
+ 		max-width: 946px;
+ 	}
+
+  .btn {
+  	cursor: pointer;
+    position: relative;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+		padding: 15px 0;
+    font-size: 12px;
+		text-transform: uppercase;
+		outline: none;
+		font-family: Lato;	  
+    width: 100%;
+		min-width: 118px;
+    max-width: 220px;
+    height: 45px;
+	  border: 1px solid #7C878F;
+	  border-radius: 100px;
+	  color: #7C878F;
+
+	  &:hover,
+	  &:focus {
+	  	outline: none;
+	  }
+
+    &.btn-boxed {
+      border-color: #FF6A38;
+      color: #fff;
+      font-weight: bold;
+      font-family: Lato;
+      .transition;
+      background-color: #FF6A38;;
+
+      &:hover, body.mobile & {
+        background-color: #FF6A38;
+        color: #ffffff;
+      }
+    }
+
+    &.btn-vazado {
+      border: none;
+    	color: #7C878F;
+		}
+
+		&.btn-bordered {
+	    border: 1px solid #484e52;
+	    color: #484e52;
+	    text-transform: none;
+	    width: 270px;
+	    font-size: 14px;
+	    line-height: 17px;
+	    padding: 13px 0px;
+		}
+
+		&:hover,
+		&:active {
+			outline: none;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.container-fluid {
+		background-color: #fff;
+	  position: relative;
+	  width: 100%;
+	  height: 100%;
+	 	padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+	 	.container {
+	 		max-width: 946px;
+	 	}
+
+	  .btn {
+	  	cursor: pointer;
+	    position: relative;
+	    border-radius: 100px;
+	    -moz-border-radius: 100px;
+	    -webkit-border-radius: 100px;
+			padding: 15px 0;
+	    font-size: 12px;
+			text-transform: uppercase;
+			outline: none;
+			color: #7C878F;
+	    width: 100%;
+			min-width: 118px;
+	    max-width: 220px;
+	    height: 45px;
+		  border: 1px solid #7C878F;
+		  border-radius: 100px;
+
+		  &:hover,
+		  &:focus {
+		  	outline: none;
+		  }
+
+	    &.btn-boxed {
+	      border-color: #FF6A38;
+	      color: #fff;
+	      font-weight: bold;
+	      font-family: Lato;
+	      .transition;
+	      background-color: #FF6A38;;
+
+	      &:hover, body.mobile & {
+	        background-color: #FF6A38;
+	        color: #ffffff;
+	      }
+	    }
+
+	    &.btn-vazado {
+	      border: none;
+	    	color: #7C878F;
+			}
+
+			&.btn-bordered {
+		    border: 1px solid #7C878F;
+		    color: #7C878F;
+		    text-transform: none;
+		    width: 270px;
+		    font-size: 14px;
+		    line-height: 17px;
+		    padding: 13px 0px;
+			}
+		}
+	}
+}

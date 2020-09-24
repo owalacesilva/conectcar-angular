@@ -1,0 +1,84 @@
+<div class="view address-view">
+  <div *ngIf="ativacaoOffline">
+    <h2 [innerHTML]="R.R('cadastro_address_falta_endereco')"></h2>
+    <h3>{{ R.R('ativacao_offline_endereco_subtitulo') }}</h3>
+  </div>
+
+  <div *ngIf="!ativacaoOffline">
+    <h2 [innerHTML]="R.R('cadastro_address_titulo')"></h2>
+    <h3>{{ R.R('cadastro_address_subtitulo') }}</h3>
+  </div>
+
+  <cc-address-form
+    #addressForm
+    [dadosEndereco]="dadosEndereco"
+    tipoEndereco="Entrega"
+    (onResize)="resize($event)">
+  </cc-address-form>
+
+  <div *ngIf="!ativacaoOffline && addressForm.cepSearched">
+    <div class="entrega">
+      <div class="image"></div>
+      <div class="title">
+      	{{ R.R('cadastro_address_forma_entrega') }}
+      </div>
+      <div class="description">
+        <div *ngIf="!data1 || !data2">
+        	{{ R.R('cadastro_address_aviso_entrega_adesivos') }}
+        </div>
+
+        <div *ngIf="data1 && data2">
+        	{{ R.R('cadastro_address_aviso_adesivos') }}
+
+          <br>
+
+          <span class="data">
+            {{ data1 }}<br>
+            {{ data2 }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!data1 || !data2">
+      <div class="agendar">
+      	{{ R.R('cadastro_address_agendar_entrega') }}
+      </div>
+
+      <button
+      class="button-agendar"
+      (click)="openModalAgendamento()"
+      >
+      	{{ R.R('cadastro_address_quero_agendar') }}
+      </button>
+    </div>
+
+    <div *ngIf="data1 && data2">
+      <div class="agendar">
+      	{{ R.R('cadastro_address_quero_receber') }}
+      </div>
+
+      <button
+      class="button-agendar"
+      (click)="clear()"
+      >
+      	{{ R.R('cadastro_address_frete_gratuito') }}
+      </button>
+    </div>
+  </div>
+
+  <div class="address-action action">
+    <button
+      (click)="back($event)"
+      (touchstart)="back($event)"
+      class="voltar"
+    >{{ R.R('cadastro_address_btn_voltar') }}</button>
+
+    <button
+      (click)="submit($event)"
+      (touchstart)="submit($event)"
+      [ngClass]="{ avancar: true, disabled: checkDisabled() }"
+      id="next-button"
+    >{{ R.R('cadastro_address_btn_avancar') }}</button>
+  </div>
+</div>

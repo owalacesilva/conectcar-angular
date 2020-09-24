@@ -1,0 +1,59 @@
+@import "functions.less";
+@import "../../registration.component.less";
+
+html, body {
+  background: #fff !important;
+}
+
+.authentication-view {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  text-align: center;
+
+  h2 { color: #FF6A38; }
+
+  .form-group {
+    position: relative;
+  }
+
+  &.fb-on {
+    .fb-hidden {
+      display: none;
+    }
+  }
+
+  input#cpf {
+    margin-top: 40px;
+  }
+
+  .has-danger {
+    input#cpf {
+      border-color: #EE0000!important;
+    }
+  }
+
+  button {
+    &.fb-login {
+      font-size: 15px;
+      border: 1px solid #3B5998;
+      border-radius: 100px;
+      color: #3B5998;
+      width: 100%;
+    }
+  }
+
+  .back-btn {
+    position: absolute;
+    left: 0;
+    width: 100px;
+  }
+
+  cc-spinner {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin: 12px 10px;
+  }
+}

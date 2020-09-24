@@ -1,0 +1,179 @@
+@import "./../../../../functions.less";
+
+.modal-backdrop {
+	background-color: #4D5862;
+
+	&.show {
+	  opacity: .9;
+	}
+}
+
+.modal-endereco {
+	.form-control {
+		font-weight: 400 !important;
+	}
+
+	.modal-dialog {
+		.modal-content {
+
+			.modal-body {
+				padding: 50px 20px 0px 20px;
+
+				h4 {
+					font-size: 20px;
+					margin-bottom: 30px;
+				}
+
+				.close {
+					top: 0px;
+				}
+			}
+		}
+	}
+
+  .btn {
+    cursor: pointer;
+    height: 50px;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 100px;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+    outline: none;
+    width: 100%;
+
+    &.btn-link {
+			color: #333;
+
+			&:focus,
+			&:hover {
+				outline: none;
+			}
+    }
+
+    &.btn-default {
+      background-color: #FF6A38;
+      color: #fff;
+    }
+
+    &.disabled {
+      transition: background-color 0.5s;
+      background-color: #D7DBDE;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+	.modal-endereco {
+
+		.modal-dialog {
+			max-width: 400px;
+
+			.modal-content {
+
+				.modal-header {
+					.modal-title {
+						margin: 10px;
+					}
+
+					p {
+						color: #fff;
+					}
+
+					.close {
+				    bottom: 26px;
+				    top: inherit;
+				    right: 12px;
+					}
+				}
+
+				.modal-body {
+					background: transparent;
+					max-width: 360px;
+					padding: 0px;
+					margin: 0px auto;
+					border-radius: 0px;
+
+					.text-title {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.form-endereco {
+			background-color: #fff;
+			border-radius: 6px;
+			padding: 10px 20px;
+		}
+
+		.row-btns {
+			margin: 10px 0px;
+		}
+
+	  .btn {
+	    cursor: pointer;
+	    height: 50px;
+	    padding: 0 15px;
+	    border: 0;
+	    border-radius: 100px;
+	    text-transform: uppercase;
+	    line-height: 15px;
+	    font-family: Lato;
+	    font-size: 12px;
+	    outline: none;
+	    width: 100%;
+
+	    &.btn-link {
+				color: #fff;
+
+				&:focus,
+				&:hover {
+					outline: none;
+				}
+	    }
+
+	    &.btn-default {
+	      background-color: #FF6A38;
+	      color: #fff;
+	    }
+
+	    &.disabled {
+	      transition: background-color 0.5s;
+	      background-color: #D7DBDE;
+	    }
+	  }
+
+	  .agenda-data,
+	  .agenda-periodo {
+	  	background-color: #fff;
+	  	border-radius: 6px;
+	  	padding: 20px 40px;
+	  }
+
+	  .agenda-data {
+	  	margin-bottom: 20px;
+
+		  p {
+				color: #7C878F;	
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 19px;	  	
+				margin: 0px;
+		  }
+	  }
+
+	  .agenda-periodo {
+	  	.radio {
+	  		font-size: 13px;
+	  		color: #7C878F;
+
+	  		label {
+					margin-bottom: 15px;
+	  		}
+	  	}
+	  }
+	}
+}

@@ -1,0 +1,106 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="container-fluid">
+  <div class="container clearfix">
+    <h1 class="title">Recarga</h1>
+    <div class="summary clearfix">
+      <h2
+      	class="account-name"
+      	(click)="openModalTrocaConta()"
+      	[ngClass]="{ 'ic_expand': contas.length > 1 }"
+      >Conta {{ contaSelecionada.NumeroConta || '--' }}</h2>
+    </div>
+  </div>
+
+  <div class="holders">
+  	<!-- Aderir Ponto a Ponto -->
+    <div class="holder credits" [@slideInOut]="direction">
+		  <div class="recarga-avulsa main" *ngIf="escolherRecarga">
+		    <div *ngIf="!loading">
+			    <div class="texto-recarga">
+			      <p>Faça sua recarga pagando com <b>cartão de crédito</b> e tenha o valor no seu saldo em poucos minutos!</p>
+			    </div>
+			    <div class="recargas clearfix">
+		        <div
+		        	class="recarga"
+		        	*ngFor="let recarga of recargas;"
+		        	(click)="selectCredit(recarga)"
+		        	[class.active]="recargaSelecionada.Codigo == recarga.Codigo"
+		        >
+		        	<div class="ic_checked ic_image" *ngIf="recargaSelecionada.Codigo == recarga.Codigo"></div>
+		          <p class="valor-recarga">{{ getValorFormatado( (recarga.Valor|| 0.0) ) }}</p>
+		          <div class="info-adicional taxa">
+		            <p class="titulo">Taxa</p>
+		            <p class="valor">{{ getValorFormatado( (recarga.Taxa || 0.0) ) }}</p>
+		          </div>
+		          <div class="info-adicional credito">
+		            <p class="titulo">Crédito</p>
+		            <p class="valor">{{ getValorFormatado( (recarga.Credito || 0.0) ) }}</p>
+		          </div>
+		        </div>
+			    </div>
+
+			    <div class="action">
+			      <button
+			      	(click)="saveCreditSelected()"
+			      	[class.active]="recargaSelecionada.Codigo"
+			      >
+			      	recarregar
+			      </button>
+			    </div>
+		    </div>
+
+		    <!-- Carregando credios disponiveis -->
+			  <div class="spinner-page" *ngIf="loading">
+			  	<cc-spinner stroke="2" size="38" color="#FF6A38"></cc-spinner>
+			  	<p>Carregando recargas</p>
+			  </div>
+
+			  <!-- Mensagem para nenhum credito disponivel -->
+			  <div class="spinner-page" *ngIf="!loading && !recargas.length">
+			  	<p>Nenhuma recarga encontrada para essa conta</p>
+			  </div>
+		  </div>
+    </div>
+
+  	<!-- Confirmar Ponto a Ponto -->
+    <div class="holder payment" [@slideInOut]="direction">
+		  <div class="recarga-avulsa pagamento" *ngIf="pagamento">
+		    <div *ngIf="!loading">
+          <div class="texto-recarga">
+            <p>Adicione os dados do seu <b>cartão de crédito</b></p>
+          </div>
+          <div class="cartao-de-credito">
+            <cc-cartao-payment #creditCard></cc-cartao-payment>
+          </div>
+          <div class="action">
+            <button class="active"[ngClass]="{ disabled: creditCard.disabled }" (click)="savePayment()">CONFIRMAR</button>
+          </div>
+        </div>
+
+		    <!-- Carregando credios disponiveis -->
+			  <div class="spinner-page" *ngIf="loading">
+			  	<cc-spinner stroke="2" size="38" color="#FF6A38"></cc-spinner>
+			  	<p>Salvando</p>
+			  </div>
+		  </div>
+    </div>
+
+  	<!-- Adesao confirmada Ponto a Ponto -->
+    <div class="holder success" [@slideInOut]="direction">
+		  <div class="recarga-avulsa pagamento-processado" *ngIf="pagamentoProcessado">
+		    <div class="imagem-sucesso"></div>
+		    <div class="texto">
+		      <p class="title">Recarga confirmada!</p>
+		      <p class="description">Dentro de alguns minutos a sua<br/> recarga será adicionada</p>
+		    </div>
+		    <div class="action">
+		      <button (click)="resetProcess()">Fazer outra recarga</button>
+		      <button (click)="router.navigate(['meu-conect', 'extrato'])">Voltar ao meu extrato</button>
+		    </div>
+		  </div>
+    </div>
+  </div>
+</div>
+
+<cc-footer></cc-footer>

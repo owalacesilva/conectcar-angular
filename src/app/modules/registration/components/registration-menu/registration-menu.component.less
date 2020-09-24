@@ -1,0 +1,53 @@
+.registration-menu {
+  position: relative;
+  background: white;
+  width: 100%;
+  height: 70px;
+  list-style: none;
+
+
+  li {
+    display: inline-block;
+    width: 24%;
+    margin: 0;
+
+    cc-progress-arc {
+      position: absolute;
+      margin: -8px 22px;
+    }
+
+    svg {
+      position: absolute;
+      margin: -9px 21px;
+
+      * { stroke: #D8DBDE; }
+    }
+
+    &.active {
+      svg * { stroke: #FF9268; }
+    }
+
+    &.profile {
+      background: url('~assets/svg/ico_reg_profile.svg') no-repeat;
+    }
+
+    &.delivery {
+      background: url('~assets/svg/ico_reg_delivery.svg') no-repeat;
+    }
+
+    &.vehicle {
+      background: url('~assets/svg/ico_reg_vehicle.svg') no-repeat;
+    }
+
+    &.payment {
+      background: url('~assets/svg/ico_reg_payment.svg') no-repeat;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .registration-menu{
+    padding: 20px;
+    padding-left: 55px;
+  }
+}

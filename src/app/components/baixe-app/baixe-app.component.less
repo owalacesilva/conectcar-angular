@@ -1,0 +1,87 @@
+.desktop { display: none; }
+.mobile  { display: block; }
+
+.valign {
+  .section-baixe {
+    background: transparent !important;
+  }
+}
+
+.section-baixe {
+  display: block;
+  padding: 40px 20px;
+  background-color: #3b434b;
+  background-image: url('~assets/img/img_baixe_nosso_app.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .btn-boxed {
+    color: #fff;
+    border-color: #fff !important;
+  }
+}
+
+.btn_app {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  display: inline-block;
+  height: 45px;
+  width: 130px;
+
+  &.btn_google_play {
+    background-image: url('~assets/svg/bt_google_play.svg');
+  }
+
+  &.btn_apple {
+    background-image: url('~assets/svg/bt_apple_store.svg');
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile  { display: none; }
+  .desktop { display: block; }
+
+  .section-baixe {
+    padding: 40px 20px;
+
+    h2 {
+      color: #fff !important;
+      font-size: 42px;
+      font-weight: 300;
+    }
+
+    p {
+      color: #fff;
+    }
+
+    .btn-boxed {
+      color: #fff;
+      border-color: #fff !important;
+    }
+  }
+
+	.btn_app {
+	  height: 45px;
+	  width: 156px;
+	}
+
+	.mkt-app {
+		margin-top: 20px;
+
+		a {
+	    display: inline-block;
+	    padding-right: 20px;
+		}
+	}
+}

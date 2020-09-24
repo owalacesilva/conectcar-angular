@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>Ico_Info</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Cadastro-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Pagamento-1-Expandido" transform="translate(-103.000000, -274.000000)" stroke="#FF9268">
+            <g id="Ico_Info" transform="translate(104.000000, 275.000000)">
+                <path d="M11.5299652,6.0249913 C11.5847478,9.19455652 8.96144348,11.8089913 5.79187826,11.8642957 C2.62283478,11.9190783 0.108573913,9.39438261 0.0537913043,6.22481739 C-0.00151304348,3.05577391 2.62283478,0.440817391 5.79187826,0.386034783 C8.96092174,0.330730435 11.4751826,2.85646957 11.5299652,6.0249913 Z" id="Stroke-25" stroke-linecap="round"></path>
+                <path d="M5.79187826,5.90693913 L5.79187826,3.25476522" id="Stroke-27" stroke-linecap="round"></path>
+                <path d="M6.05274783,8.73302609 C6.05274783,8.87702609 5.93587826,8.99389565 5.79187826,8.99389565 C5.64787826,8.99389565 5.5310087,8.87702609 5.5310087,8.73302609 C5.5310087,8.58902609 5.64787826,8.47215652 5.79187826,8.47215652 C5.93587826,8.47215652 6.05274783,8.58902609 6.05274783,8.73302609 Z" id="Stroke-29" fill="#FF9268"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,167 @@
+.modal-backdrop {
+	background-color: #4D5862;
+
+	&.show {
+	  opacity: .9;
+	}
+}
+
+.modal-editar-plaque {
+
+	.modal-dialog {
+
+		.modal-content {
+			height: 100%;
+		}
+	}
+
+	.row-btns {
+		margin: 20px 0px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	}
+
+	.plaque-preview {
+		text-align: center;
+	}
+
+	.text-title {
+		display: block;
+		font-weight: 300;
+    margin-bottom: 30px;
+    font-size: 20px;
+	}
+
+  .modal-body-header {
+  	display: block;
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 50px;
+  }
+
+	.plaque-adesivo {
+		text-align: center;
+    position: relative;
+    max-width: 300px;
+    margin: 0px auto;
+
+	  fieldset {
+	    display: inline-block;
+
+	    &.placa-1 {
+	      width: 40%;
+	      margin-right: 5%;
+	    }
+
+	    &.placa-2 {
+	      width: 52%;
+	    }
+
+	    div { position: absolute; }
+	  }
+
+	  .image {
+	    width: 100%;
+	    position: relative;
+	    margin-left: 0px;
+
+	    .text {
+	      position: absolute;
+	      left: 50%;
+	      bottom: 5px;
+	      margin: auto;
+	      height: 45px;
+	      width:250px;
+
+	      input {
+	      	width: 100%;
+	        font-size: 38px;
+	        letter-spacing: 0.25em;
+	        font-family: 'Droid Sans Mono';
+	        color: #292F36;
+	        border-bottom: 1px solid #c4cace;
+	      }
+	    }
+	  }
+
+		input::-webkit-input-placeholder {
+			line-height: 1 !important;
+		}
+	}
+
+  .btn {
+  	cursor: pointer;
+    position: relative;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+		min-width: 118px;
+		padding: 15px 0;
+    font-size: 12px;
+		text-transform: uppercase;
+		outline: none;
+
+    &.btn-boxed {
+	    display: block;
+      border-color: #FF6A38;
+      color: #fff;
+      font-weight: bold;
+      font-family: Lato;
+      background-color: #FF6A38;
+      min-width: 260px;
+      width: auto;
+	    margin: 0px auto;
+
+      &.disabled {
+      	border-color: #9E9E9E;
+      	background-color: #9E9E9E;
+      }
+    }
+	}
+}
+
+@media (min-width: 768px) {
+//@media (min-width: 992px) {
+	.modal-editar-plaque {
+
+		.modal-dialog {
+			max-width: 412px;
+
+			.modal-content {
+
+				.modal-header {
+					padding: 20px 0px;
+
+					.close {
+						top: -10px;
+    				right: -10px;
+					}
+				}
+
+				.modal-body {
+			    height: auto;
+			    max-width: 300px;
+			    padding: 0px;
+			    margin: 0px auto;
+
+				}
+			}
+		}
+
+		.row-btns {
+			position: relative;
+		}
+
+    .modal-body-header {
+    	display: none;
+    }
+
+		.text-title {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,129 @@
+<div
+  class="home-card"
+  [ngClass]="{
+    'plano-livre': produto.TipoProduto === 'Plano Livre',
+    'plano-urbano': produto.TipoProduto === 'Plano Urbano'
+    }"
+>
+  <div class="modals">
+    <ng-template
+      #modalVejaMais
+      let-c="close"
+      let-d="dismiss"
+    >
+      <div
+        class="veja-mais home-card"
+        [ngClass]="{
+          'plano-livre': produto.TipoProduto === 'Plano Livre',
+          'plano-urbano': produto.TipoProduto === 'Plano Urbano'
+          }"
+      >
+        <div
+          (click)="c()"
+          class="voltar"
+        ><a href="#"></a></div>
+
+        <div class="box">
+          <div class="image"><!-- css --></div>
+          <div class="informacoes">
+            <h2>{{ produto.Titulo }}</h2>
+            <p>{{ R.R(produto.Descricao) }}</p>
+          </div>
+
+          <div class="preco">
+            <small class="moeda">R$</small>
+            <span class="reais">{{ produto.MensalidadeSplit[0] }}</span>
+            <small *ngIf="!!produto.MensalidadeSplit[1]" class="centavos">,{{ produto.MensalidadeSplit[1] }}</small>
+            <small class="mensal">/{{ R.R('detalhes_planos_mes') }}</small>
+          </div>
+
+          <div class="servicos">
+            <p class="credito" *ngIf="produto.CreditoAutomatico > 0">
+              {{ R.R('Catalogo_Produto_CreditoAutomatico') }} {{ produto.CreditoAutomatico | currency:'BRL':true }}&nbsp;
+              <span
+               class="info-ico info-ico-modal"
+               placement="top"
+               triggers="click"
+               ngbTooltip="{{ R.R('tooltip_home_plano') }}"
+              ></span>
+            </p>
+            <p *ngIf="produto.TipoProduto === 'Plano Livre'">{{ R.R('detalhes_planos_sem_taxas_adicionais') }}</p>
+            <p *ngFor="let tarifa of produto.TarifasNormalizado">
+              {{ R.R(tarifa.Descricao) }}
+
+              <span *ngIf="tarifa.Decricao !== '' && tarifa.Descricao.indexOf('PEDAGIO') > -1">
+                {{ tarifa.Valor | currency:'BRL':true }}
+              </span>
+            </p>
+          </div>
+
+          <p>{{ R.R('detalhes_planos_desc_rodape') }}</p>
+          <ul class="icones">
+            <li *ngFor="let local of produto.Locais" class="{{ (R.R(local) | latinise) | slugify }}">
+              <div class="ico"><!--css--></div>{{ R.R(local) }}
+            </li>
+          </ul>
+          <ul class="lista">
+            <li *ngIf="produto.TipoProduto === 'Plano Livre'">{{ R.R('detalhes_planos_sem_taxas_adicionais') }}</li>
+            <li *ngFor="let tarifa of produto.TarifasNormalizado">
+              {{ R.R(tarifa.Descricao) }}
+
+              <span *ngIf="tarifa.Descricao && tarifa.Descricao.indexOf('PEDAGIO') > -1">
+                {{ tarifa.Valor | currency:'BRL':true }}
+              </span>
+            </li>
+          </ul>
+
+          <div class="fechar">
+            <button aria-label="Voltar" (click)="c()">{{ R.R('detalhes_planos_btn_voltar') }}</button>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </div>
+
+  <div class="box">
+    <div *ngIf="!!produto.MensalidadeDesconto" class="desconto">{{ produto.MensalidadeDesconto }}% OFF</div>
+
+    <div class="image"><!-- css --></div>
+    <div class="informacoes">
+      <h2>{{ produto.Titulo }}</h2>
+      <p>{{ R.R(produto.Descricao) }}</p>
+
+      <div class="preco">
+        <small class="moeda">R$</small>
+        <span *ngIf="!!produto.MensalidadeSplit && !!produto.MensalidadeSplit[0]" class="reais">{{ produto.MensalidadeSplit[0] }}</span>
+        <small *ngIf="!!produto.MensalidadeSplit && !!produto.MensalidadeSplit[1]" class="centavos">,{{ produto.MensalidadeSplit[1] }}</small>
+        <small class="mensal">/{{ R.R('detalhes_planos_mes') }}</small>
+      </div>
+
+      <div class="servicos">
+        <span
+          class="info-ico"
+          placement="top"
+          triggers="hover"
+          ngbTooltip="{{ R.R('tooltip_home_plano') }}"></span>
+        <p *ngIf="produto.CreditoAutomatico > 0" class="credito">
+          {{ R.R('planos_modal_detalhes_plano_1_texto') }} {{produto.CreditoAutomatico | currency:'BRL':true}}&nbsp;
+        </p>
+        <p *ngFor="let tarifa of produto.TarifasNormalizado">
+
+          <span *ngIf="tarifa.Descricao && tarifa.Descricao.indexOf('PEDAGIO') > -1">
+            {{ R.R(tarifa.Descricao) }}
+            {{ tarifa.Valor | currency:'BRL':true }}
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="btns">
+    <button
+      [id]="produto.TipoProduto === 'Plano Livre' ? 'free-plan-button' : 'urban-plan-button'"
+      class="btn btn-boxed btn-vazado"
+      (click)="selectPlan()"
+    >{{ R.R('detalhes_planos_eu_quero_esse') }}</button>
+    <button (click)="openModalDetalhes()" class="btn btn-flat">{{ R.R('detalhes_planos_veja_mais_vantagens') }}</button>
+  </div>
+</div>

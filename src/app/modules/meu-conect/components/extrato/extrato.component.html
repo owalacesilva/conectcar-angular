@@ -1,0 +1,70 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="container-fluid container-page" *ngIf="loading">
+  <div class="container clearfix">
+    <h1 class="title desktop-titulo">Meu extrato</h1>
+    <div class="summary clearfix">
+      <h2 class="account-name desktop-conta">Conta ...</h2>
+      <h2 class="total-label desktop-total">Saldo atual</h2>
+      <h2 class="total desktop-total">R$ ...</h2>
+    </div>
+  </div>
+	<cc-spinner stroke="2" size="58" color="#FF6A38"></cc-spinner>
+</div>
+
+<div class="container-fluid container-page" *ngIf="!loading">
+  <div class="container clearfix">
+    <h1 class="title desktop-titulo">Meu extrato</h1>
+    <div class="summary clearfix">
+      <h2 
+      	class="account-name desktop-conta" 
+      	(click)="openModalTrocaConta()" 
+      	[ngClass]="{ 'ic_expand': contas.length > 1 }" 
+      >Conta {{ contaSelecionada.NumeroConta || '--' }}</h2>
+      <h2 class="total-label desktop-total">Saldo atual</h2>
+      <h2 class="total desktop-total">{{ getValorFormatado( (contaSelecionada.Valor || 0.0), true ) }}</h2>
+    </div>
+  </div>
+  <div class="extrato-wraper">
+
+  	<!-- Agrupamento de transações -->
+    <div class="extrato" *ngFor="let extrato of extratos">
+      <div class="extrato-dia">
+        <div class="dot"></div>
+        <h3 class="dia-titulo">{{ getDataFormatada(extrato.DataTransacao) }}</h3>
+
+        <!-- Transações -->
+        <div class="clearfix line-item" *ngFor="let transacao of extrato.transactions" (click)="openModalExtratoDetalhe( transacao )">
+          <div class="extrato-item" >
+            <div class="linha"></div>
+            <div class="extrato-item-icone {{ getIconeTransacao( transacao ) }}"></div>
+            <div class="item-info">
+              <h3 [ngClass]="{ 'credit': isCredit( transacao ) } ">{{transacao.Descricao}}</h3>
+              <div class="details">
+                <p>{{ getSubDescricao( transacao ) }}</p>
+                <p class="codigo">{{transacao.Placa}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="extrato-item-valores">
+            <p class="amount-paid" [ngClass]="{ 'credit': isCredit( transacao ) } ">{{ getValorFormatado(transacao.Valor, transacao.Credito) }}</p>
+            <p class="saldo">{{ getValorFormatado(transacao.ValorSaldoAnterior, transacao.Credito, false, true) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spinner-page" *ngIf="loadingPagination">
+    	<cc-spinner stroke="2" size="38" color="#FF6A38"></cc-spinner>
+    	<p>Carregando transações</p>
+    </div>
+
+    <div class="spinner-page" *ngIf="!loadingPagination && !extratos.length">
+    	<p>Nenhuma transação encontrada para essa conta</p>
+    </div>
+  </div>
+
+  <cc-app-call-desktop style="position: absolute;left: 140px;"></cc-app-call-desktop>
+</div>
+
+<cc-footer></cc-footer>

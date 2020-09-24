@@ -1,0 +1,26 @@
+<div class="passos">
+  <div class="dashed-line"></div>
+
+  <div class="container size-{{ steps.length }}">
+
+    <div
+      *ngFor="let step of steps; let i = index"
+       class="passo-container"
+    >
+      <div
+        [ngClass]="{ done: step.done }"
+        class="passo passo-{{ i + 1 }}">
+
+        <div *ngIf="!step.done" class="index">
+          {{ i + 1 }}
+        </div>
+
+        <div *ngIf="step.done" class="check"></div>
+      </div>
+
+      <div class="label" [ngClass]="{ done: step.done }">
+        {{ step.label }}
+      </div>
+    </div>
+  </div>
+</div>

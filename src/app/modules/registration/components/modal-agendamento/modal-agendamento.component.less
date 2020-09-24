@@ -1,0 +1,331 @@
+@import "./../../../../functions.less";
+
+.modal-backdrop {
+	background-color: #4D5862 !important;
+
+	&.show {
+	  opacity: 0.9;
+		color: #fff;
+	}
+}
+
+.modal-agendamento {
+	.modal-dialog {
+		max-width: 400px;
+
+		.modal-content {
+
+			.modal-header {
+				display: block;
+				border-bottom: none;
+
+				.modal-title {
+					margin: 10px;
+					color: white;
+				}
+
+				.close {
+			    top: -10px;
+			    right: 0px;
+				}
+
+				.close-mobile {
+		  		position: absolute;
+					background: url("~assets/svg/bt_fechar.svg") no-repeat center center;
+					background-size: 100%;
+			    top: 10px;
+			    right: 10px;
+			    width: 20px;
+			    height: 20px;
+					opacity: 1;
+				}
+			}
+
+			.modal-body {
+				background: transparent;
+				width: 317.39px;
+				padding: 0px;
+				margin: 0px auto;
+				border-radius: 0px;
+			}
+		}
+	}
+
+	.row-btns {
+		margin: 40px 0px;
+
+		.col-xs-6 {
+			width: 50%;
+		}
+	}
+
+  .btn {
+    cursor: pointer;
+    height: 50px;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 100px;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+    outline: none;
+    width: 100%;
+
+    &.btn-link {
+			color: white;
+
+			&:focus,
+			&:hover {
+				outline: none;
+			}
+    }
+
+    &.btn-default {
+      background-color: #FF6A38;
+      color: #fff;
+    }
+
+    &.disabled {
+      transition: background-color 0.5s;
+      background-color: #D7DBDE;
+    }
+  }
+
+  .agenda-data,
+  .agenda-periodo {
+  	background-color: #fff;
+  	border-radius: 6px;
+  	padding: 20px;
+  }
+
+  .agenda-data {
+  	margin-bottom: 20px;
+
+	  p {
+			color: #7C878F;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 19px;
+			margin: 0px;
+	  }
+  }
+
+  .agenda-periodo {
+  	.radio {
+  		font-size: 13px;
+  		color: #7C878F;
+
+  		label {
+				margin-bottom: 15px;
+  		}
+
+      input {
+        width: auto;
+        margin: 0 10px 10px 0;
+        float: left;
+
+				border-radius: 10px;
+				border: solid 1px #333;
+				cursor: pointer;
+				display: inline-block;
+				height: 15px;
+				margin-right: 15px;
+				position: relative;
+				width: 15px;
+				-webkit-appearance: none;
+
+				&:after {
+			    background-color: transparent;
+			    border-radius: 25px;
+			    content: '';
+			    display: block;
+			    position: relative;
+			    top: 3px;
+			    left: 3px;
+			    width: 7px;
+			    height: 7px;
+				}
+
+				&:checked:after {
+					background-color: #f66;
+				}
+
+      }
+  	}
+  }
+}
+
+@media (min-width: 992px) {
+	.modal-agendamento {
+
+		.modal-dialog {
+			max-width: 400px;
+
+			.modal-content {
+
+				.modal-header {
+					.modal-title {
+						margin: 10px;
+					}
+
+					p {
+						font-size: 16px !important;
+						color: #fff;
+					}
+
+					.close {
+				    top: -10px;
+				    right: -20px;
+					}
+
+					.close-mobile {
+						display: none;
+					}
+				}
+
+				.modal-body {
+					background: transparent;
+					width: 317.39px;
+					padding: 0px;
+					margin: 0px auto;
+					border-radius: 0px;
+
+					.loading{
+						padding-left: 140px;
+					}
+				}
+			}
+		}
+
+		.row-btns {
+			margin: 40px 0px;
+		}
+
+	  .btn {
+	    cursor: pointer;
+	    height: 50px;
+	    padding: 0 15px;
+	    border: 0;
+	    border-radius: 100px;
+	    text-transform: uppercase;
+	    line-height: 15px;
+	    font-family: Lato;
+	    font-size: 12px;
+	    outline: none;
+	    width: 100%;
+
+	    &.btn-link {
+				color: #fff;
+
+				&:focus,
+				&:hover {
+					outline: none;
+				}
+	    }
+
+	    &.btn-default {
+	      background-color: #FF6A38;
+	      color: #fff;
+	    }
+
+	    &.disabled {
+	      transition: background-color 0.5s;
+	      background-color: #D7DBDE;
+	    }
+	  }
+
+	  .agenda-data,
+	  .agenda-periodo {
+	  	background-color: #fff;
+	  	border-radius: 6px;
+	  	padding: 20px 40px;
+	  }
+
+	  .agenda-data {
+	  	margin-bottom: 20px;
+
+		  p {
+				color: #7C878F;
+				font-size: 16px !important;
+				font-weight: 300;
+				line-height: 19px;
+				margin: 0px;
+		  }
+	  }
+
+	  .agenda-periodo {
+	  	.radio {
+	  		font-size: 13px;
+	  		color: #7C878F;
+
+	  		label {
+					margin-bottom: 15px;
+	  		}
+
+        input {
+          width: auto;
+          margin: 0 10px 10px 0;
+          float: left;
+
+					border-radius: 10px;
+					border: solid 1px #333;
+					cursor: pointer;
+					display: inline-block;
+					height: 15px;
+					margin-right: 15px;
+					position: relative;
+					width: 15px;
+					-webkit-appearance: none;
+
+					&:after {
+				    background-color: transparent;
+				    border-radius: 25px;
+				    content: '';
+				    display: block;
+				    position: relative;
+				    top: 3px;
+				    left: 3px;
+				    width: 7px;
+				    height: 7px;
+					}
+
+					&:checked:after {
+						background-color: #f66;
+					}
+
+        }
+	  	}
+	  }
+	}
+}
+
+ngb-datepicker.date {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+
+  .btn-primary {
+  	border-radius: 100%;
+  }
+}
+
+.ngb-dp-day,
+.custom-select {
+
+ 	font-weight: 300 !important;
+}
+
+.d-block {
+	width: auto !important;
+	text-align: center;
+
+	select.custom-select {
+		color: #4D5862;
+		font-size: 16px !important;
+	}
+}
+
+.hide {
+	display: none;
+}

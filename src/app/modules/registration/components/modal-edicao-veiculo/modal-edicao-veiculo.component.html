@@ -1,0 +1,35 @@
+<div class="modal-header text-center">
+	<h4 class="modal-title">
+		Qual a <strong>categoria</strong> do seu veículo?
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	</h4>
+</div>
+<div class="modal-body">
+  <div class="content">
+    <div class="carroussel" layout-align="center center" layout="row" layout-wrap >
+      <div class="veiculo" *ngFor="let axle of axles; let i = index" [ngClass]="{'selected': isSelected(axle) }">
+        <div class="axle" (click)="changeAxle(axle)" >
+          <div class="image axle-line-{{axle}}"></div>
+          <div class="description">
+            <div class="title">
+              {{getAxleTitle(axle)}}
+            </div>
+            <div>
+              {{getAxleDescription(axle)}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+	<div class="row row-btns">
+		<div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
+			<button class="btn btn-link" (click)="_activeModal.dismiss()">cancelar</button>
+		</div>
+		<div class="col-xs-6 col-sm-7 col-md-7 col-lg-7">
+			<button class="btn btn-default" (click)="savePlaque()">confirmar</button>
+		</div>
+	</div>
+</div>

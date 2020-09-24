@@ -1,0 +1,117 @@
+@import "functions.less";
+
+.placa {
+  fieldset {
+    display: inline-block;
+
+    &.placa-1 {
+      width: 40%;
+      margin-right: 5%;
+    }
+
+    &.placa-2 {
+      width: 52%;
+    }
+
+    div { position: absolute; }
+  }
+
+  .image {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+
+    svg {
+      position: relative;
+      transform: translateX(-50%);
+      left: 50%;
+    }
+
+    .text {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      height: 60px;
+      width:250px;
+
+      transform: translateX(-50%);
+      left: 50%;
+      margin: auto 0px;
+
+      fieldset {
+        margin-top: 0px;
+
+        input {
+          width: 100%;
+        }
+      }
+
+      input {
+        font-size: 40px;
+        line-height: 30px !important;
+        letter-spacing: 0.25em;
+        font-family: 'Droid Sans Mono';
+        color: #292F36;
+        height: 40px;
+        border-bottom: 1px solid #DADBDE;
+      }
+
+      ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        margin-bottom: 1px !important;
+        padding-bottom: 1px !important;
+      }
+
+    }
+  }
+
+  .placa-xs {
+    display: block;
+  }
+
+  .placa-md {
+    display: none;
+  }
+
+  .plaque {
+    color: #7C878F;
+    font-size: 36px;
+    letter-spacing: 0.20em;
+    height: 60px;
+    vertical-align: middle;
+    line-height: 60px;
+    text-align: center;
+    width: 100%;
+    font-weight: 300;
+    border-bottom: 1px solid silver;
+  }
+}
+
+.placa {
+  @media (min-width: 768px) {
+    .image {
+      .text {
+        margin: auto 0px;
+        height: 65px;
+        width: 392px;
+        bottom: 44px;
+
+        fieldset {
+          margin-top: 10px;
+        }
+
+        input {
+          height: 65px;
+          font-size: 60px;
+        }
+      }
+    }
+
+    .placa-xs {
+      display: none;
+    }
+
+    .placa-md {
+      display: block;
+    }
+  }
+}

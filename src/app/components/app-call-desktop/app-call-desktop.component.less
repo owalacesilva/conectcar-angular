@@ -1,0 +1,54 @@
+.wrapper-app-call {
+  display: none;
+}
+
+@media (min-width: 768px) {
+	.wrapper-app-call {
+	  display: block;
+	  padding: 20px 20px;
+	  width: 280px;
+	  text-align: center;
+
+	  p {
+	    color: #4D5862;
+	    font-size: 20px;
+	    line-height: 24px;
+	    text-align: center;
+	    font-weight: 300;
+	  }
+
+	  a {
+	  	color: #FF6A38;
+	  	text-transform: uppercase;
+	  	font-size: 12px;
+	  	line-height: 15px;
+	  	font-weight: bold;
+	  }
+
+		.btn_app {
+		  background-color: transparent;
+		  background-repeat: no-repeat;
+		  background-position: center;
+		  background-size: 100%;
+		  display: inline-block;
+		  height: 45px;
+		  width: 155px;
+
+		  &.btn_google_play {
+		    background-image: url('~assets/svg/bt_google_play-black.svg');
+		  }
+
+		  &.btn_apple {
+		    background-image: url('~assets/svg/bt_apple_store-black.svg');
+		  }
+		}
+
+		.mkt-app {
+			margin-bottom: 20px;
+
+			a {
+		    display: inline-block;
+			}
+		}
+	}
+}

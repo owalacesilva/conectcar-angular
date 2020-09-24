@@ -1,0 +1,27 @@
+<div class="view como-funciona-view">
+
+	<div class="container-fluid">
+  	<div class="title ">
+  		<h1>Como funcionam os <strong>planos?</strong></h1>
+  	</div>
+		<div class="adjust-vertical">
+			<div class="ico saldo"></div>
+		</div>
+		<div class="content">
+      <h3>{{ R.R('planos_modal_como_funciona_3_titulo') }}</h3>
+      <p>{{ R.R('planos_modal_como_funciona_3_texto') }}</p>
+		</div>
+		<div class="row row-btns">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+				<button type="button" class="btn btn-vazado" (click)="back($event)">{{ R.R('ativacao_btn_voltar') }}</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+				<button type="button" class="btn btn-boxed" (click)="submit($event)">
+					<span class="txt">{{ R.R('ativacao_btn_avancar') }}</span>
+					<span class="ic_avancar"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+</div>

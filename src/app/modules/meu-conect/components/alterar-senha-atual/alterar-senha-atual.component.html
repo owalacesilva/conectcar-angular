@@ -1,0 +1,69 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="alterar-senha-atual">
+  <div class="titulo">
+    <h1 [innerHTML]="R.R('senha_alteracao_atual_titulo')"></h1>
+  </div>
+
+  <div class="clearfix container-wraper">
+    <div class="text-center m-b-md">
+      <h2 [innerHTML]="R.R('senha_alteracao_atual_subtitulo')"></h2>
+      <h3 class="m-b-md" [innerHTML]="R.R('senha_alteracao_atual_texto')"></h3>
+
+      <div class="form-group" style="position: relative;"
+        [ngClass]="{'has-danger': password.length && password.invalid && (password.dirty || password.touched)}">
+
+        <input required #passwordInput
+          [formControl]="password"
+          focus-watcher
+          name="password"
+          id="password"
+          tabindex="1"
+          class="form-control"
+          [type]="passwordType"
+          [cc-placeholder]="'Senha'"
+          (input)="disabled = (password.value.length === 0 || !password.valid)"
+          (keydown.enter)="submit($event)"
+        >
+
+        <button
+          class="password-type-toggle"
+          (click)="passwordToggle($event)"
+          [ngClass]="{ active: passwordType === 'text' }">
+        </button>
+
+        <div class="password-criteria">
+          <button
+            class="password-type-toggle"
+            (click)="passwordToggle($event)"
+            [ngClass]="{ active: passwordType === 'text' }">
+          </button>
+
+          <ul class="first">
+            <li [ngClass]="{ ok: !password.errors || !password.errors.noUpperCase }">
+              <small>Uma maiúscula</small>
+            </li>
+            <li [ngClass]="{ ok: !password.errors || !password.errors.noLowerCase }">
+              <small>Uma minúscula</small>
+            </li>
+          </ul>
+
+          <ul>
+            <li [ngClass]="{ ok: !password.errors || !password.errors.noNumbers }">
+              <small>Um número</small>
+            </li>
+            <li [ngClass]="{ ok: !password.errors || !password.errors.minLength }">
+              <small>Mínimo de 8 caracteres</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <button
+        class="btn btn-boxed"
+        (click)="submit($event)">
+        {{ R.R('senha_alteracao_atual_btn') }}
+      </button>
+    </div>
+  </div>
+</div>

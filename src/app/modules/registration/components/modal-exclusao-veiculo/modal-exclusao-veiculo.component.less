@@ -1,0 +1,130 @@
+@import "./../../../../functions.less";
+
+.modal-backdrop {
+	background-color: #4D5862;
+
+	&.show {
+	  opacity: .5 !important;
+	  background: #000 !important;
+	}
+}
+
+.modal-exclusao-veiculo {
+  text-align: center;
+
+  .modal-dialog {
+		margin-top: 70px;
+
+  	.modal-content {
+  		padding: 10px 30px;
+  		border-radius: 6px;
+
+  		.modal-body {
+  			padding: 10px 30px;
+  			border-radius: 6px;
+  		}
+  	}
+  }
+
+  h2 {
+    color: #292F36;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: center;
+    margin: 16px 0;
+  }
+
+	.row {
+		.col-xs-6 {
+  		width: 50%;
+		}
+	}
+
+  .btn {
+    cursor: pointer;
+    height: 44px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 100px;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+
+    &.cancelar {
+      background-color: #FFF;
+      color: #7C878F;
+      margin-right: 24px;
+    }
+
+    &.excluir {
+      transition: background-color 0.5s;
+      background-color: #333d44;
+      background-repeat: no-repeat;
+      background-position: 88px;
+      background-size: 15px auto;
+      padding-right: 20px;
+      color: #FFFFFF;
+    }
+
+    &.disabled {
+      transition: background-color 0.5s;
+      background-color: #D7DBDE;
+
+    }
+  }
+
+  .axle {
+    text-align: center;
+    padding-top: 40px;
+
+    .image {
+      width: 100%;
+      height: 72px;
+      background-size:contain !important;
+      background-repeat:no-repeat !important;
+      background-position: center center !important;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+	.modal-backdrop {
+		background-color: #4D5862;
+
+		&.show {
+		  opacity: .9;
+		}
+	}
+
+	.modal-exclusao-veiculo {
+		.modal-dialog {
+			max-width: 300px;
+
+			.modal-content {
+				padding: 0px !important;
+
+				.modal-body	{
+					max-height: 260px;
+
+					.close {
+						display: block;				
+					}
+				}
+			}
+		}
+	}
+}
+
+.dois_eixos_simples { background-image: url('~assets/svg/axle/1/2 eixos simples.svg'); }
+.dois_eixos_dupla { background-image: url('~assets/svg/axle/1/2 eixos dupla.svg'); }
+.tres_eixos_simples { background-image: url('~assets/svg/axle/1/3 eixos simples.svg'); }
+.tres_eixos_dupla { background-image: url('~assets/svg/axle/1/3 eixos dupla.svg'); }
+.tres_eixos_dupla_onibus { background-image: url('~assets/svg/axle/1/3 eixos dupla onibus.svg'); }
+.quatro_eixos_simples { background-image: url('~assets/svg/axle/1/4 eixos simples.svg'); }
+.quatro_eixos_dupla { background-image: url('~assets/svg/axle/1/4 eixos dupla.svg'); }
+.cinco_eixos_dupla { background-image: url('~assets/svg/axle/1/5 eixos dupla.svg'); }
+.seis_eixos_dupla { background-image: url('~assets/svg/axle/1/6 eixos dupla.svg'); }
+.oito_eixos_dupla { background-image: url('~assets/svg/axle/1/8 eixos dupla.svg'); }
+.nove_eixos_dupla { background-image: url('~assets/svg/axle/1/9 eixos dupla.svg'); }

@@ -1,0 +1,340 @@
+@import "functions.less";
+
+.container-fluid {
+	background-color: #fff;
+}
+
+.container-flux {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+	.row {
+	  position: relative;
+	  height: 100%;
+	}
+}
+
+.col-bg {
+	display: block;
+	position: relative;
+	background-color: #333;
+
+	.logconectcar {
+		position: relative;
+		top: 10px;
+		left: 10px;
+  	width: 93px;
+  	height: 15px;
+		background-image: url('~assets/svg/logo.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.bg-img {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+
+		&.image1 {
+			background-image: url('~assets/img/landing/ic_abasteca_com_desconto.png');
+		}
+
+		&.image2 {
+			background-image: url('~assets/img/landing/ic_aplicativo_integrado.png');
+		}
+
+		&.image3 {
+			background-image: url('~assets/img/landing/ic_clientes_itau.png');
+		}
+
+		&.image4 {
+			background-image: url('~assets/img/landing/ic_design_adesivo.png');
+		}
+
+		&.image5 {
+			background-image: url('~assets/img/landing/ic_seja_bem_vindo.png');
+		}
+
+		&.image6 {
+			background-image: url('~assets/img/landing/ic_caixa_foto.png');
+		}
+
+		&.image7 {
+			background-image: url('~assets/img/landing/ic_login.png');
+		}
+
+		&.image8 {
+			background-image: url('~assets/img/landing/ic_caminhonete.png');
+		}
+	}
+
+	.txt-content {
+		display: table;
+		position: relative;
+		padding-left: 60px;
+		width: 380px;
+		height: 100%;
+		color: #fff;
+		font-family: 'Lato';
+
+		.valign {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		h1 {
+			font-weight: 500;
+		}
+
+		p {
+			font-weight: 300;
+		}
+	}
+}
+
+.content {
+  overflow: auto;
+}
+
+.image-checked {
+	margin-top: 40px;
+  background-color: transparent;
+  background-image: url('~assets/svg/checkmark_sucesso.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 82px 82px;
+  width: 100%;
+  height: 82px;
+}
+
+
+h1 {
+  font-size: 18px;
+  line-height: 19px;
+  color: #4D5862;
+  text-align: center;
+  padding: 15px 0 0 0;
+  font-weight: 300;
+}
+
+p {
+	font-weight: 300;
+	color: #7C878F;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+}
+
+.m-b-md {
+	margin-bottom: 30px;
+}
+
+.m-t-lgg {
+	margin-top: 130px;
+}
+
+button {
+  color: #292F36;
+  border-color: #353C44;
+  background-color: #ffffff;
+  font-family: Lato;
+  line-height: 17px;
+  font-weight: 200;
+
+  &.btn-boxed {
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    background-color: #FF6A38;
+    border: 1px solid #FF6A38 !important;
+    color: #fff;
+    width: 220px;
+    padding: 15px 0;
+    font-size: 14px;
+  }
+}
+
+.col-bg {
+	display: none;
+}
+
+
+.linker {
+	a {
+		color: #FF6A38;
+		font-size: 12px;
+		line-height: 15px;
+	  text-decoration: underline;
+	}
+}
+
+.links {
+	margin-bottom: 20px;
+
+	.lnk {
+
+		.icon {
+			display: inline-block;
+			position: relative;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background-position: center;
+			background-image: url('~assets/svg/ic_central_de_atendimento.svg');
+			width: 20px;
+			height: 20px;
+			margin: 0px 3px;
+			top: 4px;
+
+			&.chat {
+				background-image: url('~assets/svg/ic_chat_online.svg');
+			}
+
+			&.phone {
+				background-image: url('~assets/svg/ic_central_de_atendimento.svg');
+			}
+		}
+
+		.txt {
+			color: #7C878F;
+			font-size: 16px;
+			line-height: 19px;
+		}
+	}
+}
+
+hr {
+	margin: 50px auto;
+}
+
+.retrovisor {
+	position: relative;
+	width: 260px;
+	height: 118px;
+	margin: 50px auto 20px auto;
+
+	.icon {
+		display: block;
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center;
+		background-image: url('~assets/svg/ic_como_instalar.svg');
+		width: 100%;
+		height: 100%;
+		margin-left: 30px;
+	}	
+}
+
+@media (min-width: 768px) {
+
+	.container-flux {
+
+		.justify-content {
+	    padding: 3rem 10rem;
+	    display: table;
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+
+	    .valign {
+	    	display: table-cell;
+	    	vertical-align: top;
+
+	    	h4 {
+			    font-size: 24px;
+			    font-weight: 300;
+	    	}
+	    }
+		}
+
+		.col-bg {
+			display: block;
+			position: relative;
+			background-color: #333;
+
+			.logconectcar {
+				position: relative;
+				top: 10px;
+				left: 10px;
+	    	width: 93px;
+	    	height: 15px;
+				background-image: url('~assets/img/logotipo.png');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+			}
+
+			.bg-img {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				bottom: 0px;
+				right: 0px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+
+				&.image {
+					background-image: url('~assets/img/landing/ic_aplicativo_integrado.png');
+				}
+
+				&.image1 {
+					background-image: url('~assets/img/landing/ic_abasteca_com_desconto.png');
+				}
+
+				&.image2 {
+					background-image: url('~assets/img/landing/ic_aplicativo_integrado.png');
+				}
+
+				&.image3 {
+					background-image: url('~assets/img/landing/ic_clientes_itau.png');
+				}
+
+				&.image4 {
+					background-image: url('~assets/img/landing/ic_design_adesivo.png');
+				}
+
+				&.image5 {
+					background-image: url('~assets/img/landing/ic_seja_bem_vindo.png');
+				}
+
+				&.image6 {
+					background-image: url('~assets/img/landing/ic_caixa_foto.png');
+				}
+			}
+
+			.txt-content {
+				display: table;
+				position: relative;
+				padding-left: 60px;
+		    width: auto;
+		    max-width: 500px;
+				height: 100%;
+				color: #fff;
+				font-family: 'Lato';
+
+				.valign {
+					display: table-cell;
+					vertical-align: middle;
+				}
+
+				h1 {
+					font-weight: 500;
+				}
+
+				p {
+					font-weight: 300;
+					text-align: left;
+				}
+			}
+		}
+	}
+}

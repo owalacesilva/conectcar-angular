@@ -1,0 +1,407 @@
+@import "functions.less";
+
+html, body {
+  background: #fff;
+}
+
+reg-menu {
+  display: block;
+  height: 100px;
+  width: 100%;
+  transition: height 0.2s ease-out;
+  body.mobile.inputActive & { height: 75px; }
+}
+
+.holder.esqueci {
+  padding: 0px;
+}
+
+.registration {
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  .normal-weight();
+  .mobile-col();
+
+  h2 {
+    color: #292F36;
+    font-size: 20px;
+    max-width: 100%;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  h3 {
+    color: #7C878F;
+    max-width: 100%;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease-out;
+    overflow: hidden;
+    font-weight: 300;
+
+    body.mobile.inputActive & {
+      height: 0;
+
+      &.no-hide {
+        height: auto !important;
+      }
+    }
+  }
+
+  hr {
+    margin: 4px 0;
+    border-color: #EBEDEE;
+  }
+
+  select,
+  input[type="tel"],
+  input[type="text"],
+  input[type="phone"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
+    width: 100%;
+    height: 35px;
+    color: #7C878F;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 18px;
+    border: 0;
+    border-radius: 0px;
+    //border-bottom: 1px solid #7C878F;
+    border-bottom: 1px solid #c4cace;
+    padding-right: 0px;
+    padding-left: 0px;
+    text-align: left;
+
+    &:focus {
+      border-bottom: 2px solid #4D5862;
+      outline: 0;
+    }
+
+    &:disabled {
+      background: transparent;
+    }
+  }
+
+  .dropdown-menu {
+    border: 1px solid #7C878F;
+    border-top: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    width: 100%;
+
+    .dropdown-item {
+      text-transform: none;
+      border-radius: 0px;
+      color: #7C878F;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 38px;
+      padding: 0px 8px;
+
+      &.active {
+        color: #fff;
+      }
+    }
+
+    button {
+      line-height: 18px;
+      height: auto;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+
+  .action {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 280px;
+    body.mobile.inputActive & {
+      margin: 10px auto;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    margin-top: 20px;
+    height: 44px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 100px;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+    .bold-weight();
+
+    &.voltar {
+      background-color: #FFF;
+      color: #7C878F;
+      margin-right: 24px;
+    }
+
+    &.adicionar {
+      transition: background-color 0.5s;
+      background-color: #333d44;
+      background-repeat: no-repeat;
+      background-position: 88px;
+      background-size: 15px auto;
+      padding-right: 20px;
+      color: #FFFFFF;
+    }
+
+    &.avancar {
+      transition: background-color 0.5s;
+      background-color: #FF6A38;
+      background-image: url("~assets/svg/ico_avancar.svg");
+      background-repeat: no-repeat;
+      background-position: 88px;
+      background-size: 15px auto;
+      padding-right: 40px;
+      color: #FFFFFF;
+    }
+
+    &.disabled {
+      transition: background-color 0.5s;
+      background-color: #D7DBDE;
+    }
+
+    &.fb-login {
+      text-transform: none;
+    }
+
+    &.fb-login {
+      font-size: 15px;
+      border: 1px solid #3B5998;
+      border-radius: 100px;
+      color: #3B5998;
+      width: 100%;
+    }
+  }
+
+  .help-block {
+    color: red;
+    display: block;
+    text-align: left;
+    font-weight: 300;
+  }
+
+  .steps {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+
+    body.mobile & {
+      overflow-y: hidden;
+      clip: rect(0px, 360px, 2000px, 0px);
+    }
+    .mobile-col();
+
+    .holder {
+      position: absolute;
+      //position: relative;
+      left: 0; right: 0;
+      width: 100%;
+    	max-width: 360px;
+    	margin: 0px auto;
+      .mobile-col();
+    }
+  }
+
+  p.small-info {
+    .normal-weight();
+    margin: 10px auto;
+    max-width: 280px;
+    opacity: 0.8;
+    color: #7C878F;
+    font-family: Lato;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    a {
+      .orange();
+      text-decoration: underline;
+    }
+  }
+
+  .collapsible-header {
+    .normal-weight();
+    text-align: left;
+    color: #414A53;
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+  }
+  .card {
+    .normal-weight();
+    padding: 0;
+    border: 0;
+    text-align: left;
+    color: #B5BDC4;
+    font-family: Lato;
+    font-size: 13px;
+    line-height: 18px;
+
+    .card-block {
+      padding: 0 0 10px 0;
+    }
+  }
+
+  .view {
+    height: auto;
+  }
+}
+
+.col-bg {
+	display: none;
+}
+
+@media (min-width: 992px) {
+	html,
+	body {
+    background: #fff;
+    position: relative;
+    width: 100%;
+    height: 100%;
+	}
+
+	.container-flux {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+		.row {
+		  position: relative;
+		  height: 100%;
+		}
+	}
+
+	.col-bg {
+		display: block;
+		position: relative;
+		background-color: #333;
+
+		.logconectcar {
+			position: relative;
+			top: 10px;
+			left: 10px;
+    	width: 93px;
+    	height: 15px;
+			background-image: url('~assets/svg/logo.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+
+		.bg-img {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			bottom: 0px;
+			right: 0px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+
+			&.image1 {
+				background-image: url('~assets/img/landing/ic_abasteca_com_desconto.png');
+			}
+
+			&.image2 {
+				background-image: url('~assets/img/landing/ic_aplicativo_integrado.png');
+			}
+
+			&.image3 {
+				background-image: url('~assets/img/landing/ic_clientes_itau.png');
+			}
+
+			&.image4 {
+				background-image: url('~assets/img/landing/ic_design_adesivo.png');
+			}
+
+			&.image5 {
+				background-image: url('~assets/img/landing/ic_seja_bem_vindo.png');
+			}
+
+			&.image6 {
+				background-image: url('~assets/img/landing/ic_caixa_foto.png');
+			}
+
+			&.image7 {
+				background-image: url('~assets/img/landing/ic_login.png');
+			}
+
+			&.image8 {
+				background-image: url('~assets/img/landing/ic_caminhonete.png');
+			}
+		}
+
+		.txt-content {
+			display: table;
+			position: relative;
+			padding-left: 60px;
+			width: 380px;
+			height: 100%;
+			color: #fff;
+			font-family: 'Lato';
+
+			.valign {
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			h1 {
+				font-weight: 500;
+			}
+
+			p {
+				font-weight: 300;
+			}
+		}
+  }
+
+  .content {
+    overflow: auto;
+  }
+
+  .registration {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+
+    .steps {
+      position: relative;
+      //height: auto !important;
+
+      .holder {
+        //position: relative;
+        max-width: 100%;
+        padding: 0px 9.6rem;
+
+        &.esqueci {
+          padding: 0px;
+        }
+      }
+    }
+
+    .form-group {
+      margin-top: 50px;
+    }
+
+    .view {
+      margin-top: 80px;
+    }
+  }
+}

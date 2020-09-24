@@ -1,0 +1,120 @@
+<div id="embrulho">
+  <cc-header [origin]="'home'"></cc-header>
+
+  <div id="principal-recipiente" class="principal-recipiente">
+    <div class="recipient">
+      <h3 [innerHTML]="R.R('planos_infos_titulo')"></h3>
+      <section class="planos">
+
+        <div class="spinner-container" *ngIf="loading">
+          <cc-spinner size="100" stroke="2" color="#fff"></cc-spinner>
+        </div>
+
+        <div
+          id="card-slider"
+          (swiperight)="prev()"
+          (swipeleft)="next()"
+          >
+          <cc-plano
+            *ngFor="let produto of produtos | async; let i = index"
+            [@slideInOut]="slideInOut(i)"
+            (click)="swipeClick(i)"
+            [produto]="produto"
+            [index]="i"
+            ></cc-plano>
+        </div>
+      </section>
+
+      <div class="planos infos">
+        <div class="col-info">
+          <div class="box-como-funciona">
+            <div class="image ic_como_funcionam_os_planos"></div>
+            <div class="informacoes">
+              <h4>{{R.R('planos_infos_titulo_como_funciona_os_planos')}}</h4>
+              <p>{{R.R('planos_infos_desc_como_funciona_os_planos')}}</p>
+            </div>
+            <div class="btns">
+              <button (click)="openModalComoFuncionam()" class="btn btn-boxed">{{R.R('planos_infos_btn_saiba_mais')}}</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-info">
+          <div class="box-plano-empresa">
+            <div class="image ic_como_empresa"></div>
+            <div class="informacoes">
+              <h4>{{R.R('planos_infos_titulo_planos_para_empresa')}}</h4>
+              <p>{{R.R('planos_infos_desc_planos_para_empresa')}}</p>
+            </div>
+            <div class="btns">
+              <button routerLink="http://conectcar.jurema.la/?page_id=205" class="btn btn-boxed">{{R.R('planos_infos_btn_ver_planos_para_empresa')}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-pontos-de-venda">
+        <div class="mapa"></div>
+        <div class="texto">
+          <h5>{{R.R('planos_infos_titulo_quer_pegar_seu_adesivo_hoje')}}</h5>
+          <p>{{R.R('planos_infos_desc_descubra_o_posto_ipiranga')}}</p>
+          <div class="btns">
+            <button class="btn btn-boxed">{{R.R('planos_infos_btn_pontos_de_venda')}}</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="perguntas-frequentes" class="container">
+        <h4>Perguntas frequentes</h4>
+        <ul class="list-unstyled">
+          <li>
+            <div class="header" (click)="coll_a = !coll_a" [ngClass]="{ 'expand': coll_a }">
+              <span>Como funciona o ConectCar?</span>
+              <span class="ic ic_dropdown"></span>
+            </div>
+            <div class="body" [ngbCollapse]="!coll_a">
+              Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.
+            </div>
+          </li>
+          <li>
+            <div class="header" (click)="coll_b = !coll_b" [ngClass]="{ 'expand': coll_b }">
+              <span>Como funciona o crédito automático?</span>
+              <span class="ic ic_dropdown"></span>
+            </div>
+            <div class="body" [ngbCollapse]="!coll_b">
+              Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.
+            </div>
+          </li>
+          <li>
+            <div class="header" (click)="coll_c = !coll_c" [ngClass]="{ 'expand': coll_c }">
+              <span>Porque preciso incluir créditos para começar a usar meu ConectCar?</span>
+              <span class="ic ic_dropdown"></span>
+            </div>
+            <div class="body" [ngbCollapse]="!coll_c">
+              Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.
+            </div>
+          </li>
+          <li>
+            <div class="header" (click)="coll_d = !coll_d" [ngClass]="{ 'expand': coll_d }">
+              <span>O que são veiculos adicionais?</span>
+              <span class="ic ic_dropdown"></span>
+            </div>
+            <div class="body" [ngbCollapse]="!coll_d">
+              Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="div-voltar text-left">
+        <div class="container">
+          <a routerLink="/">
+            <span class="set_esq"></span> {{R.R('planos_infos_btn_voltar_para_home')}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <cc-footer></cc-footer>
+</div>

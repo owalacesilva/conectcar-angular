@@ -1,0 +1,50 @@
+<div class="view name-view">
+  <h2 [innerHTML]="R.R('cadastro_name_titulo')">
+
+  </h2>
+
+  <h3>
+  	{{ R.R('cadastro_name_subtitulo') }}
+  </h3>
+
+  <div class="form-group"
+    [ngClass]="{'has-danger': showValidation && name.invalid}">
+
+    <input required #nameInput
+      [formControl]="name"
+      focus-watcher
+      name="name"
+      id="name"
+      type="text"
+      class="form-control"
+      tabindex="1"
+      [cc-placeholder]="'Nome completo'"
+      (blur)="showValidation = true"
+      (focus)="showValidation = false"
+      (input)="disabled = (name.value.length === 0 || !name.valid)"
+      (keydown.enter)="submit($event)"
+    >
+
+    <div *ngIf="showValidation && name.invalid && (name.dirty || name.touched)">
+      <small *ngIf="name.value.length > 0 && name.errors.names" class="help-block">Nome completo</small>
+    </div>
+
+    <div class="action mobile-init">
+      <button
+        (touchstart)="back($event)"
+        (click)="back($event)"
+        tabindex="3"
+        class="voltar"
+      >Voltar</button>
+
+      <button
+        class="avancar"
+        [ngClass]="{ disabled: disabled }"
+        tabindex="2"
+        (click)="submit($event)"
+        (touchstart)="submit($event)"
+        id="next-button"
+      >Avançar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,242 @@
+<div id="embrulho">
+	<cc-header [restrict]="true"></cc-header>
+
+  <div id="main">
+    <div class="clearfix header">
+      <div class="codigo-header clearfix f-left">
+        <span class="order-code">
+          {{R.R('detalhe_pedido_label_codigo')}}
+        </span>
+
+        <span class="label-right">
+          {{ pedido.NumeroPedido }}
+        </span>
+      </div>
+
+      <div class="pedido-steps f-right">
+        <cc-pedido-passos [steps]="steps"></cc-pedido-passos>
+      </div>
+    </div>
+
+    <div class="pedido-main" [ngClass]="{ error: error }">
+      <div class="image-container">
+        <div class="status-image"
+             [ngClass]="{
+               'sem-adesivos': pedido.Status === 'SaiuParaEntrega',
+               'pedido-realizado': pedido.Status === 'EsperandoAprovacao' || pedido.Status === 'PedidoRealizado',
+               'pagamento-aprovado': pedido.Status === 'PagamentoAprovado',
+               'sucesso': pedido.Status === 'Entregue'
+             }"
+        ></div>
+      </div>
+
+      <p class="status-title">{{ status }}</p>
+      <p class="status-description"></p>
+      <p class="status-time">{{ pedido.DataHoraAceite | date:'shortDate' }} - {{ pedido.DataHoraAceite | date:'hh:mm' }}h</p>
+    </div>
+
+    <div *ngIf="error" class="details-wraper wraper-error">
+      <div class="pedido-error">
+        <p>{{R.R('detalhe_pedido_error_texto_tentativa_entrega')}}</p>
+        <p (click)="comprar()">{{R.R('detalhe_pedido_error_texto_endereco_entrega')}}</p>
+      </div>
+    </div>
+
+    <div class="pedido-more-info">
+      <span>
+        {{R.R('detalhe_pedido_contato_texto_1')}}<br>
+        <a (click)="openModal(modalPoliticaEntrega)">{{R.R('detalhe_pedido_contato_texto_2')}}</a>{{R.R('detalhe_pedido_contato_texto_3')}}<br>
+        <a href="">{{R.R('detalhe_pedido_contato_texto_4')}}</a>{{R.R('detalhe_pedido_contato_texto_5')}}<a href="">{{R.R('detalhe_pedido_contato_texto_6')}}</a>
+      </span>
+    </div>
+
+    <div *ngIf="pedidos.status === 'Entregue'">
+      <cc-baixe-app></cc-baixe-app>
+    </div>
+
+    <div class="details-wraper">
+      <div class="clearfix">
+        <div class="dados-pedido f-left">
+          <div>
+            <p class="subtitle"><strong>{{R.R('detalhe_pedido_info_dados_title')}}</strong></p>
+
+            <div class="clearfix">
+              <span class="label-left">{{R.R('detalhe_pedido_info_dados_label_codigo')}}</span>
+              <span class="label-right">{{ pedido.NumeroPedido }}</span>
+            </div>
+
+            <div class="clearfix">
+              <span class="label-left">{{R.R('detalhe_pedido_info_dados_label_data')}}</span>
+              <span class="label-right">{{ pedido.DataHoraAceite | date:'short' }}</span>
+            </div>
+
+            <div class="clearfix">
+              <span class="label-left">{{R.R('detalhe_pedido_info_dados_label_prazo')}}</span>
+              <span class="label-right">{{ pedido.FormaDeEnvio.PrazoDeEntrega }} {{R.R('detalhe_pedido_info_dados_prazo_unit')}}</span>
+            </div>
+
+            <div class="clearfix">
+              <span class="label-left">{{R.R('detalhe_pedido_info_dados_label_itens')}}</span>
+              <span class="label-right">{{ pedido.Veiculos.length }} {{R.R('detalhe_pedido_info_dados_itens_unit')}}</span>
+            </div>
+
+            <div class="clearfix">
+              <span class="label-left">{{R.R('detalhe_pedido_info_dados_label_plano')}}</span>
+              <span class="label-right">{{ pedido.Produto.Titulo }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dados-pedido f-right">
+          <div>
+            <p class="subtitle"><strong>{{R.R('detalhe_pedido_info_credito_title')}}</strong></p>
+
+            <div class="clearfix">
+              <span class="label-left text-left">{{R.R('detalhe_pedido_info_credito_label_subtotal')}}</span>
+              <span class="label-right">{{ (pedido.SubTotal ? pedido.SubTotal : '0.00') | currency:'BRL':'true' }}</span>
+            </div>
+
+            <div class="clearfix">
+              <span class="label-left text-left">{{R.R('detalhe_pedido_info_credito_label_frete')}}</span>
+              <span class="label-right">{{ (pedido.ValorFrete ? pedido.ValorFrete : '0.00') | currency:'BRL':'true' }}</span>
+            </div>
+
+            <div class="clearfix">
+              <span class="label-left text-left dark">--</span>
+            </div>
+
+            <div class="clearfix">
+              <span class="label-left text-left dark"><strong>{{R.R('detalhe_pedido_info_credito_label_total')}}</strong></span>
+              <span class="label-right">{{ (pedido.ValorTotal ? pedido.ValorTotal : '0.00') | currency:'BRL':'true' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix">
+        <div class="dados-pedido f-left">
+          <div>
+            <p class="subtitle"><strong>{{R.R('detalhe_pedido_info_entrega_title')}}</strong></p>
+
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.TipoLogradouro }} {{ enderecos.cobranca.Logradouro }}, {{ enderecos.cobranca.Numero }}
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.Complemento }}
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.Bairro }}
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.Cidade }} - {{ enderecos.cobranca.Estado }}
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.CEP }}<br>
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.Pais }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dados-pedido f-right">
+          <div>
+            <p class="subtitle"><strong>{{R.R('detalhe_pedido_info_cobranca_title')}}</strong></p>
+
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.TipoLogradouro }} {{ enderecos.cobranca.Logradouro }}, {{ enderecos.cobranca.Numero }}
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.Complemento }}
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.Bairro }}
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.Cidade }} - {{ enderecos.cobranca.Estado }}
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.CEP }}<br>
+              </span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">
+                {{ enderecos.cobranca.Pais }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix">
+        <div class="dados-pedido f-left">
+          <div>
+            <p class="subtitle"><strong>{{R.R('detalhe_pedido_info_pagamento_title')}}</strong></p>
+
+            <div class="clearfix">
+              <span class="label-left text-left dark"><strong>{{R.R('detalhe_pedido_info_pagamento_label_cartao')}}</strong></span>
+            </div>
+
+            <div class="clearfix">
+              <span class="label-left text-left">{{ cartaoCredito.Bandeira }} {{R.R('detale_pedido_info_pagamento_cartao_texto')}} {{ finalCredito }}</span>
+              <span class="card-image"
+                   [ngClass]="{
+                     'ic_visa': cartaoCredito.Bandeira === 'Visa',
+                     'ic_master': cartaoCredito.Bandeira === 'Mastercard',
+                     'ic_amex': cartaoCredito.Bandeira === 'Amex',
+                     'ic_hipercard': cartaoCredito.Bandeira === 'Hipercard',
+                     'ic_diners': cartaoCredito.Bandeira === 'Diners'
+                   }"
+              ></span>
+            </div>
+            <div class="clearfix">
+              <span class="label-left text-left">{{ cartaoCredito.MesDeVencimento }}/{{ cartaoCredito.AnoDeVencimento }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modals">
+    <ng-template
+      #modalPoliticaEntrega
+      class="modal-window"
+      let-c="close"
+      let-d="dismiss"
+    >
+      <div
+        class="modal-window"
+      >
+        <div
+          (click)="d()"
+          class="voltar"
+        ><a href="javascript:void"></a></div>
+
+        <cc-modal-politica-entrega></cc-modal-politica-entrega>
+      </div>
+    </ng-template>
+  </div>
+
+  <cc-footer></cc-footer>
+</div>

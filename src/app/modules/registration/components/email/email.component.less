@@ -1,0 +1,43 @@
+.email-view {
+}
+
+.form-check {
+  text-align: left;
+  margin-top: 18px;
+  color: #7C878F;
+}
+
+.form-control.has-danger {
+  border-color: #d9534f !important;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] + small:before {
+  content: '';
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid rgba(181,189,196,1);
+  display: inline-block;
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
+  padding: 2px;
+  margin-right: 6px;
+}
+input[type=checkbox]:checked + small:after {
+  content: '';
+  border: 0px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
+  padding: 2px;
+  margin-right: 10px;
+  color: rgba(255,106,56,1);
+  background: url("~assets/svg/ico_mini_check2.svg") no-repeat;
+  position: absolute;
+	left: 2px;
+	top: 6px;
+}

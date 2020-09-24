@@ -1,0 +1,137 @@
+@import "functions.less";
+
+.header-bg {
+  width: 100%;
+  height: 66px;
+  background: #4D5862;
+}
+
+.esqueci-view {
+  margin-bottom: 60px;
+
+  .form-group {
+    margin: 20px auto 0px auto;
+    max-width: 350px;
+  }
+
+  h1 {
+    display: none;
+    font-size: 32px;
+    color: #292F36;
+    text-align: left;
+    .normal-weight();
+    margin-top: 40px;
+    border-bottom: 1px solid #B5BDC4;
+    padding-bottom: 10px;
+  }
+
+  h2 {
+    .normal-weight();
+    margin-top: 80px;
+    color: #4D5862;
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  h3 {
+    .normal-weight();
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .password-criteria {
+    margin-top: 5px;
+    text-align: left;
+
+    ul {
+      &.first {
+        margin-right: 20px;
+      }
+      display: inline-block;
+
+      li {
+        color: #B5BDC4;
+        list-style-type: disc;
+        margin-left: 20px;
+
+        &.ok {
+          list-style-type: none;
+          margin: 0px;
+
+          &:before {
+            display:inline-block;
+            background-size:contain;
+            background-repeat:no-repeat;
+            background-image:url('~assets/svg/ico_mini_check.svg');
+            height: 10px;
+            width: 20px;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  .password-type-toggle {
+    &.active {
+      background: url('~assets/svg/ic_eye_text_input_on.svg');
+    }
+    background: url('~assets/svg/ic_eye_text_input_off.svg');
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+  }
+
+  .action.login {
+    margin: 100px auto;
+
+    .voltar {
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      background-image: none;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .esqueci-view {
+    padding: 0px 9.6rem;
+    margin-bottom: 300px;
+
+    h1 {
+      display: block;
+    }
+  }
+}
+
+.image-checked {
+	margin-top: 40px;
+  margin-bottom: 25px;
+  background-color: transparent;
+  background-image: url('~assets/svg/checkmark_sucesso.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 82px 82px;
+  width: 100%;
+  height: 82px;
+}
+
+.sent {
+  p {
+    font-weight: 300;
+  }
+
+  a {
+    margin-top: 40px;
+    float: left;
+    color: #9B9B9B;
+  } 
+}

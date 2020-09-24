@@ -1,0 +1,49 @@
+<div class="view credito">
+	<h2>
+		{{ R.R('cadastro_credito_titulo') }}
+	</h2>
+	<h3 style="font-size: 1.1em; margin-bottom: 35px;">
+		{{ R.R('cadastro_credito_subtitulo') }}
+	</h3>
+	<h3 class="alert-message" stye="margin-bottom: 50px;">
+		{{ R.R('cadastro_credito_aviso') }}
+	</h3>
+
+	<fieldset class="text-left">
+    <select
+      required
+      #amount
+      style="font-weight: normal;"
+      focus-watcher
+      name="amount"
+      id="amount"
+      class="form-control"
+      [cc-placeholder]="'Valor sugerido'"
+      [(ngModel)]="selected">
+      <option *ngFor="let amount of amounts" [value]="amount.Codigo">{{ amount.ValorAquisicao | currency:'BRL':true }}</option>
+    </select>
+    <span class="ic ic_expand"></span>
+	</fieldset>
+
+	<small>
+		<span style="color: #7C878F;">
+			{{ R.R('cadastro_credito_duvida_creditos') }}
+		</span>
+		<a href="javascript:void;" style="color: #FF6A38;" (click)="openModalComoFuncionam()">
+			{{ R.R('cadastro_credito_ver_por_aqui') }}
+		</a>
+	</small>
+
+	<div class="action">
+	  <button
+	    onclick="history.back()"
+	    class="voltar"
+	  >Voltar</button>
+
+	  <button
+	    [ngClass]="{ avancar: true, disabled: disabled }"
+	    (click)="submit($event)"
+      id="next-button"
+	  >Avançar</button>
+	</div>
+</div>

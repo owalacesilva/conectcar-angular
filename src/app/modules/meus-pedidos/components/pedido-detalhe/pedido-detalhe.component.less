@@ -1,0 +1,280 @@
+@import "functions.less";
+
+#main {
+  background: #fff;
+  font-family: Lato;
+
+  .wraper-error {
+    margin-top: 20px;
+  }
+
+  h2 {
+    color: #292F36;
+    font-size: 22px;
+    max-width: 100%;
+    .normal-weight();
+    line-height: 27px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .order-code{
+    font-size: 12px;
+    float: left;
+    color: #7C878F;
+    padding-top: 5px;
+  }
+
+  .label-left {
+    float: left;
+    color: #7C878F;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 28px;
+
+    &.dark {
+      color: #4D5862 !important;
+    }
+  }
+
+  .label-right {
+    float: right;
+    color: #4D5862;
+    font-size: 15px;
+    line-height: 28px;
+  }
+
+  .card-image{
+    float: right;
+    width: 36px;
+    height: 27px;
+    display: block;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.ic_visa {
+      background-image: url("~assets/svg/bandeira_visa_color.svg");
+    }
+
+    &.ic_master {
+      background-image: url("~assets/svg/band_mastercard.svg");
+    }
+
+    &.ic_amex {
+      background-image: url("~assets/svg/band_amex.svg");
+    }
+
+    &.ic_hipercard {
+      background-image: url("~assets/svg/band_hipercard.svg");
+    }
+
+    &.ic_diners {
+      background-image: url("~assets/svg/band_diners.svg");
+    }
+  }
+
+  .codigo-header {
+    box-shadow: 0px 10px 40px -6px #D8DBDE;
+    position: relative;
+    padding: 15px 32px 18px 32px;
+    border: 0px;
+    font-family: Lato;
+    line-height: 18px;
+    .normal-weight();
+
+    .label-right {
+      font-size: 18px;
+      .bold-weight();
+    }
+  }
+
+  .dados-pedido {
+    margin: auto;
+    display: block;
+    text-align: center;
+    padding: 32px;
+
+    p.subtitle  {
+      border: 0px;
+      border-bottom: 1px solid #B5BDC4;
+      border-color: rgba(181,189,196,0.3);
+      text-transform: uppercase;
+      text-align: left;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: #4D5862;
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+  }
+
+  .pedido-error {
+    width: 100%;
+    background: #EF0202;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 15px;
+    font-size: 12px;
+    padding: 40px 40px 50px 40px;
+    .normal-weight();
+
+    p {
+      float: left;
+    }
+
+    p:last-child {
+      float: right;
+      cursor: pointer;
+      font-size: 10px;
+      .bold-weight();
+    }
+  }
+
+  .pedido-more-info {
+    text-align: center;
+    font-size: 11px;
+    color: #7C878F;
+    margin: 25px auto;
+
+    a {
+      color: #7C878F;
+      text-decoration: underline;
+    }
+  }
+
+  .pedido-main {
+    text-align: center;
+    margin: auto;
+
+    .status-title {
+      .bold-weight();
+      font-size: 18px;
+      color: #4D5862;
+      margin-bottom: 0px;
+    }
+
+    .status-image {
+      width: 72px;
+      height: 70px;
+      margin: auto;
+      background-size: 150px;
+      margin-top: 30px;
+
+      &.alerta {
+        background: url(~assets/svg/pedido/alerta.svg) no-repeat center;
+      }
+
+      &.cancelado {
+        background: url(~assets/svg/pedido/cancelado.svg) no-repeat center;
+      }
+
+      &.erro {
+        background: url(~assets/svg/pedido/erro.svg) no-repeat center;
+      }
+
+      &.pedido-realizado {
+        background: url(~assets/svg/pedido/pedido-realizado.svg) no-repeat center;
+        width: 137px !important;
+      }
+
+      &.pagamento-aprovado {
+        background: url(~assets/svg/pedido/pagamento-aprovado.svg) no-repeat center;
+      }
+
+      &.sem-adesivos {
+        background: url(~assets/svg/pedido/sem-adesivos.svg) no-repeat center;
+      }
+
+      &.sucesso {
+        background: url(~assets/svg/pedido/sucesso.svg) no-repeat center;
+      }
+
+      &.sucesso-pagamento {
+        background: url(~assets/svg/pedido/sucesso-pagamento.svg) no-repeat center;
+      }
+    }
+
+    .status-description {
+      color: #7C878F;
+      font-style: italic;
+      font-size: 14px;
+      margin-bottom: 0px;
+    }
+
+    .status-time {
+      color: #7C878F;
+      font-size: 12px;
+      .normal-weight();
+    }
+
+    &.error {
+      .status-title { color: #EE0000; };
+    }
+  }
+
+  @media (min-width: 992px) {
+    .header{
+      width: 75%;
+      margin: auto;
+      border-bottom: 1px solid #ccc;
+      padding-top: 100px;
+    }
+    .codigo-header{
+      box-shadow: 0px 0px 0px 0px;
+      width: 16%;
+      padding: 35px 32px 15px 0px;
+
+      .order-code{
+        line-height: 15px;
+        padding: 0px 0px 7px 0px;
+      }
+
+      .label-right{
+        float: none;
+        font-size: 32px;
+      }
+    }
+    .dados-pedido{
+      margin: unset;
+      width: 50%;
+    }
+
+    .pedido-steps{
+      width: 37%;
+    }
+
+    .dashed-line{
+      left: 20.5%;
+    }
+
+    .passos{
+      .container{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+    }
+
+    .pedido-main{
+      .status-image{
+        margin-top: 80px;
+      }
+    }
+
+    .details-wraper{
+      width: 80%;
+      margin: auto;
+      margin-top: 80px;
+    }
+
+    .f-left{
+      float: left;
+    }
+
+    .f-right{
+      float: right;
+    }
+
+  }
+}

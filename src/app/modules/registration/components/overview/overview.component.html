@@ -1,0 +1,247 @@
+<div class="woverview">
+  <h2>
+  	<strong>Resumo</strong> da sua contratação
+  </h2>
+
+  <p>
+  	Confira os planos escolhidos<br /> e seus dados antes de prosseguir
+  </p>
+
+  <div class="meus_planos">
+  	<h3 class="text-left">
+			{{ R.R('cadastro_resumo_label_meus_planos') }}
+  	</h3>
+  	<div class="plano_atual">
+  		<div class="desc pull-left">
+        {{ produto.Titulo }}
+  		</div>
+  		<!-- <span class="icon ic_edit pull-right"></span> -->
+  	</div>
+		<table class="table tplanos">
+			<thead>
+	      <tr>
+	        <th class="text-left">
+						{{ R.R('cadastro_resumo_label_veiculo') }}
+	        </th>
+	        <th class="text-right">
+	        	{{ R.R('cadastro_resumo_label_mensalidade') }}
+	        </th>
+	      </tr>
+			</thead>
+			<tbody>
+        <tr *ngFor="let veiculo of veiculos; let i = index">
+          <td class="text-left">{{ veiculo.Placa }}<span (click)="editStep('/comprar/eixo')" class="icon ic_edit"></span></td>
+          <td class="text-right">
+            <small *ngIf="produto.MensalidadePor > 0.0"><del>{{ produto.MensalidadePor | currency:'BRL':true }}</del></small> {{ produto.Mensalidade | currency:'BRL':true }}
+          </td>
+
+          <td class="text-right" *ngIf="produto.DescontoSegundoAdesivo > 0 && i > 0">
+            <small>R$ {{ produto.Mensalidade }}</small>
+            {{ produto.DescontoSegundoAdesivo | currency:'BRL':true }}
+          </td>
+	      </tr>
+			</tbody>
+		</table>
+    <p class="mgs"><small>
+    	{{ R.R('cadastro_resumo_aviso_mensalidade') }} <a href="javascript:;" style="color: #FF6A38;" (click)="openModalComoFuncionam()">Saiba mais</a></small>
+    </p>
+  </div>
+
+  <div class="collapse">
+		<div id="collapseDados">
+		  <div class="card">
+		  	<div class="card-header" (click)="isCollapsed1 = !isCollapsed1; resize()">
+		  		{{ R.R('cadastro_resumo_label_meus_dados') }}
+		      <span class="icon ic_expand_down pull-right" [ngClass]="{ 'ic_expand_up': isCollapsed1, 'ic_expand_down': !isCollapsed1 }" style="top: 3px;position: relative;"></span>
+		  	</div>
+		    <div class="card-body" [ngClass]="{ 'show': isCollapsed1, 'hide': !isCollapsed1 }">
+          {{ cliente.NomeCompleto }}<br />
+		    	{{ cliente.CPF }}<br />
+		    	{{ cliente.DataDeNascimento }}<br />
+		    	{{ cliente.Email }}<br />
+          {{ cliente.DDD }} {{ cliente.Celular }}
+          <span
+            (click)="editStep('/cadastro/nome')"
+            class="icon ic_edit pull-right"></span>
+		    </div>
+		  </div>
+		</div>
+
+		<div id="collapseEndereco">
+		  <div class="card">
+		  	<div class="card-header" (click)="isCollapsed2 = !isCollapsed2; resize()">
+		      {{ R.R('cadastro_resumo_label_endereco_entrega') }}
+		      <span class="icon ic_expand_down pull-right" [ngClass]="{ 'ic_expand_up': isCollapsed2, 'ic_expand_down': !isCollapsed2 }" style="top: 3px;position: relative;"></span>
+		  	</div>
+		    <div class="card-body" [ngClass]="{ 'show': isCollapsed2, 'hide': !isCollapsed2 }">
+          {{ endereco.Logradouro }}, {{ endereco.Numero }}<br/>
+          {{ endereco.Bairro }}, {{ endereco.Cidade }}, {{ endereco.Estado }}<br/>
+          {{ endereco.CEP }}
+		    	Brasil
+          <span
+            (click)="editStep('/comprar/endereco')"
+            class="icon ic_edit pull-right"></span>
+		    </div>
+		  </div>
+		</div>
+  </div>
+  <div class="total_apagar">
+  	<h3 class="text-left">
+			{{ R.R('cadastro_resumo_valor_total') }}
+  	</h3>
+  	<div class="div-block">
+  		<div class="table-wrapper">
+	  		<table class="table">
+	  			<tbody class="refrs">
+	  				<tr>
+	  					<td class="text-left">
+								{{ R.R('cadastro_resumo_credito_inicial') }}
+	  					</td>
+              <td class="text-right">{{ credito.ValorAquisicao | currency:'BRL':true }}</td>
+	  				</tr>
+	  				<tr *ngIf="!ativacaoOffline">
+	  					<td class="text-left">
+	  						{{ R.R('cadastro_resumo_frete') }}
+	  					</td>
+	  					<td class="text-right">
+	  						R$ 0,00
+	  					</td>
+	  				</tr>
+	  			</tbody>
+	  			<tfoot class="refrs">
+	  				<tr>
+	  					<td class="text-left">
+								{{ R.R('cadastro_resumo_total') }}
+	  					</td>
+              <td class="text-right">{{ credito.ValorAquisicao | currency:'BRL':true }}</td>
+	  				</tr>
+	  			</tfoot>
+	  		</table>
+  		</div>
+  	</div>
+  </div>
+  <div class="overview-action action">
+    <button
+      onclick="history.back()"
+      class="voltar"
+    >Voltar</button>
+
+    <button
+      routerLink="/cadastro/pagamento"
+      [ngClass]="{ avancar: true, disabled: false }"
+      (click)="submit($event)"
+      id="next-button"
+    >Avançar</button>
+  </div>
+</div>
+
+<div class="view overview">
+  <h2>
+    <strong>Resumo</strong> da sua contratação
+  </h2>
+  <h3>
+    Confira os planos escolhidos e seus dados antes de prosseguir
+  </h3>
+
+  <div class="form-group">
+    <h2>
+      Meus planos
+    </h2>
+
+    <ul>
+      <li>
+        {{ produto.Titulo }}
+        <span class="info-ico"></span>
+      </li>
+    </ul>
+
+    <hr />
+
+    <table>
+      <tr>
+        <th>
+          Veículo
+        </th>
+        <th>
+          Mensalidade
+        </th>
+      </tr>
+      <tr *ngFor="let veiculo of veiculos; let i = index">
+        <td>
+          {{ veiculo.Placa }}
+        </td>
+
+        <td *ngIf="i === 0 || produto.DescontoSegundoAdesivo === 0">
+          R$ {{ produto.Mensalidade }}
+        </td>
+
+        <td *ngIf="produto.DescontoSegundoAdesivo > 0 && i > 0">
+          <small>R$ {{ produto.Mensalidade }}</small>
+          R$ {{ produto.DescontoSegundoAdesivo }}
+        </td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <p class="small-info">
+      A mensalidade do seu plano é descontada do saldo
+      ConectCar no último dia de cada mês. <a href="#">Saiba mais</a>
+    </p>
+
+    <hr />
+
+    <p
+      class="collapsible-header"
+      (click)="isDetailsCollapsed = !isDetailsCollapsed"
+      [attr.aria-expanded]="!isDetailsCollapsed"
+      aria-controls="details"
+    >
+        Meus dados
+    </p>
+    <div id="details" [ngbCollapse]="isDetailsCollapsed">
+      <div class="card">
+        <div class="card-block">
+          {{ cliente.NomeCompleto }}<br>
+          {{ cliente.CPF }}<br>
+          {{ cliente.DataDeNascimento }}<br>
+          {{ cliente.Email }}<br>
+          {{ cliente.DDD }} {{ cliente.Celular }}
+        </div>
+
+        <hr />
+      </div>
+    </div>
+
+    <p
+      class="collapsible-header"
+      (click)="isAddressCollapsed = !isAddressCollapsed"
+      [attr.aria-expanded]="!isAddressCollapsed"
+      aria-controls="isAddressCollapsed"
+    >
+      Endereço {{ ativacaoOffline ? '' : 'de entrega' }}
+    </p>
+    <div id="address" [ngbCollapse]="isAddressCollapsed">
+      <div class="card">
+        <div class="card-block">
+          {{ endereco.Logradouro }}, {{ endereco.Numero }}<br/>
+          {{ endereco.Bairro }}, {{ endereco.Cidade }}, {{ endereco.Estado }}<br/>
+          {{ endereco.CEP }}
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <div class="overview-action">
+      <button
+        onclick="history.back()"
+        class="voltar"
+      >Voltar</button>
+
+      <button
+        [ngClass]="{ avancar: true, disabled: false }"
+        (click)="submit($event)"
+      >Avançar</button>
+    </div>
+  </div>
+</div>

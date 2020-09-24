@@ -1,0 +1,118 @@
+.modal-axle-view {
+  text-align: center;
+  position: relative;
+  height: 90vh;
+  overflow-y: hidden;
+
+  h2 {
+    color: #292F36;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin: 16px 0;
+  }
+
+  .action {
+    position: fixed;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(transparent, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(transparent, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(transparent, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(transparent, white);
+
+    button {
+      cursor: pointer;
+      margin-top: 20px;
+      height: 44px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 100px;
+      text-transform: uppercase;
+      line-height: 15px;
+      font-family: Lato;
+      font-size: 12px;
+
+      &.cancelar {
+        background-color: transparent;
+        color: #7C878F;
+        margin-right: 24px;
+      }
+
+      &.confirmar {
+        transition: background-color 0.5s;
+        background-color: #333d44;
+        background-repeat: no-repeat;
+        background-position: 88px;
+        background-size: 15px auto;
+        padding-right: 20px;
+        color: #FFFFFF;
+      }
+
+      &.disabled {
+        transition: background-color 0.5s;
+        background-color: #D7DBDE;
+
+      }
+    }
+  }
+
+  .content {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 90vh;
+    width: 100%;
+    overflow: scroll;
+
+    .carroussel {
+      display: inline-block;
+      text-align: center;
+      margin-top: 16px;
+      padding-bottom: 100px;
+
+      .veiculo {
+        border: 1px solid #EBEDEE;
+        border-radius: 12px;
+        margin-bottom: 24px;
+        width: 150px;
+        min-height: 150px;
+        text-align: center;
+
+        &.selected {
+          border: 1px solid #FF6A38;
+        }
+
+        .axle {
+          min-height: 70px;
+          padding: 10px;
+
+          .description {
+            width: 100%;
+            font-size: 13px;
+            color: #7C878F;
+            line-height: 16px;
+            vertical-align: middle;
+
+            .title {
+              color: #4D5862;
+              font-weight: bold;
+            }
+          }
+
+          .image {
+            width: 120px;
+            height: 72px;
+            background-size:contain !important;
+            background-repeat:no-repeat !important;
+            background-position: center center !important;
+            margin: 8px;
+          }
+        }
+      }
+    }
+  }
+}

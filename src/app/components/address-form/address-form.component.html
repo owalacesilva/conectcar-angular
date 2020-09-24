@@ -1,0 +1,97 @@
+<div class="form-group">
+  <fieldset class="cep">
+    <cc-spinner stroke="6" size="15" color="#999" *ngIf="loading"></cc-spinner>
+    <input required #cepInput
+      [formControl]="cep"
+      name="cep"
+      id="cep"
+      type="tel"
+      class="form-control"
+      [cc-placeholder]="'CEP'"
+      [textMask]="{ mask: mask }"
+      (input)="onCepFilled($event)"
+    >
+  </fieldset>
+
+  <div [hidden]="!cepSearched" class="full-address">
+    <fieldset class="logradouro">
+      <input required #logradouroInput
+        [formControl]="logradouro"
+        name="logradouro"
+        id="logradouro"
+        type="text"
+        class="form-control logradouro"
+        [cc-placeholder]="'Logadouro'"
+        (input)="disabled = (logradouro.value.length === 0 || !logradouro.valid)"
+      >
+    </fieldset>
+
+    <fieldset class="numero">
+      <input required #numeroInput
+        [formControl]="numero"
+        name="numero"
+        id="numero"
+        type="tel"
+        class="form-control numero"
+        [cc-placeholder]="'Número'"
+        (input)="disabled = (numero.value.length === 0 || !numero.valid)"
+      >
+    </fieldset>
+
+    <fieldset class="complemento">
+      <input #complementoInput
+        [formControl]="complemento"
+        name="complemento"
+        id="complemento"
+        type="text"
+        class="form-control complemento"
+        [cc-placeholder]="'Complemento'"
+        (input)="disabled = (complemento.value.length === 0 || !complemento.valid)"
+      >
+    </fieldset>
+
+    <fieldset class="bairro">
+      <input required #bairroInput
+        [formControl]="bairro"
+        name="bairro"
+        id="bairro"
+        type="text"
+        class="form-control"
+        [cc-placeholder]="'Bairro'"
+        (input)="disabled = (bairro.value.length === 0 || !bairro.valid)"
+      >
+    </fieldset>
+
+    <fieldset class="estado" style="position: relative;">
+      <select required #estadoInput
+        [formControl]="estado"
+        name="estado"
+        id="estado"
+        class="form-control estado"
+        (change)="populateCidades()"
+        [cc-placeholder]="'Estado'">
+        <option *ngFor="let estado of estados" [value]="estado.Sigla">{{ estado.Sigla }}</option>
+      </select>
+      <span class="ic ic_expand"></span>
+    </fieldset>
+
+    <fieldset class="cidade">
+      <input required #cidadeInput
+        [formControl]="cidade"
+        name="cidade"
+        id="cidade"
+        class="form-control cidade"
+        type="text"
+        editable="false"
+        [ngbTypeahead]="buscaCidades"
+        [inputFormatter]="inputFormatter"
+        [resultFormatter]="resultFormatter"
+        [resultTemplate]="listaCidades"
+        [cc-placeholder]="'Cidade'">
+
+      <ng-template #listaCidades let-r="result" let-t="term">
+        {{ r.Cidade }}
+      </ng-template>
+    </fieldset>
+  </div>
+</div>

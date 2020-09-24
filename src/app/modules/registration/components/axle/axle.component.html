@@ -1,0 +1,69 @@
+<div class="view axle-view">
+  <h2 [innerHTML]="R.R('cadastro_axle_titulo')"></h2>
+
+  <div class="form-group">
+    <div class="veiculos">
+      <div class="veiculo" *ngFor="let veiculo of veiculos; let i = index">
+        <div
+          class="delete"
+          (mouseover)="tapDelete = true"
+          (mouseout)="tapDelete = false"
+          (click)="openExclusaoVeiculo(veiculo.Placa)"
+          [ngClass]="{'selected': tapDelete}">
+        </div>
+
+        <div class="plaque">
+          {{veiculo.Placa}}
+        </div>
+
+        <div class="axle">
+        	<div class="axle-box">
+        		<div class="axle-box-avatar">
+		          <div
+		             class="image-container axle-{{veiculo.CategoriaId}}"
+		            (click)="selected(veiculo.Placa); open(modalAxle)"
+		          >
+		            <!-- <img [attr.src]="getAxleImage(veiculo.CategoriaId)" /> -->
+		            <span class="icon" [ngStyle]="{'background-image': 'url(' + getAxleImage(veiculo.CategoriaId) + ')' }"></span>
+		          </div>
+		          <div class="description">
+		              <div class="title" >{{getAxleTitle(veiculo.CategoriaId)}}</div>
+		              <span>{{getAxleDescription(veiculo.CategoriaId)}}</span>
+		          </div>
+        		</div>
+        		<div class="axle-box-action">
+		          <div class="text-right divr">
+                <div
+                class="info-ico"
+                placement="left"
+                triggers="hover"
+                ngbTooltip="{{ R.R('tooltip_veiculo') }}"
+                ></div>
+			          <div class="edit-ico" placement="bottom" (click)="openEdicaoVeiculo(veiculo.Placa)"></div>
+		          </div>
+        		</div>
+        	</div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      *ngIf="veiculos.length < 3"
+      (click)="add($event)"
+      class="add"
+    >Adicionar veículo</button>
+
+    <div class="action">
+      <button
+        onclick="history.back()"
+        class="voltar"
+      >Voltar </button>
+
+      <button
+        [ngClass]="{ avancar: true, disabled: disabled }"
+        (click)="submit($event)"
+        id="next-button"
+      >Avançar</button>
+    </div>
+  </div>
+</div>

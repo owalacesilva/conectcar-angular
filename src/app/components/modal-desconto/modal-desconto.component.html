@@ -1,0 +1,15 @@
+<div class="modal-header text-center">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-title" [innerHTML]="R.R('cadastro_modal_desconto_titulo')"></h4>
+	<p class="sub" [innerHTML]="R.R('modal_desconto_subtitulo')"></p>
+</div>
+
+<div class="modal-body">
+  <div class="content">
+    <img [src]="R.R('cupom_url_' + cupom)" />
+
+    <div class="row-btns text-center">
+      <button (click)="_activeModal.dismiss()" class="btn btn-default" [innerHTML]="R.R('modal_desconto_btn_confirmar')"></button>
+    </div>
+  </div>
+</div>

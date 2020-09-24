@@ -1,0 +1,121 @@
+@import "./../../functions.less";
+
+.modal-backdrop {
+	background-color: #4D5862;
+
+	&.show {
+	  opacity: .9;
+	}
+}
+
+.modal-desconto {
+
+	.modal-dialog {
+		max-width: 360px;
+
+		.modal-content {
+
+			.modal-header {
+				display: block;
+				border: none;
+				margin-top: 50px;
+
+				.modal-title {
+					text-align: center;
+					font-weight: 300;
+				}
+
+				.close {
+			    position: absolute;
+			    background: url("~assets/svg/bt_fechar.svg") no-repeat center center;
+			    background-size: contain;
+			    top: 25px;
+			    right: 15px;
+			    width: 24px;
+			    height: 24px;
+			    opacity: 1;
+				}
+			}
+
+			.modal-body {
+				background: transparent;
+				padding: 15px;
+			}
+		}
+	}
+
+	.sub {
+		width: 280px;
+		margin: 0px auto;
+		text-align: center;
+	}
+
+	img {
+		width: 100%;
+		margin: 0px 0px 30px 0px;
+	}
+
+  .btn {
+    cursor: pointer;
+    height: 40px;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 100px;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+    outline: none;
+    width: 200px;
+    margin: 0px auto;
+
+    &.btn-default {
+      background-color: #FF6A38;
+      color: #fff;
+    }
+
+    &.disabled {
+      transition: background-color 0.5s;
+      background-color: #D7DBDE;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+//@media (min-width: 992px) {
+	.modal-desconto {
+
+		.modal-dialog {
+			max-width: 360px;
+
+			.modal-content {
+
+				.modal-header {
+					display: block;
+					border: none;
+
+					.close {
+						top: initial;
+						bottom: 0px;
+					}
+				}
+
+				.modal-body {
+					background: transparent;
+					padding: 15px;
+				}
+			}
+		}
+
+		.sub {
+			width: 200px;
+			margin: 0px auto;
+			text-align: center;
+			color: #fff !important;
+		}
+
+		.btn-boxed {
+			display: none;
+		}
+	}
+}

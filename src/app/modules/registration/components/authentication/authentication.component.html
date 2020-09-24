@@ -1,0 +1,101 @@
+<div [ngClass]="{ login: path === 'login', 'fb-on': facebookLoggedIn() }" class="view authentication-view">
+  <div class="fb-hidden" *ngIf="!ativacaoOffline">
+    <h2 *ngIf="isLogin" [innerHTML]="R.R('login_cpf_titulo')"></h2>
+    <h2 *ngIf="!isLogin" [innerHTML]=" R.R('cadastro_cpf_titulo')"></h2>
+    <h3>
+    	{{ R.R('cadastro_cpf_subtitulo_1') }}<br />{{ R.R('cadastro_cpf_subtitulo_2') }}
+    </h3>
+  </div>
+
+  <div *ngIf="ativacaoOffline">
+  	<h2>{{ R.R('ativacao_offline_cpf_titulo') }}</h2>
+  	<h3>{{ R.R('ativacao_offline_cpf_subtitulo') }}</h3>
+  </div>
+
+  <div class="form-group"
+    [ngClass]="{'has-danger': showValidation && !cpf.valid }">
+
+    <cc-spinner stroke="6" size="15" color="#999" *ngIf="loading"></cc-spinner>
+    <input required #cpfInput
+      focus-watcher
+      [formControl]="cpf"
+      [textMask]="{mask: mask}"
+      (input)="onChange($event)"
+      novalidate
+      tabindex="0"
+      type="tel"
+      name="cpf"
+      id="cpf"
+      class="form-control"
+      [cc-placeholder]="'Digite seu CPF'"
+    >
+
+    <div *ngIf="showValidation && !cpf.valid && (cpf.dirty || cpf.touched)">
+      <small *ngIf="cpf.value.length > 0 && !cpf.valid" class="help-block">{{ R.R('cadastro_cpf_nao_reconhecido') }}</small>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">ou</div>
+
+    <button
+      class='fb-login'
+      (click)="facebookLogin($event)"
+    >{{ R.R('cadastro_cpf_continuar_facebook') }}</button>
+
+    <div *ngIf="!isLogin" class="bottom-info legal">
+    	{{ R.R('cadastro_cpf_termos') }} <a (click)="openTerms()">Termos de Uso</a> e
+      <a (click)="openTerms()">Política de Privacidade</a>
+    </div>
+
+    <div *ngIf="isLogin" class="bottom-info check-plans">
+      {{ R.R('login_nao_eh_cliente_ainda') }}<br>
+      <a (click)="openPlans()"><strong>{{ R.R('login_conheca_planos') }}</strong></a>
+    </div>
+  </div>
+
+  <button
+    *ngIf="!isLogin"
+    (click)="back($event)"
+    (touchstart)="back($event)"
+    class="back-btn"
+  >Voltar</button>
+</div>
+
+<div *ngIf="!isLogin" class="modals">
+  <ng-template
+    #modalTermos
+    class="modal-window termos"
+    let-c="close"
+    let-d="dismiss"
+  >
+    <div
+      class="modal-window termos"
+    >
+      <div
+        (click)="c()"
+        class="voltar"
+      ><a aria-label="voltar"></a></div>
+
+      <cc-modal-termos></cc-modal-termos>
+    </div>
+  </ng-template>
+
+  <ng-template
+    #modalPrivacidade
+    class="modal-window privacidade"
+    let-c="close"
+    let-d="dismiss"
+  >
+    <div
+      class="modal-window privacidade"
+    >
+      <div
+        (click)="c()"
+        class="voltar"
+      ><a aria-label="voltar"></a></div>
+
+      <cc-modal-privacidade></cc-modal-privacidade>
+    </div>
+  </ng-template>
+</div>

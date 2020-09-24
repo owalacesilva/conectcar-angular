@@ -1,0 +1,85 @@
+<div class="payment">
+  <h2 class="title" [innerHtml]="R.R('cadastro_payment_titulo')"></h2>
+  <h3 [innerHtml]="R.R('cadastro_payment_desc')"></h3>
+
+  <cc-cartao-payment #creditCard [enableCoupon]="true"></cc-cartao-payment>
+
+  <div class="endereco-cobranca">
+    <h2 style="white-space: nowrap;" [innerHtml]="R.R('cadastro_payment_titulo_endereco')"></h2>
+    <fieldset>
+      <input #sameAddressInput id="use-my-address" name="endereco" type="radio" checked (change)="sameAddress()">
+      <label class="address-label">
+        {{
+        ativacaoOffline ?
+          R.R('cadastro_payment_label_usar_endereco_offline') :
+          R.R('cadastro_payment_label_usar_endereco')
+        }}
+      </label>
+      <br>
+      <small>{{ enderecoEntrega }}</small>
+    </fieldset>
+
+    <fieldset>
+      <input id="new-address" name="endereco" type="radio" (change)="openEnderecoCobranca()">
+      <label>
+        {{ R.R('cadastro_payment_label_outro_endereco') }}
+      </label>
+      <br>
+      <small *ngIf="enderecoCobranca !== null" (click)="openEnderecoCobranca()">{{ enderecoCobranca }}</small>
+    </fieldset>
+  </div>
+
+  <div class="adesao-container form-check">
+    <label>
+      <input #adesaoInput [formControl]="adesao" id="adesao" type="checkbox" checked class="form-check-input" checked="false">
+      <small id="adesao-click">{{ R.R('cadastro_pagamento_adesao_checkbox') }} <a target="_blank" href="{{ adesaoLink }}">{{ R.R('cadastro_pagamento_adesao_checkbox_link') }}</a></small>
+    </label>
+  </div>
+
+  <div class="action">
+    <button
+      onclick="history.back()"
+      class="voltar"
+    >Voltar</button>
+
+    <button
+      id="next-button"
+      class="avancar aceitar-pagar"
+      [ngClass]="{ disabled: creditCard.disabled }"
+      (click)="submit($event)"
+    >
+    	ACEITAR E PAGAR
+  	</button>
+  </div>
+
+  <ng-template
+    #modalCobranca
+    let-c="close"
+    let-d="dismiss"
+  >
+    <div class="modal-body">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d()"></button>
+      <h2 [innerHTML]="R.R('compra_pagamento_qual_endereco_cobranca')"></h2>
+
+      <br>
+
+      <cc-address-form
+        #addressForm
+        [dadosEndereco]="dadosEndereco()"
+        tipoEndereco="Cobranca">
+      </cc-address-form>
+
+      <div class="action">
+        <button
+          class="cancelar"
+          (click)="d()"
+        >Cancelar</button>
+
+        <button
+          [ngClass]="{ confirmar: true, disabled: addressForm.checkDisabled() }"
+          (click)="c(addressForm)"
+          >{{ ativacaoOff ? 'Ativar' : 'Confirmar' }}</button>
+      </div>
+    </div>
+  </ng-template>
+</div>

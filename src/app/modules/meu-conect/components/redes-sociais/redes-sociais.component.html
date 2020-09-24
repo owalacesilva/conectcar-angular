@@ -1,0 +1,56 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="container-fluid container-page">
+  <div class="redes-sociais">
+    <div class="titulo">
+      <h1>Redes Sociais</h1>
+    </div>
+
+    <div class="conteudo">
+      <div class="mobile-titulo">
+        <p>FACEBOOK</p>
+      </div>
+      <div class="titulo-associar">
+        <p>Associar com Facebook</p>
+      </div>
+      <div class="mobile-descricao">
+        <p>Conectando com o Facebook podemos<br> sincronizar informações de foto, nome, email<br> e telefone. Não postaremos nada no seu facebook<br> sem sua autorização.</p>
+      </div>
+      <div class="descricao">
+        <p>Conectando com o Facebook podemos sincronizar informações de foto, nome, email e telefone. Não postaremos nada no seu facebook sem sua autorização.</p>
+      </div>
+    </div>
+
+    <div class="text-center" *ngIf="loading">
+			<cc-spinner stroke="2" size="60" color="#999"></cc-spinner>
+    </div>
+
+    <div class="action" *ngIf="!facebookLoggedIn() && !loading">
+      <button (click)="facebookLogin()"> Associar com Facebook </button>
+    </div>
+
+    <div class="action" *ngIf="facebookLoggedIn() && !loading">
+      <div class="conta-associada">
+        <div class="icone-foto">
+        	<img src="http://graph.facebook.com/{{ getFacebookUsuarioId() }}/picture?type=normal" alt="Facebook Picture" />
+        </div>
+        <div class="textos">
+          <p class="title">
+            Facebook conectado
+          </p>
+          <p class="nome">
+            {{cliente.NomeCompleto}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="action" *ngIf="facebookLoggedIn() && !loading">
+      <div class="action">
+        <button class="desassociar" (click)="facebookLogout()"> Desassociar do Facebook </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<cc-footer></cc-footer>

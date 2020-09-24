@@ -1,0 +1,40 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="container-fluid container-page">
+	<div class="container">
+		<h1 class="page-title">
+			{{ R.R('ativacao_titulo') }}
+			<div class="contadores">
+				<span class="ativacao">Ativação</span>
+				<span class="contador">Adesivo 1 de 3</span>
+			</div>
+		</h1>
+		<div class="contadores xs">
+			<span class="ativacao">Ativação</span>
+			<span class="contador">Adesivo 1 de 3</span>
+		</div>
+		<h3 class="page-subtitle">Confirme a <strong>placa</strong> do seu veículo</h3>
+
+    <div class="plaque-preview plaque-adesivo">
+      <app-placa #gnplaca [readonly]="true"></app-placa>
+    </div>
+
+    <div class="text-center">
+    	<a href="javascript:;" class="link-no-plaque" (click)="openModalEditarPlaque()">minha placa não é essa</a>
+    </div>
+
+		<div class="row row-btns">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+				<button type="button" class="btn btn-vazado">{{ R.R('ativacao_btn_voltar') }}</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+        <button type="button" class="btn btn-boxed" (click)="next()">
+					<span class="txt">{{ R.R('ativacao_btn_avancar') }}</span>
+					<span class="ic_avancar"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<cc-footer></cc-footer>

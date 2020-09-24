@@ -1,0 +1,232 @@
+@import "functions.less";
+
+.container-fluid {
+	background-color: #fff;
+}
+
+.container-page {
+	padding: 10px 0px 40px 0px;
+
+	.page-title {
+		display: none;
+		color: #292F36;
+		font-family: Lato;
+		font-size: 24px;
+		line-height: 39px;
+		font-weight: 300;
+		padding-bottom: 10px;
+		border-bottom: none;
+		text-align: center;
+	}
+
+	.page-subtitle {
+		text-align: center;
+		color: #292F36;
+		font-family: Lato;
+		font-size: 18px;
+		line-height: 25px;
+		font-weight: 300;
+    margin-top: 45px;
+    margin-bottom: 40px;
+	}
+
+	.contadores {
+		float: inherit;
+		text-align: center;
+
+		.ativacao {
+	    position: relative;
+	    display: block;
+			color: #FF9268;
+			font-family: Lato;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 16px;
+	    top: 13px;
+	    line-height: 14px;
+		}
+
+		.contador {
+	    position: relative;
+	    display: block;
+			color: #B5BDC4;
+			font-family: Lato;
+			font-weight: normal;
+			font-size: 13px;
+	    top: 17px;
+			line-height: 14px;
+		}
+	}
+
+	.plaque-adesivo {
+		text-align: center;
+    position: relative;
+    width: 300px;
+    height: 80px;
+    margin: 0px auto;
+
+    &:after {
+    	display: table;
+    	content: " ";
+    	clear: both;
+    }
+
+	  fieldset {
+	    float: left;
+
+	    &.pre-adesivo {
+	      width: 200px;
+		    color: #A0A7AE;
+		    font-size: 34px;
+
+		    span {
+			    font-weight: 300;
+			    letter-spacing: 5px;		    	
+		    }
+	    }
+
+	    &.num-adesivo {
+	      width: 100px;
+	    }
+
+	    div { position: absolute; }
+	  }
+
+    .text {
+      position: absolute;
+      right: 0;
+      left:0;
+      bottom: 0;
+      top: 0;
+      margin: 0px;
+      height: 54px;
+      width: 100%;
+
+      input {
+      	width: 100%;
+        font-size: 34px;
+        letter-spacing: 0.25em;
+        font-family: 'Droid Sans Mono';
+        color: #292F36;
+        border-bottom: 1px solid #c4cace;
+        text-align: center;
+      }
+    }
+
+		input::-webkit-input-placeholder {
+			line-height: 1 !important;
+		}
+	}
+
+	.link-no-plaque {
+    text-transform: uppercase;
+    color: #FF6A38;
+    font-size: 12px;
+    font-weight: 700;
+	}
+
+	.row-btns {
+    max-width: 360px;
+    margin: 0px auto;
+    margin-top: 50px;
+
+		.col-xs-6 {
+			width: 50%;
+		}
+	}
+
+  .btn {
+  	cursor: pointer;
+    position: relative;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+		min-width: 118px;
+		padding: 15px 0;
+    font-size: 12px;
+		text-transform: uppercase;
+		outline: none;
+
+    &.btn-boxed {
+      border-color: #FF6A38;
+      color: #fff;
+      font-weight: bold;
+      font-family: Lato;
+      .transition;
+      background-color: #FF6A38;;
+
+      &:hover, body.mobile & {
+        background-color: #FF6A38;
+        color: #ffffff;
+      }
+
+      .txt {
+      	margin-right: 20px;
+      }
+
+	    .ic_avancar {
+				position: absolute;
+				right: 15px;
+				background: url("~assets/svg/ico_avancar.svg") no-repeat center center;
+		    width: 18px;
+		    height: 15px;
+		    background-size: 100%;
+	    }
+    }
+
+    &.btn-vazado {
+      border: none;
+    	color: #7C878F;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 768px) {
+	.container-page {
+		padding: 60px 0px 80px 0px;
+
+		.container {
+			width: 960px;
+		}
+
+		.page-title {
+			display: block;
+			font-size: 32px;
+			text-align: left;
+			border-bottom: solid 1px #e8e6e6;
+		}
+
+		.page-subtitle {
+			font-size: 20px;
+			line-height: 25px;
+		}
+
+		.contadores {
+			float: right;
+			text-align: right;
+
+			&.xs {
+				display: none;
+			}
+
+			.ativacao {
+				font-size: 14px;
+			}
+
+			.contador {
+				font-size: 11px;
+			}
+		}
+
+		.row-content {
+
+			.alert-title {
+				font-size: 24px;
+				font-weight: 300;
+			}
+		}
+	}
+}

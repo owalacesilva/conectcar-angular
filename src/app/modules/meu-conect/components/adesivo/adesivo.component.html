@@ -1,0 +1,49 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="container-fluid container-page">
+	<div class="container">
+		<h1 class="page-title">
+			{{ R.R('ativacao_titulo') }}
+			<div class="contadores">
+				<span class="ativacao">Ativação</span>
+				<span class="contador">Adesivo 2 de 3</span>
+			</div>
+		</h1>
+		<div class="contadores xs">
+			<span class="ativacao">Ativação</span>
+			<span class="contador">Adesivo 2 de 3</span>
+		</div>
+		<h3 class="page-subtitle">Digite os <strong>3 últimos números do adesivo</strong><br />que você vai colar nesse veículo</h3>
+
+	  <div class="plaque-preview plaque-adesivo">
+	    <div class="text text-right">
+	      <fieldset class="pre-adesivo">
+          <span>{{ adesivoPrefix }}</span>
+	      </fieldset>
+
+	      <fieldset class="num-adesivo">
+	        <input required #tag type="tel" (input)="disabled = (tag.value !== adesivoSuffix)">
+	      </fieldset>
+	    </div>
+	  </div>
+
+    <div class="text-center">
+    	<a href="javascript:;" class="link-no-plaque" (click)="openModalEditarPlaque()">meu adesivo não é esse</a>
+    </div>
+
+		<div class="row row-btns">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+				<button type="button" class="btn btn-vazado">{{ R.R('ativacao_btn_voltar') }}</button>
+			</div>
+
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+        <button type="button" class="btn btn-boxed" [ngClass]="{ disabled: disabled }" (click)="next()">
+					<span class="txt">{{ R.R('ativacao_btn_avancar') }}</span>
+					<span class="ic_avancar"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<cc-footer></cc-footer>

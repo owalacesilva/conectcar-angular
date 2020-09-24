@@ -1,0 +1,72 @@
+<div class="view birthdate-view">
+  <h2 [innerHTML]="R.R('cadastro_birthdate_titulo')"></h2>
+  <h3 [innerHTML]="R.R('cadastro_birthdate_subtitulo')"></h3>
+
+  <div class="form-group">
+    <fieldset class="date">
+      <input required #dateInput
+        [formControl]="date"
+        focus-watcher
+        class="form-control"
+        name="date"
+        id="date"
+        type="tel"
+        [textMask]="{ mask: mask }"
+        [cc-placeholder]="'Dia'"
+        (input)="onDateInput()"
+        (keydown.enter)="submit($event)"
+      >
+    </fieldset>
+
+    <fieldset class="month">
+      <input required #monthInput
+        [formControl]="month"
+        focus-watcher
+        name="month"
+        class="form-control"
+        id="month"
+        type="tel"
+        [textMask]="{ mask: mask }"
+        [cc-placeholder]="'Mês'"
+        (input)="onMonthInput()"
+        (keydown.enter)="submit($event)"
+      >
+    </fieldset>
+
+    <fieldset class="year">
+      <input required #yearInput
+        [formControl]="year"
+        focus-watcher
+        name="year"
+        id="year"
+        class="form-control"
+        type="tel"
+        [textMask]="{ mask: yearMask }"
+        [cc-placeholder]="'Ano'"
+        (blur)="yearBlur = true"
+        (input)="onYearInput()"
+        (keydown.enter)="submit($event)"
+      >
+    </fieldset>
+
+    <div class="clearfix" *ngIf="yearBlur && disabled && (date.value && month.value && invalidYear)">
+      <small class="help-block">{{ R.R('cadastro_nascimento_data_invalida') }}</small>
+    </div>
+
+    <div class="action">
+      <button
+        (click)="back($event)"
+        (touchstart)="back($event)"
+        class="voltar"
+      >Voltar</button>
+
+      <button
+        class="avancar"
+        [ngClass]="{ disabled: disabled }"
+        (click)="submit($event)"
+        (touchstart)="submit($event)"
+        id="next-button"
+      >Avançar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,173 @@
+@import 'functions.less';
+.select2-selection,
+  select,
+  input[type="tel"],
+  input[type="text"],
+  input[type="phone"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
+  width: 100%;
+  color: #7C878F;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 18px;
+  border: 0;
+  border-radius: 0px;
+  border-bottom: 1px solid #7C878F;
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: left;
+
+  &:focus {
+    border-bottom: 2px solid #4D5862;
+    outline: 0;
+  }
+}
+
+.dropdown-menu {
+  border: 1px solid #7C878F;
+  border-top: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  width: 100%;
+
+  .dropdown-item {
+    text-transform: none;
+    border-radius: 0px;
+    color: #7C878F;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 38px;
+    padding: 0px 8px;
+
+    &.active {
+      color: #fff;
+    }
+  }
+
+  button {
+    line-height: 18px;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.action {
+  position: relative;
+  text-align: center;
+  margin: 200px auto;
+  width: 280px;
+  body.mobile.inputActive & {
+    margin: 10px auto;
+  }
+}
+
+button {
+  cursor: pointer;
+  margin-top: 20px;
+  height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 100px;
+  text-transform: uppercase;
+  line-height: 15px;
+  font-family: Lato;
+  font-size: 12px;
+  .bold-weight();
+
+  &.voltar {
+    background-color: #FFF;
+    color: #7C878F;
+    margin-right: 24px;
+  }
+
+  &.adicionar {
+    transition: background-color 0.5s;
+    background-color: #333d44;
+    background-repeat: no-repeat;
+    background-position: 88px;
+    background-size: 15px auto;
+    padding-right: 20px;
+    color: #FFFFFF;
+  }
+
+  &.avancar {
+    transition: background-color 0.5s;
+    background-color: #FF6A38;
+    background-image: url("~assets/svg/ico_avancar.svg");
+    background-repeat: no-repeat;
+    background-position: 88px;
+    background-size: 15px auto;
+    padding-right: 40px;
+    color: #FFFFFF;
+  }
+
+  &.disabled {
+    transition: background-color 0.5s;
+    background-color: #D7DBDE;
+  }
+}
+
+fieldset {
+  display: inline-block;
+  padding: 8px 0;
+
+  &.cep {
+  	position: relative;
+    width: 100%;
+  }
+
+  &.bairro {
+    width: 100%;
+  }
+
+  &.cidade {
+    width: 100%;
+  }
+
+  &.estado   {
+    width: 100%;
+  }
+
+  &.complemento {
+    width: 48%;
+  }
+
+  &.numero {
+    width: 48%;
+    margin-right: 3%;
+  }
+
+  &.logradouro {
+    width: 100%
+  }
+
+  div {
+    position: inline;
+  }
+}
+
+cc-spinner {
+  display: block;
+  position: absolute;
+  margin: 12px 10px;
+  right: 0;
+}
+
+.ic_expand {
+  background: url("~assets/svg/ic_expand_down.svg") no-repeat center center;
+  position: absolute;
+  width: 17px;
+  height: 8px;
+  top: 20px;
+  right: 0;
+}
+
+.form-check {
+  text-align: left;
+  margin-top: 18px;
+  color: #7C878F;
+}

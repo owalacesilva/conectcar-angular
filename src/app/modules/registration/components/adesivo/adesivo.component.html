@@ -1,0 +1,40 @@
+<div class="view adesivo-view">
+	<div class="container-fluid container-page">
+		<div class="container">
+			<h3 class="page-title">Qual o número do seu <strong>adesivo?</strong></h3>
+			<p class="page-subtitle">{{ R.R('ativacao_offline_adesivo_subtitulo') }}</p>
+
+      <fieldset class="num-adesivo">
+        <input
+        	type="tel"
+        	#inputAdesivo
+        	[formControl]="controlAdesivo"
+        	(input)="disabled = (controlAdesivo.value.length === 0 || !controlAdesivo.valid)"
+        	name="adesivo"
+        	required />
+      </fieldset>
+
+	    <div class="text-center">
+	    	<a href="javascript:;" class="link-no-plaque" (click)="semAdesivo()">Ainda não tenho o adesivo ConectCar</a>
+	    </div>
+
+			<div class="row row-btns">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+					<button type="button" class="btn btn-vazado" (click)="back($event)">{{ R.R('ativacao_btn_voltar') }}</button>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+					<button
+						type="button"
+						class="btn btn-boxed"
+						[ngClass]="{ disabled: disabled }"
+						[disabled]="disabled"
+						(click)="submit($event)"
+					>
+						<span class="txt">{{ R.R('ativacao_btn_avancar') }}</span>
+						<span class="ic_avancar"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

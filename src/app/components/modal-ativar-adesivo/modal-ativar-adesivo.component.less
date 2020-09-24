@@ -1,0 +1,408 @@
+@import "./../../functions.less";
+
+.modal-backdrop {
+	background-color: #4D5862;
+
+	&.show {
+	  opacity: .9;
+	}
+}
+
+.modal-ativar-adesivo {
+
+	.modal-dialog {
+
+		.modal-content {
+			.modal-header {
+				display: block;
+				border: none;
+				padding: 40px 30px 15px 30px;
+
+				.modal-title {
+					color: #4D5862;
+					font-family: Lato;
+	    		font-size: 20px;
+	    		font-weight: 300;
+					line-height: 24px;
+					text-align: center;
+				}
+
+				.close {
+					position: absolute;
+					background: url("~assets/svg/bt_fechar.svg") no-repeat center center;
+					background-size: contain;
+			    top: 10px;
+			    right: 10px;
+					width: 18px;
+					height: 19px;
+					opacity: 1;
+					z-index: 999;
+				}
+			}
+
+			.modal-body {
+				padding: 50px 0px;					
+				max-width: 360px;
+				margin: 0px auto;
+				height: auto;
+			}
+		}
+	}
+
+	.wrapper {
+
+		.col-wrapper {
+			text-align: center;
+
+			&:first-child {
+				margin-bottom: 40px;
+			}
+
+			.col-icon {
+				display: none;
+		    position: relative;
+		    text-align: center;
+		    margin-bottom: 10px;
+
+				.icon {
+					display: block;
+					position: relative;
+			    width: 51px;
+			    height: 51px;
+			    margin: 0px auto;
+				}
+			}
+
+			h4 {
+				color: #4D5862;
+				font-family: Lato;
+    		font-size: 16px;
+    		font-weight: normal;
+				line-height: 22px;
+				text-align: center;
+				height: 44px;
+				display: none;
+
+				.icon {
+					display: none;
+					position: absolute;
+    			left: 55px;
+    			background-size: 80%;
+				}
+			}
+
+			.icon {
+	    	background: url("~assets/svg/ico_moto.svg") no-repeat center center;
+
+	    	&.ic_comprou_um_adesivo {
+	    		background-image: url("~assets/svg/ic_comprou_um_adesivo.svg");
+			    width: 62px;
+			    height: 57px;
+	    	}
+
+	    	&.ic_ja_recebeu_adesivo {
+	    		background-image: url("~assets/svg/ic_ja_recebeu_adesivo.svg");
+			    width: 51px;
+			    height: 57px;
+	    	}
+
+	    	&.ic_nao_recebeu_seu_adesivo {
+	    		background-image: url("~assets/svg/ic_nao_recebeu_seu_adesivo.svg");
+			    width: 62px;
+			    height: 57px;
+	    	}		    	
+			}
+
+			.wrapper-xs {
+				position: relative;
+				width: 260px;
+				margin: 0px auto;
+				min-height: 44px;
+
+				.wrapper-xs-content {
+					padding-left: 60px;
+					text-align: left;
+
+					&.add {
+						padding-bottom: 20px;
+					}
+				}
+
+				.icon {
+			    position: absolute;
+			    background-size: 100%;
+
+		    	&.ic_ja_recebeu_adesivo {
+		    		background-image: url("~assets/svg/ic_ja_recebeu_adesivo.svg");
+				    top: -5px;
+				    left: 6px;
+				    width: 37px;
+				    height: 37px;
+		    	}
+
+		    	&.ic_nao_recebeu_seu_adesivo {
+		    		background-image: url("~assets/svg/ic_nao_recebeu_seu_adesivo.svg");
+				    top: -25px;
+				    left: 0px;
+				    width: 47px;
+				    height: 47px;
+		    	}
+
+		    	&.ic_comprou_um_adesivo {
+		    		background-image: url("~assets/svg/ic_comprou_um_adesivo.svg");
+				    top: 0px;
+				    left: 15px;
+				    width: 37px;
+				    height: 37px;
+		    	}
+				}
+			}
+
+		  .btn {
+		  	cursor: pointer;
+		    position: relative;
+		    border-radius: 100px;
+		    -moz-border-radius: 100px;
+		    -webkit-border-radius: 100px;
+				width: 220px;
+				padding: 15px 0;
+		    font-size: 14px;
+
+		    &.btn-primary {
+		      border-color: #FF6A38;
+		      color: #fff;
+		      font-weight: bold;
+		      font-family: Lato;
+		      .transition;
+		      background-color: #FF6A38;;
+
+		      &:hover, body.mobile & {
+		        background-color: #FF6A38;
+		        color: #ffffff;
+		      }
+		    }
+
+		    &.btn-vazado {
+		      border-color: #4D5862;
+		    	background-color: #fff;
+		    	color: #4D5862;
+
+		      &:hover {
+		      	border-color: #FF6A38;
+		        background-color: #FF6A38;
+		        color: #ffffff;
+		      }
+				}
+
+				&.btn-comprou {
+					text-transform: capitalize;
+				}
+			}
+		}
+
+		.divisoria {
+			margin-bottom: 40px;
+
+			span {
+				display: block;
+				color: #4D5862;
+				font-family: Lato;
+    		font-size: 16px;
+    		font-weight: 300;
+				line-height: 22px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.modal-ativar-adesivo {
+
+		.modal-dialog {
+
+			.modal-content {
+				.modal-header {
+					padding: 15px 15px 15px 30px;
+
+					.modal-title {
+						color: #fff;
+						font-family: Lato;
+						font-size: 26px;
+						line-height: 32px;
+		    		font-weight: 300;
+						text-align: center;
+					}
+
+					.close {
+						background: url("~assets/svg/ic_modal_close.svg") no-repeat center center;
+				    top: -20px;
+				    right: 85px;
+					}
+				}
+
+				.modal-body {
+					padding: 50px 0px;					
+					max-width: 360px;
+					margin: 0px auto;
+					height: auto;
+				}
+			}
+		}
+
+		.wrapper {
+			.col-wrapper {
+				text-align: center;
+
+				&:first-child {
+					margin-bottom: 40px;
+				}
+
+				.col-icon {
+					display: none;
+			    position: relative;
+			    text-align: center;
+			    margin-bottom: 10px;
+
+					.icon {
+						display: block;
+						position: relative;
+				    width: 51px;
+				    height: 51px;
+				    margin: 0px auto;
+					}
+				}
+
+				h4 {
+					color: #4D5862;
+					font-family: Lato;
+	    		font-size: 16px;
+	    		font-weight: 300;
+					line-height: 22px;
+					text-align: center;
+					height: 44px;
+					display: none;
+
+					.icon {
+						display: none;
+						position: absolute;
+	    			left: 55px;
+	    			background-size: 80%;
+					}
+				}
+
+				.icon {
+		    	background: url("~assets/svg/ico_moto.svg") no-repeat center center;
+
+		    	&.ic_comprou_um_adesivo {
+		    		background-image: url("~assets/svg/ic_comprou_um_adesivo.svg");
+				    width: 62px;
+				    height: 57px;
+		    	}
+
+		    	&.ic_ja_recebeu_adesivo {
+		    		background-image: url("~assets/svg/ic_ja_recebeu_adesivo.svg");
+				    width: 51px;
+				    height: 57px;
+		    	}
+
+		    	&.ic_nao_recebeu_seu_adesivo {
+		    		background-image: url("~assets/svg/ic_nao_recebeu_seu_adesivo.svg");
+				    width: 62px;
+				    height: 57px;
+		    	}		    	
+				}
+
+				.wrapper-xs {
+					position: relative;
+					width: 260px;
+					margin: 0px auto;
+					min-height: 44px;
+
+					.wrapper-xs-content {
+						padding-left: 60px;
+						text-align: left;
+
+						&.add {
+							padding-bottom: 20px;
+						}
+
+						span {
+							font-weight: 300;
+						}
+					}
+
+					.icon {
+				    position: absolute;
+				    background-size: 100%;
+
+			    	&.ic_ja_recebeu_adesivo {
+			    		background-image: url("~assets/svg/ic_ja_recebeu_adesivo.svg");
+					    top: -5px;
+					    left: 6px;
+					    width: 37px;
+					    height: 37px;
+			    	}
+
+			    	&.ic_nao_recebeu_seu_adesivo {
+			    		background-image: url("~assets/svg/ic_nao_recebeu_seu_adesivo.svg");
+					    top: -25px;
+					    left: 0px;
+					    width: 47px;
+					    height: 47px;
+			    	}
+
+			    	&.ic_comprou_um_adesivo {
+			    		background-image: url("~assets/svg/ic_comprou_um_adesivo.svg");
+					    top: 0px;
+					    left: 15px;
+					    width: 37px;
+					    height: 37px;
+			    	}
+					}
+				}
+
+			  .btn {
+			  	cursor: pointer;
+			    position: relative;
+			    border-radius: 100px;
+			    -moz-border-radius: 100px;
+			    -webkit-border-radius: 100px;
+					width: 220px;
+					padding: 15px 0;
+			    font-size: 14px;
+
+			    &.btn-primary {
+			      border-color: #FF6A38;
+			      color: #fff;
+			      font-weight: bold;
+			      font-family: Lato;
+			      .transition;
+			      background-color: #FF6A38;;
+
+			      &:hover, body.mobile & {
+			        background-color: #FF6A38;
+			        color: #ffffff;
+			      }
+			    }
+
+			    &.btn-vazado {
+			      border-color: #4D5862;
+			    	background-color: #fff;
+			    	color: #4D5862;
+
+			      &:hover {
+			      	border-color: #FF6A38;
+			        background-color: #FF6A38;
+			        color: #ffffff;
+			      }
+					}
+
+					&.btn-comprou {
+						text-transform: capitalize;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="71px" height="71px" viewBox="0 0 71 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>ic Pedágio Detalhe</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.206211768 0.123615272 6.66211904 0.123615272 6.66211904 3.96138526 0.206211768 3.96138526 0.206211768 0.123615272"></polygon>
+        <polygon id="path-3" points="1.00335037 0.123615272 8.24194501 0.123615272 8.24194501 3.96138526 1.00335037 3.96138526 1.00335037 0.123615272"></polygon>
+        <polygon id="path-5" points="1.23309932 0.123615272 9.30076036 0.123615272 9.30076036 3.96138526 1.23309932 3.96138526 1.23309932 0.123615272"></polygon>
+        <polygon id="path-7" points="0.299980656 0.123615272 8.14698341 0.123615272 8.14698341 3.96138526 0.299980656 3.96138526 0.299980656 0.123615272"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-Pedágio-Detalhe">
+            <g id="Group-7">
+                <g id="Page-1" transform="translate(16.000000, 14.000000)">
+                    <g id="Group-4" transform="translate(0.000000, 8.006628)" stroke-linecap="round" stroke="#FFFFFF" stroke-linejoin="round">
+                        <polygon id="Stroke-1" points="1.42413908 30.4765763 17.3292099 30.4765763 17.3292099 6.04518556 1.42413908 6.04518556"></polygon>
+                        <polygon id="Stroke-3" points="18.4684642 0.209234514 0.28477085 0.209234514 1.42408211 6.04535646 17.329153 6.04535646"></polygon>
+                    </g>
+                    <polygon id="Stroke-5" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" points="5.80649985 23.9387565 13.0904024 23.9387565 13.0904024 18.2410609 5.80649985 18.2410609"></polygon>
+                    <g id="Group" transform="translate(12.689655, 0.000000)">
+                        <g id="Group-8" transform="translate(25.374275, 7.042064) rotate(-40.000000) translate(-25.374275, -7.042064) translate(21.408758, 4.662754)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-7"></g>
+                            <path d="M0.333557251,-0.896320661 L6.78946453,5.55958661" id="Stroke-6" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                        </g>
+                        <g id="Group-11" transform="translate(19.992926, 11.736388) rotate(-40.000000) translate(-19.992926, -11.736388) translate(15.234306, 9.357078)">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g id="Clip-10"></g>
+                            <path d="M0.570932753,-0.896320661 L7.02684003,5.55958661" id="Stroke-9" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-4)"></path>
+                        </g>
+                        <g id="Group-14" transform="translate(13.044947, 16.940510) rotate(-40.000000) translate(-13.044947, -16.940510) translate(8.286326, 14.561199)">
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <g id="Clip-13"></g>
+                            <path d="M1.6297481,-0.896320661 L8.08565538,5.55958661" id="Stroke-12" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-6)"></path>
+                        </g>
+                        <g id="Group-17" transform="translate(7.375737, 22.144631) rotate(-40.000000) translate(-7.375737, -22.144631) translate(2.617116, 19.765320)">
+                            <mask id="mask-8" fill="white">
+                                <use xlink:href="#path-7"></use>
+                            </mask>
+                            <g id="Clip-16"></g>
+                            <path d="M0.371101918,-2.60580104 L6.82700919,3.85010624" id="Stroke-15" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-8)"></path>
+                        </g>
+                        <polygon id="Stroke-21" stroke="#FFFFFF" stroke-linejoin="round" transform="translate(16.165422, 14.678341) rotate(-40.000000) translate(-16.165422, -14.678341) " points="-0.490653597 16.7824459 32.8214977 16.5018223 32.8214977 12.6640523 3.0404544 12.5742353"></polygon>
+                    </g>
+                </g>
+                <circle id="Oval-2" stroke="#FF6A38" cx="35.3052515" cy="35.3052515" r="35.3052515"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

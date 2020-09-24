@@ -1,0 +1,37 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="container-fluid container-page">
+	<div class="container">
+		<h1 class="page-title">
+			{{ R.R('ativacao_titulo') }}
+			<div class="contadores">
+				<span class="ativacao">Ativação</span>
+				<span class="contador">Adesivo 1 de 3</span>
+			</div>
+		</h1>
+		<div class="contadores xs">
+			<span class="ativacao">Ativação</span>
+			<span class="contador">Adesivo 1 de 3</span>
+		</div>
+		<div class="row-content">
+			<h3 class="alert-title">{{ R.R('ativacao_titulo_atencao') }}</h3>
+			<div class="icon">
+				<span></span>
+			</div>
+			<p class="alert-desc">A ativação realiza o vínculo do veículo com o adesivo. Se houver divergência, você está <strong>sujeito a multa</strong> por evasão de pedágio, por parte dos órgãos reguladores.</p>
+			<div class="row row-btns">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+					<button type="button" class="btn btn-vazado">{{ R.R('ativacao_btn_voltar') }}</button>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+					<button type="button" class="btn btn-boxed">
+						<span class="txt">{{ R.R('ativacao_btn_avancar') }}</span>
+						<span class="ic_avancar"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<cc-footer></cc-footer>

@@ -1,0 +1,82 @@
+<div class="image">
+  <svg width="435px" height="170px" viewBox="0 0 435 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="placa-md">
+      <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+      <title>Placa Grande</title>
+      <desc>Created with Sketch.</desc>
+      <defs></defs>
+      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Placa-Grande">
+              <g id="Placa">
+                  <g id="Group-3" transform="translate(26.155063, 23.666065)">
+                      <rect id="Rectangle-4" stroke="#DADBDE" x="1.3012139" y="0.5" width="380.087446" height="24.1975964" rx="3"></rect>
+                      <ellipse id="Oval" stroke="#D8DBDE" cx="367.547468" cy="12.5987982" rx="4.12974684" ry="4.19959941"></ellipse>
+                      <ellipse id="Oval-Copy" stroke="#D8DBDE" cx="13.7658228" cy="12.5987982" rx="4.12974684" ry="4.19959941"></ellipse>
+                  </g>
+                  <g id="Group-4" opacity="0.5" transform="translate(97.969909, 11.198932)" stroke="#D8DBDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M0.580243161,2.0997997 L14.506079,2.0997997" id="Line-3"></path>
+                      <path d="M224.554103,2.0997997 L238.479939,2.0997997" id="Line-3-Copy"></path>
+                  </g>
+                  <g id="Group-4-Copy" opacity="0.5" transform="translate(97.969909, 156.279128)" stroke="#D8DBDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M0.580243161,2.0997997 L14.506079,2.0997997" id="Line-3"></path>
+                      <path d="M224.554103,2.0997997 L238.479939,2.0997997" id="Line-3-Copy"></path>
+                  </g>
+                  <path d="M425,169.48779 C430.246705,169.48779 434.5,165.234495 434.5,159.98779 L434.5,10.972414 C434.5,5.72570886 430.246705,1.47241398 425,1.47241398 L10,1.47241398 C4.75329488,1.47241398 0.5,5.72570886 0.5,10.972414 L0.5,159.98779 C0.5,165.234495 4.75329488,169.48779 10,169.48779 L425,169.48779 Z" id="Rectangle" stroke="#DADBDE"></path>
+              </g>
+          </g>
+      </g>
+  </svg>
+  <svg width="300px" height="111px" viewBox="0 0 316 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="placa-xs">
+      <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+      <title>Placa</title>
+      <desc>Created with Sketch.</desc>
+      <defs></defs>
+      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Placa">
+              <g>
+                  <g id="Group-3" transform="translate(19.000000, 15.452548)">
+                      <rect id="Rectangle-4" stroke="#DADBDE" x="1.08203125" y="0.5" width="275.835938" height="15.4525483" rx="3"></rect>
+                      <ellipse id="Oval" stroke="#D8DBDE" cx="267" cy="8.22627413" rx="3" ry="2.74209138"></ellipse>
+                      <ellipse id="Oval-Copy" stroke="#D8DBDE" cx="10" cy="8.22627413" rx="3" ry="2.74209138"></ellipse>
+                  </g>
+                  <g id="Group-4" opacity="0.5" transform="translate(71.168945, 7.312244)" stroke="#D8DBDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M0.421509974,1.37104569 L10.5377494,1.37104569" id="Line-3"></path>
+                      <path d="M163.12436,1.37104569 L173.240599,1.37104569" id="Line-3-Copy"></path>
+                  </g>
+                  <g id="Group-4-Copy" opacity="0.5" transform="translate(71.168945, 102.041078)" stroke="#D8DBDE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M0.421509974,1.37104569 L10.5377494,1.37104569" id="Line-3"></path>
+                      <path d="M163.12436,1.37104569 L173.240599,1.37104569" id="Line-3-Copy"></path>
+                  </g>
+                  <path d="M306,110.492028 C311.246705,110.492028 315.5,106.238733 315.5,100.992028 L315.5,10.6349291 C315.5,5.38822401 311.246705,1.13492913 306,1.13492913 L12.9508197,1.13492913 C6.06241665,1.13492913 0.5,6.09242899 0.5,12.1773379 L0.5,99.4496189 C0.5,105.534528 6.06241665,110.492028 12.9508197,110.492028 L306,110.492028 Z" id="Rectangle" stroke="#DADBDE"></path>
+              </g>
+          </g>
+      </g>
+  </svg>
+
+  <div class="text">
+    <fieldset class="placa-1">
+      <input required #inputChars
+        [formControl]="plaque1"
+        name="plaque"
+        id="plaque"
+        type="text"
+        placeholder="XXX"
+        [textMask]="{ mask: mask1, guide: false, placeholderChar: ' ' }"
+        (input)="onInput1()"
+        (keydown.enter)="add($event)"
+      >
+    </fieldset>
+
+    <fieldset class="placa-2">
+      <input required #inputNumbers
+        [formControl]="plaque2"
+        name="plaque2"
+        id="plaque2"
+        type="tel"
+        placeholder="0000"
+        [textMask]="{ mask: mask2, guide: false, placeholderChar: ' ' }"
+        (input)="onInput2()"
+        (keydown.enter)="add($event)"
+      >
+    </fieldset>
+  </div>
+</div>

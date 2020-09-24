@@ -1,0 +1,239 @@
+<div class="container-fluid container-flux">
+	<div class="row">
+		<div *ngIf="!full" class="col-lg-6 col-bg">
+			<div class="bg-img" [ngClass]="bgcontent"></div>
+      <div routerLink="/" class="logconectcar"></div>
+			<div class="txt-content">
+				<div class="valign" [innerHTML]="txtcontent"></div>
+			</div>
+		</div>
+
+    <div class="content" [ngClass]="{ 'col-lg-6': !full, 'col-lg-12': full }" style="padding: 0px;">
+      <div *ngIf="visible">
+        <reg-menu></reg-menu>
+      </div>
+
+		  <div class="registration">
+		    <div class="steps" [style.height]="height + 'px'">
+		      <div
+		        class="holder cpf"
+						*ngIf="path === '/cadastro/cpf' || path === '/login' || path === '/login/cpf'"
+		        [@slideInOut]="direction"
+		      >
+		        <app-authentication (legalterms)="openLegalTerms()"></app-authentication>
+		      </div>
+
+		      <div
+		        class="holder chamada-ativacao"
+						*ngIf="step === 'chamada-ativacao'"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-chamada-ativacao></app-registration-chamada-ativacao>
+		      </div>
+
+		      <div
+		        class="holder cuidados"
+						*ngIf="step === 'cuidados'"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-cuidados></app-registration-cuidados>
+		      </div>
+
+		      <div
+		        class="holder email"
+		        *ngIf="step === 'email'"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-email></app-registration-email>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'nome'"
+		        class="holder nome"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-name></app-registration-name>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'celular'"
+		        class="holder celular"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-phone></app-registration-phone>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'senha' || path === '/login/senha'"
+		        class="holder senha"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-password></app-registration-password>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'nascimento'"
+		        class="holder nascimento"
+		        [@slideInOut]="direction"
+
+		      >
+		        <app-registration-birthdate></app-registration-birthdate>
+		      </div>
+
+		      <div
+		        *ngIf="path === '/comprar/placa'"
+		        class="holder placa"
+		        [@slideInOut]="direction"
+
+		      >
+		        <app-registration-plaque></app-registration-plaque>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'placa-eixo'"
+		        class="holder placa-eixo"
+		        [@slideInOut]="direction"
+
+		      >
+		        <app-registration-ativar-placa-eixo></app-registration-ativar-placa-eixo>
+		      </div>
+
+		      <div
+		        *ngIf="path === '/ativar/adesivo'"
+		        class="holder adesivo"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-adesivo></app-registration-adesivo>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'confirmar-placa-adesivo'"
+		        class="holder confirmar-placa-adesivo"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-confirmar-placa-adesivo></app-registration-confirmar-placa-adesivo>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'como-funciona-conta-conectcar'"
+		        class="holder como-funciona-conta-conectcar"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-cc-conta-conectcar (onResize)="resize($event)"></app-registration-cc-conta-conectcar>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'como-funciona-credito-automatico'"
+		        class="holder como-funciona-credito-automatico"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-cc-credito-automatico (onResize)="resize($event)"></app-registration-cc-credito-automatico>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'como-funciona-saldo-conta-conectcar'"
+		        class="holder como-funciona-saldo-conta-conectcar"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-cc-saldo-conta-conectcar (onResize)="resize($event)"></app-registration-cc-saldo-conta-conectcar>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'planos'"
+		        class="holder planos"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-planos (onResize)="resize($event)"></app-registration-planos>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'credito'"
+		        class="holder credito"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-credit></app-registration-credit>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'eixo'"
+		        class="holder eixo"
+		        [@slideInOut]="direction"
+
+		      >
+		        <app-registration-axle></app-registration-axle>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'resumo'"
+		        class="holder resumo"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-overview (onResize)="resize($event)"></app-registration-overview>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'pagamento'"
+		        class="holder pagamento"
+		        [@slideInOut]="direction"
+		      >
+		        <app-registration-payment (onResize)="resize($event)"></app-registration-payment>
+		      </div>
+
+		      <div
+		        *ngIf="step === 'endereco'"
+		        class="holder endereco"
+		        [@slideInOut]="direction"
+
+		      >
+		        <app-registration-address (onResize)="resize($event)"></app-registration-address>
+		      </div>
+
+		      <div
+		        *ngIf="path === '/login/adesivo'"
+		        class="holder adesivo"
+		        [@slideInOut]="direction"
+		      >
+		        <app-ativar-adesivo></app-ativar-adesivo>
+		      </div>
+
+		      <div
+		        *ngIf="path === '/login/placa'"
+		        class="holder placa"
+		        [@slideInOut]="direction"
+		      >
+		        <app-ativar-placa></app-ativar-placa>
+		      </div>
+
+					<div
+		        *ngIf="step === 'cpf-nao-encontrado'"
+		        class="holder cpf-nao-encontrado"
+		        [@slideInOut]="direction"
+		      >
+		        <app-login-cpf-nao-encontrado></app-login-cpf-nao-encontrado>
+		      </div>
+
+		      <div
+		        *ngIf="path === '/esqueci'"
+		        class="holder esqueci"
+		        [@slideInOut]="direction"
+		      >
+		        <app-esqueci-senha></app-esqueci-senha>
+		      </div>
+
+		      <div
+            *ngIf="path.indexOf('/esqueci/t') > -1"
+		        class="holder esqueci"
+		        [@slideInOut]="direction"
+		      >
+		        <app-esqueci-senha-reset></app-esqueci-senha-reset>
+		      </div>
+		    </div>
+		  </div>
+		  <ng-template #legalterms></ng-template>
+		</div>
+	</div>
+</div>
+
+<div>
+  <cc-footer *ngIf="path && path.indexOf('login') > -1"></cc-footer>
+</div>

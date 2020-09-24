@@ -1,0 +1,28 @@
+<cc-header [restrict]="true"></cc-header>
+
+<div class="container-fluid">
+  <div class="steps" [style.height]="height + 'px'">
+
+  	<!-- Aderir Ponto a Ponto -->
+    <div class="holder aderir" *ngIf="step === 'aderir'" [@slideInOut]="direction">
+      <aderir-ponto-a-ponto></aderir-ponto-a-ponto>
+    </div>
+
+  	<!-- Confirmar Ponto a Ponto -->
+    <div class="holder confirmar-adesao" *ngIf="step === 'confirmar-adesao'" [@slideInOut]="direction">
+      <confirmar-adesao-ponto-a-ponto></confirmar-adesao-ponto-a-ponto>
+    </div>
+
+  	<!-- Adesao confirmada Ponto a Ponto -->
+    <div class="holder adesao-confirmada" *ngIf="step === 'adesao-confirmada'" [@slideInOut]="direction">
+      <adesao-confirmada-ponto-a-ponto></adesao-confirmada-ponto-a-ponto>
+    </div>
+
+  	<!-- Cancelar Ponto a Ponto -->
+    <div class="holder cancelar-adesao" *ngIf="step === 'cancelar-adesao'" [@slideInOut]="direction">
+      <cancelar-ponto-a-ponto></cancelar-ponto-a-ponto>
+    </div>
+  </div>
+</div>
+
+<cc-footer></cc-footer>

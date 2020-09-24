@@ -1,0 +1,339 @@
+@import "functions.less";
+
+app-registration-overview {
+  display: block;
+  overflow: visible;
+}
+
+.woverview {
+  padding: 30px 15px;
+
+  h2, h3 {
+    font-weight: 300;
+    height: auto !important;
+    margin: 0px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+  }
+
+  p {
+    color: #7C878F;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 7px;
+
+    &.mgs {
+      line-height: 1;
+
+      small {
+        color: #7C878F;
+        font-family: Lato;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .table-wrapper {
+    border: solid 1px #d2cfcf;
+    border-radius: 10px;
+    padding: 5px 15px;
+  }
+
+  .table {
+    margin: 0px;
+
+    &.tplanos {
+      border-bottom: solid 1px #ddd;
+      margin-bottom: 10px;
+
+      td, th {
+        padding: 5px 0px;
+      }
+
+      th {
+        border: none;
+        color: #aaa;
+        padding-top: 10px;
+
+        &.text-left, &.text-right {
+          color: #7C878F;
+          font-family: Lato;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 17px;
+        }
+      }
+
+      small {
+        color: #aaa;
+        padding: 0px 10px;
+        text-decoration: line-through;
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          &.text-left, &.text-right {
+            color: #414A53;
+            font-family: Lato;
+            font-size: 14px;
+            line-height: 19px;
+            font-weight: 400;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+    }
+
+    td,
+    th {
+      padding: 10px 0px;
+      vertical-align: middle;
+      border-top: none;
+    }
+
+    tbody.refrs {
+      font-weight: 300;
+
+      td {
+        &.text-left,&.text-right {
+          padding: 10px;
+        }
+      }
+    }
+
+    tfoot.refrs {
+      border-top: solid 1px #ccc;
+      color: #ff6a38;
+      font-weight: bold;
+    }
+  }
+
+  .meus_planos {
+    margin-top: 50px;
+    margin-bottom: 45px;
+
+    .text-left {
+      color: #292F36;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 24px;
+    }
+
+    .plano_atual {
+      border-bottom: solid 1px #ddd;
+      padding-bottom: 10px;
+
+      &:after {
+        display: table;
+        clear: both;
+        content: " ";
+      }
+
+      .desc {
+        float: left;
+        color: #ff6a38;
+        font-weight: normal;
+      }
+
+    }
+
+  }
+
+  .icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+
+    &.ic_question {
+      background-image: url("~assets/svg/ic_info_planos.svg");
+    }
+
+    &.ic_edit {
+      cursor: pointer;
+      background-image: url("~assets/svg/ic_Editar.svg");
+    }
+
+    &.ic_expand_down {
+      background-image: url("~assets/svg/ic_expand_down.svg");
+    }
+
+    &.ic_expand_up {
+      background-image: url("~assets/svg/ic_expand_up.svg");
+    }
+  }
+
+  .pull-left {
+    float: left;
+  }
+
+  .pull-right {
+    float: right;
+  }
+
+  .collapse {
+    display: block;
+    margin-bottom: 40px;
+    border-bottom: solid 1px #ddd;
+
+    .card {
+      //border-top: solid 1px #ddd;
+
+      .card-header {
+        padding: 10px 10px 10px 0px;
+        font-weight: normal;
+        background: transparent;
+        border: none;
+        border-top: solid 1px #ddd;
+        color: #414A53;
+        font-family: Lato;
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      .card-body {
+        display: none;
+        height: 0px;
+        padding: 0px 10px 5px 0px;
+        font-weight: normal;
+
+        &.show {
+          display: block;
+          height: auto;
+          color: #B5BDC4;
+          font-family: Lato;
+          font-size: 13px;
+          line-height: 20px;
+          font-weight: 300;
+          padding-bottom: 20px;
+        }
+
+        &.hide {
+          display: none;
+          height: 0px;
+        }
+      }
+    }
+  }
+
+  .total_apagar {
+    tbody.refrs td {
+      &.text-left,&.text-right {
+        padding: 10px 0px;
+      }
+    }
+
+    .text-left {
+      color: #292F36;
+      font-family: Lato;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 22px;
+    }
+
+    .div-block {
+      margin-top: 20px;
+
+      .text-left, .text-right {
+        color: #7C878F;
+        font-family: Lato;
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      table {
+        tfoot {
+          .text-left, .text-right {
+            color: #FF6A38;
+            font-family: Lato;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.overview {
+  position: relative;
+  overflow: auto;
+  height: auto;
+  width: 100%;
+  display: none;
+
+  .overview-action {
+    display: block;
+    padding-bottom: 30px;
+  }
+
+  .form-group {
+    position: relative;
+    overflow: auto;
+    height: auto;
+    width: 100%;
+
+    p.small-info { margin-bottom: 42px; }
+    h2 { text-align: left; }
+    ul {
+      text-align: left;
+      color: #FF6A38;
+      font-family: Lato;
+      font-size: 14px;
+      line-height: 17px;
+      padding: 0;
+      margin: 0.5rem 0;
+
+      .info-ico {
+        background-image: url("~assets/svg/ico_interrogacao_laranja.svg");
+        margin: 2px 0 0 2px;
+      }
+    }
+    table {
+      width: 100%;
+      th, td {
+        padding: 8px 0;
+        width: 50%;
+        font-family: Lato;
+        font-size: 14px;
+        line-height: 17px;
+        .normal-weight();
+        &:first-child { text-align: left; }
+        &:last-child { text-align: right; }
+      }
+      th {
+        color: #7C878F;
+      }
+      td {
+        color: #414A53;
+        small {
+          .lightgray();
+          font-size: 12px;
+          line-height: 17px;
+          padding: 0 5px;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}

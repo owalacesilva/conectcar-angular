@@ -1,0 +1,143 @@
+@import "functions.less";
+
+.confirmar-placa-adesivo-view {
+	h2 {
+		margin-bottom: 35px;
+	}
+
+	.action {
+	  margin: 80px auto !important;
+
+	  button {
+	  	margin-top: 0px;
+	  }
+	}
+
+  .placa-xs {
+  	display: block;
+  }
+
+  .placa-md {
+  	display: none;
+  }
+
+	.link-no-plaque {
+    color: #FF6A38;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+	}
+
+  .box-placa {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+
+    svg {
+	    position: relative;
+	    transform: translateX(-50%);
+	    left: 50%;
+    }
+
+		.text-placa {
+	    position: absolute;
+	    top: 55px;
+	    left: 0;
+	    right: 0;
+
+			.text {
+				font-family: 'Droid Sans Mono';
+				font-size: 35px;
+				color: #353C44;
+				font-weight: normal;
+				letter-spacing: 12px;
+			}
+		}
+  }
+
+	.box-adesivo {
+		position: relative;
+		margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 233px;
+
+		svg {
+			position: relative;
+		}
+
+    .text-adesivo {
+      font-family: 'Droid Sans Mono';
+      font-size: 26px;
+      color: #353C44;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    .static-adesivo {
+      text-align: right;
+	    position: absolute;
+      width: 140px;
+	    top: 39px;
+      right: 25px;
+    }
+	}
+  .form-group {
+    margin: auto;
+    width: 365px !important;
+  }
+}
+
+@media (min-width: 768px) {
+	.confirmar-placa-adesivo-view {
+		padding-top: 0px;
+
+		h2 {
+			font-size: 24px;
+			font-weight: 300;
+			margin-bottom: 35px;
+		}
+
+		.action {
+		  margin: 30px auto !important;
+		}
+
+		.veiculos {
+
+			.veiculo {
+				width: 316px;
+			}
+		}
+
+	  .box-placa {
+			.text-placa {
+		    top: 90px;
+
+		    .text {
+		    	font-size: 56px;
+		    }
+	    }
+	  }
+
+		.placa-xs {
+			display: none;
+		}
+
+		.placa-md {
+			display: block;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.confirmar-placa-adesivo-view {
+	  .box-placa {
+	    .text {
+			  margin: auto 0px;
+			  height: 65px;
+			  width: 392px;
+			}
+		}
+	}
+}

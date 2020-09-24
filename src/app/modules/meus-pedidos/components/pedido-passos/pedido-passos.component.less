@@ -1,0 +1,75 @@
+@import 'functions.less';
+
+.passos {
+  width: 100%;
+  height: 100px;
+  position: relative;
+
+  .dashed-line {
+    border-bottom: 1px dashed #979797;
+    position: absolute;
+    height: 1px;
+    width: 69%;
+    left: 15.5%;
+    top: 45px;
+  }
+
+  .container {
+    position: absolute;
+    width: 90%;
+    top: 28px;
+    left: 5%;
+  }
+
+  .passo-container {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    width: 25%;
+  }
+
+  .done {
+    border-color: #F46B36 !important;
+    color: #F46B36 !important;
+    .bold-weight() !important;
+  }
+
+  .error {
+    border-color: #EE0000 !important;
+    color: #EE0000 !important;
+    .bold-weight() !important;
+  }
+
+  .passo {
+    border: 1px solid #B5BDC4;
+    background-color: #fff;
+    border-radius: 16px;
+    text-align: center;
+    margin: auto;
+    height: 32px;
+    width: 32px;
+    .normal-weight();
+
+    .index {
+      color: #7C878F;
+      font-family: Lato;
+      margin: 4px auto 0px auto;
+    }
+
+    .check {
+      width: 32px;
+      height: 32px;
+      margin: auto;
+      background: url(~assets/svg/ico_mini_check2.svg) no-repeat 48%;
+    }
+  }
+
+  .label {
+    margin-top: 5px;
+    text-align: center;
+    font-family: Lato;
+    font-size: 12px;
+    color: #7C878F;
+    .normal-weight();
+  }
+}

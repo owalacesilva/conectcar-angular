@@ -1,0 +1,181 @@
+@import "functions.less";
+
+.como-funciona-view {
+
+	* {
+		outline: none;
+	}
+
+  .carousel {  	
+	  .carousel-indicators,
+	  .carousel-control-prev,
+	  .carousel-control-next {
+	  	display: none;
+	  }
+  }
+
+	.title {
+		height: auto;
+
+		h1 {
+			display: none;
+  		font-family: Lato;
+  		font-size: 24px;
+  		font-weight: 300;
+  		color: #4D5862;
+  		line-height: 29px;
+  		text-align: center;
+		}
+
+  	h2 {
+  		font-family: Lato;
+  		font-size: 16px;
+  		font-weight: 400;
+  		color: #4D5862;
+  		line-height: 19px;
+  		text-align: center;
+  	}
+
+  	p {
+  		font-family: Lato;
+  		font-size: 14px;
+  		font-weight: 300;
+  		color: #4D5862;
+  		line-height: 19px;
+  		text-align: center;
+  	}
+	}
+
+  .content {
+
+  	h3 {
+  		height: auto !important;
+  		font-family: Lato;
+  		font-size: 20px;
+  		font-weight: 300;
+  		color: #292F36;
+  		line-height: 24px;
+  		text-align: center;
+  	}
+
+  	p {
+  		font-family: Lato;
+  		font-size: 14px;
+  		font-weight: 300;
+  		color: #7C878F;
+  		line-height: 17px;
+  		text-align: center;
+  	}
+  }
+
+	.row-btns {
+    max-width: 360px;
+    margin: 0px auto;
+    height: auto;
+
+		.col-xs-6 {
+			width: 50%;
+		}
+	}
+
+  .btn {
+  	cursor: pointer;
+    position: relative;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+		min-width: 118px;
+		padding: 15px 0;
+    font-size: 12px;
+		text-transform: uppercase;
+		outline: none;
+
+    &.btn-boxed {
+      border-color: #FF6A38;
+      color: #fff;
+      font-weight: bold;
+      font-family: Lato;
+      .transition;
+      background-color: #FF6A38;;
+
+      &:hover, body.mobile & {
+        background-color: #FF6A38;
+        color: #ffffff;
+      }
+
+      .txt {
+      	margin-right: 20px;
+      }
+
+	    .ic_avancar {
+				position: absolute;
+				right: 15px;
+				background: url("~assets/svg/ico_avancar.svg") no-repeat center center;
+		    width: 18px;
+		    height: 15px;
+		    background-size: 100%;
+	    }
+
+	    &.disabled {
+		    transition: background-color 0.5s;
+		    background-color: #D7DBDE !important;
+	    }
+    }
+
+    &.btn-vazado {
+      border: none;
+    	color: #7C878F;
+		}
+	}
+
+  .ico {
+    margin: 0 auto;
+		height: 150px;
+		background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.conta {
+			background-image: url("~assets/svg/ico_como_funciona_conta.svg");
+			background-size: 60px;
+			width: 150px;
+	    margin-bottom: 20px;
+    }
+
+    &.credito {
+			background-image: url("~assets/svg/ic_modal_saldo_na_conta.svg");
+	    background-size: 227px;
+	    width: 227px;
+	    margin-bottom: 20px;
+    }
+
+    &.saldo {
+			background-image: url("~assets/svg/ic_modal_credito_automatico.svg");
+	    background-size: 227px;
+	    width: 227px;
+	   	margin-bottom: 20px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+//@media (min-width: 992px) {
+	.como-funciona-view {
+
+	.title {
+		height: 100px;
+
+		h1 {
+			display: block;
+		}
+	}
+
+	  .carousel {  	
+		  .carousel-indicators,
+		  .carousel-control-prev,
+		  .carousel-control-next {
+		  	display: none;
+		  }
+	  }
+	}
+}

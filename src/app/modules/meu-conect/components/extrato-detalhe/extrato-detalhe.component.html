@@ -1,0 +1,76 @@
+<h2>{{ transacao.Descricao }}</h2>
+<h3>
+	{{transacao.Placa}}
+	<div class="close" (click)="_activeModal.dismiss()"></div>
+</h3>
+<div class="modal-extrato-detalhe modal-body">
+  <div class="ic_detalhe  {{ getIconeTransacao( transacao ) }}"></div>
+  <h1>{{ getValorFormatado(transacao.Valor) }}</h1>
+  <div class="info-detalhe-wraper">
+
+    <div class="info-detalhe" *ngIf="dataEntrada && !dataEstacionamento">
+      <p class="titulo">Entrada</p>
+      <p class="descricao">Você entrou pela cancela em</p>
+      <p class="data-hora">{{ dataEntrada }}</p>
+    </div>
+    <div class="info-detalhe" *ngIf="dataSaida && !dataEstacionamento">
+      <p class="titulo">Saída</p>
+      <p class="descricao">Você saiu pela cancela em</p>
+      <p class="data-hora">{{ dataSaida }}</p>
+    </div>
+
+    <div class="info-detalhe" *ngIf="dataPedagio">
+      <p class="titulo">Passagem</p>
+      <p class="descricao">Você passou pela cancela em</p>
+      <p class="data-hora">{{ dataPedagio }}</p>
+    </div>
+
+    <div class="info-detalhe" *ngIf="dataEstacionamento">
+      <p class="titulo">Estacionamento</p>
+      <p class="descricao">Você permaneceu estacionado em</p>
+      <p class="data-hora">{{ dataEstacionamento }}</p>
+    </div>
+
+    <div class="info-detalhe" *ngIf="dataRegistroCredito">
+      <p class="titulo">Crédito</p>
+      <p class="descricao">Seu crédito foi registrado na ConectCar em</p>
+      <p class="data-hora">{{ dataRegistroCredito }}</p>
+    </div>
+    <div class="info-detalhe" *ngIf="dataRegistroPedagio">
+      <p class="titulo">Cobrança</p>
+      <p class="descricao">Sua passagem foi registrada na ConectCar em</p>
+      <p class="data-hora">{{ dataRegistroPedagio }}</p>
+    </div>
+    <div class="info-detalhe" *ngIf="dataRegistroAbastecimento">
+      <p class="titulo">Cobrança</p>
+      <p class="descricao">Seu abastecimento foi registrado na ConectCar em</p>
+      <p class="data-hora">{{ dataRegistroAbastecimento }}</p>
+    </div>
+    <div class="info-detalhe" *ngIf="dataRegistroEstacionamento">
+      <p class="titulo">Cobrança</p>
+      <p class="descricao">Seu estacionamento foi registrado na ConectCar em</p>
+      <p class="data-hora">{{ dataRegistroEstacionamento }}</p>
+    </div>
+
+    <div class="info-total">
+      <p class="titulo" [ngSwitch]="transacao.Credito">
+      	<span *ngSwitchCase="true">Valor do crédito</span>
+      	<span *ngSwitchCase="false">Valor da cobrança</span>
+      </p>
+      <div class="clearfix">
+        <p class="descricao">{{ getValorLabel() }}</p>
+        <p class="valor-total" [ngClass]="{ 'credito': transacao.Credito }">{{ getValorFormatado(transacao.Valor) }}</p>
+      </div>
+    </div>
+
+    <!-- <div class="info-detalhe estorno" *ngIf="transacao.TipoOperacaoId == 7">
+      <div class="icone ic_aviso"></div>
+      <div class="text-wraper">
+        <p class="titulo">Contestação realizada no dia 20/01/2017</p>
+        <p class="titulo">Motivo: Valor cobrado acima da tabela</p>
+        <p class="status">Status: Aprovada</p>
+      </div>
+      <p class="descricao m-left">Você receberá o estorno dessa transação em sua conta ConectCar</p>
+    </div> -->
+  </div>
+</div>

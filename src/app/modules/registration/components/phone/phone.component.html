@@ -1,0 +1,63 @@
+<div class="view phone-view">
+  <h2 [innerHTML]="R.R('cadastro_phone_titulo')">
+  </h2>
+
+  <h3>
+  	{{ R.R('cadastro_phone_subtitulo') }}
+  </h3>
+
+  <div class="form-group">
+    <fieldset class="ddd">
+      <input required #dddInput
+        [formControl]="ddd"
+        focus-watcher
+        name="ddd"
+        id="ddd"
+        type="tel"
+        tabindex="1"
+        class="form-control"
+        [cc-placeholder]="'DDD'"
+        [textMask]="{mask: dddMask}"
+        (input)="dddOnInput()"
+        (keydown.enter)="submit($event)"
+      >
+    </fieldset>
+
+    <fieldset class="phone">
+      <input required #phoneInput
+        [formControl]="phone"
+        [textMask]="{mask: mask}"
+        focus-watcher
+        name="phone"
+        tabindex="2"
+        id="phone"
+        type="tel"
+        class="form-control"
+        [cc-placeholder]="'Celular'"
+        (input)="toggleDisabled()"
+        (keydown.enter)="submit($event)"
+      >
+    </fieldset>
+
+    <div *ngIf="ddd.value.length === 4 && phoneValue().length >= 8 && phoneValue()[0] !== '9'">
+      <small class="help-block">{{ R.R('cadastro_phone_8_digitos') }}</small>
+    </div>
+
+    <div class="action">
+      <button
+        (click)="back($event)"
+        (touchstart)="back($event)"
+        class="voltar"
+        tabindex="4"
+      >Voltar</button>
+
+      <button
+        [ngClass]="{ avancar: true, disabled: disabled }"
+        (click)="submit($event)"
+        (touchstart)="submit($event)"
+        tabindex="3"
+        id="next-button"
+      >Avançar</button>
+    </div>
+  </div>
+</div>

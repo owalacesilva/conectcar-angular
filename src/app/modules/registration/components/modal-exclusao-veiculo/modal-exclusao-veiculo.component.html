@@ -1,0 +1,34 @@
+<div class="modal-body">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+  <div class="axle">
+    <div class="image" [ngClass]="{
+			'dois_eixos_simples': getAxleImage2(veiculo.CategoriaId) == 'dois_eixos_simples', 
+			'dois_eixos_dupla': getAxleImage2(veiculo.CategoriaId) == 'dois_eixos_dupla', 
+			'tres_eixos_simples': getAxleImage2(veiculo.CategoriaId) == 'tres_eixos_simples', 
+			'tres_eixos_dupla': getAxleImage2(veiculo.CategoriaId) == 'tres_eixos_dupla', 
+			'tres_eixos_dupla_onibus': getAxleImage2(veiculo.CategoriaId) == 'tres_eixos_dupla_onibus', 
+			'quatro_eixos_simples': getAxleImage2(veiculo.CategoriaId) == 'quatro_eixos_simples', 
+			'quatro_eixos_dupla': getAxleImage2(veiculo.CategoriaId) == 'quatro_eixos_dupla', 
+			'cinco_eixos_dupla': getAxleImage2(veiculo.CategoriaId) == 'cinco_eixos_dupla', 
+			'seis_eixos_dupla': getAxleImage2(veiculo.CategoriaId) == 'seis_eixos_dupla', 
+			'oito_eixos_dupla': getAxleImage2(veiculo.CategoriaId) == 'oito_eixos_dupla', 
+			'nove_eixos_dupla': getAxleImage2(veiculo.CategoriaId) == 'nove_eixos_dupla'
+  	}"></div> 
+    <h2>Tem certeza que deseja <br/> <strong>excluir</strong> o veículo? </h2> 
+  </div>
+  <div class="row">
+  	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <button
+        id="close-button"
+        class="btn cancelar"
+        (click)="_activeModal.close()"
+      >Cancelar</button>
+  	</div>
+  	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <button
+        class="btn excluir"
+        (click)="deletePlaque()" 
+      >SIM, EXCLUIR</button>
+  	</div>
+  </div>
+</div>

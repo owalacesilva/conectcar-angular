@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="65px" viewBox="0 0 66 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Tracking-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="07-Detalhe-Cancelado" transform="translate(-149.000000, -288.000000)">
+            <g id="Group" transform="translate(124.000000, 287.000000)">
+                <g id="ic-tracking-Cancelado" transform="translate(24.000000, 0.000000)">
+                    <g id="Group-5" transform="translate(0.905405, 0.905405)" stroke="#4D5862" stroke-linejoin="round">
+                        <polygon id="Stroke-25" stroke-linecap="round" points="32.5027231 26.7887636 0.719443721 13.9135926 0.719443721 47.3890372 32.5027231 60.2642083"></polygon>
+                        <polygon id="Stroke-26" stroke-linecap="round" points="32.5238169 26.8096322 61.5390389 13.9531628 61.5390389 47.4286075 32.5238169 60.2850768"></polygon>
+                        <polyline id="Stroke-27" stroke-linecap="round" points="0.74021181 13.9036813 31.0821368 0.669102898 61.5104715 13.7595106"></polyline>
+                        <path d="M17.0754501,6.81100249 L47.3857122,19.9284741" id="Stroke-28"></path>
+                        <polygon id="Stroke-29" stroke-linecap="round" points="23.8313274 33.2792249 7.92291945 27.0081972 7.92291945 39.8833682 23.8313274 46.1543959"></polygon>
+                    </g>
+                    <circle id="Oval" stroke="#EE0000" fill="#FFFFFF" cx="53.5" cy="52.5" r="12.5"></circle>
+                    <g id="Group-4" transform="translate(41.000000, 40.000000)">
+                        <circle id="Oval" stroke="#EE0000" cx="12.5" cy="12.5" r="12.5"></circle>
+                        <rect id="Rectangle-2" fill="#EE0000" x="6.5" y="11.625" width="12" height="1.75" rx="0.875"></rect>
+                    </g>
+                </g>
+                <rect id="Rectangle-4" x="0" y="1" width="112" height="65"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

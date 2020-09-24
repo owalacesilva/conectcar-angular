@@ -1,0 +1,60 @@
+<div class="header-bg">
+  <cc-header [origin]="'home'"></cc-header>
+</div>
+
+<div class="view esqueci-view">
+  <h1 [innerHtml]="R.R('esqueci_senha_desktop_titulo')"></h1>
+
+  <div *ngIf="sent" class="sent">
+    <div class="valign">
+      <div class="text-center">
+        <div class="email-sent"></div>
+        <h4 [innerHtml]="R.R('esqueci_senha_enviamos_link_texto')"></h4>
+        <p>{{ R.R('esqueci_senha_enviamos_link_subtexto') }}</p>
+      </div>
+      <a routerLink="/">&lt; VOLTAR PARA HOME</a>
+    </div>
+  </div>
+
+  <div *ngIf="!sent">
+    <h2 [innerHtml]="R.R('esqueci_senha_titulo')"></h2>
+    <h3 [innerHtml]="R.R('esqueci_senha_subtitulo')"></h3>
+
+    <div class="form-group" style="position: relative;"
+      [ngClass]="{'has-danger': email.length && email.invalid && (email.dirty || email.touched)}">
+
+      <input required #emailInput
+        [formControl]="email"
+        focus-watcher
+        name="email"
+        id="email"
+        type="text"
+        class="form-control"
+        [cc-placeholder]="'E-mail'"
+        (input)="disabled = (email.value.length === 0 || !email.valid)"
+        (keydown.enter)="submit($event)"
+      >
+
+      <div *ngIf="!!token">
+        <a [routerLink]="['/esqueci/t', token]">( link entregue via email )</a>
+      </div>
+
+      <div class="action">
+        <button
+          (click)="back($event)"
+          (touchstart)="back($event)"
+          class="voltar"
+        >Voltar</button>
+
+        <button
+          [ngClass]="{ avancar: true, disabled: disabled }"
+          (touchstart)="submit($event)"
+          (click)="submit($event)"
+          id="next-button"
+          >{{ R.R('esqueci_senha_btn_enviar') }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<cc-footer></cc-footer>

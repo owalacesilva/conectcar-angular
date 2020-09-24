@@ -1,0 +1,41 @@
+<div class="view legado-adesivo-view">
+  <h2>
+    {{ R.R('cadastro_ativacao_adesivo_titulo') }}
+  </h2>
+
+  <h3 class="text-center">
+    <small>{{ R.R('cadastro_ativacao_adesivo_subtitulo') }}</small><br>
+    {{ placa }}
+  </h3>
+
+  <div class="form-group" style="position: relative;"
+    [ngClass]="{'has-danger': adesivo.length && adesivo.invalid && (adesivo.dirty || adesivo.touched)}">
+
+    <input required #adesivoInput
+      [formControl]="adesivo"
+      focus-watcher
+      name="adesivo"
+      id="adesivo"
+      type="text"
+      class="form-control"
+      [cc-placeholder]="'Numero do adesivo'"
+      (input)="disabled = (adesivo.value.length === 0 || !adesivo.valid)"
+      (keydown.enter)="submit($event)"
+    >
+
+    <div class="action">
+      <button
+        (click)="back($event)"
+        (touchstart)="back($event)"
+        class="voltar"
+      >Voltar</button>
+
+      <button
+        [ngClass]="{ avancar: true, disabled: disabled }"
+        (touchstart)="submit($event)"
+        (click)="submit($event)"
+        id="next-button"
+        >Avançar</button>
+    </div>
+  </div>
+</div>

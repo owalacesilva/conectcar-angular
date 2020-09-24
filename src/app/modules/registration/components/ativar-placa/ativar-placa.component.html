@@ -1,0 +1,22 @@
+<div class="view plaque-view">
+  <h2 [innerHtml]="R.R('cadastro_ativacao_placa_titulo')"></h2>
+  <h3 [innerHtml]="R.R('cadastro_ativacao_placa_subtitulo')" class="no-hide"></h3>
+
+  <div class="form-group">
+    <app-placa #gnplaca [readonly]="false"></app-placa>
+
+    <div class="action">
+      <button
+        onclick="history.back()"
+        class="voltar"
+        >Voltar</button>
+
+      <button
+        (click)="add($event)"
+        [ngClass]="{ adicionar: true, disabled: gnplaca.disabled }"
+        class="avancar"
+        id="next-button"
+        >Avançar</button>
+    </div>
+  </div>
+</div>

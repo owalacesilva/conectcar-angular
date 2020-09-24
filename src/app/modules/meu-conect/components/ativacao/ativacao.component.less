@@ -1,0 +1,240 @@
+@import "functions.less";
+
+.container-fluid {
+	background-color: #fff;
+}
+
+.container-page {
+	padding: 10px 0px 40px 0px;
+
+	.page-title {
+		color: #292F36;
+		font-family: Lato;
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 39px;
+		padding-bottom: 10px;
+		border-bottom: none;
+		text-align: center;
+	}
+
+	.page-subtitle {
+		display: block;
+		color: #292F36;
+		font-family: Lato;
+		font-size: 16px;
+		font-weight: 300;
+		text-align: center;
+		line-height: 1.2em;
+	}
+
+	.divisoria {
+		display: block;
+		width: 130px;
+		border-bottom: solid 1px #ddd;
+		margin: 0px auto;
+		margin-bottom: 30px;
+	}
+
+	.row-wrapper {
+		padding: 20px 0px;
+
+		.col-wrapper {
+			text-align: center;
+			margin-bottom: 40px;
+
+			.col-icon {
+				display: none;
+		    position: relative;
+		    text-align: center;
+		    margin-bottom: 10px;
+
+				.icon {
+					display: block;
+					position: relative;
+			    width: 51px;
+			    height: 51px;
+			    margin: 0px auto;
+				}
+			}
+
+			h4 {
+				color: #4D5862;
+				font-family: Lato;
+    		font-size: 16px;
+    		font-weight: normal;
+				line-height: 22px;
+				text-align: center;
+				height: 44px;
+				display: none;
+
+				.icon {
+					display: none;
+					position: absolute;
+    			left: 55px;
+    			background-size: 80%;
+				}
+			}
+
+			.icon {
+	    	background: url("~assets/svg/ico_moto.svg") no-repeat center center;
+
+	    	&.ic_comprou_um_adesivo {
+	    		background-image: url("~assets/svg/ic_comprou_um_adesivo.svg");
+			    width: 62px;
+			    height: 57px;
+	    	}
+
+	    	&.ic_ja_recebeu_adesivo {
+	    		background-image: url("~assets/svg/ic_ja_recebeu_adesivo.svg");
+			    width: 51px;
+			    height: 57px;
+	    	}
+
+	    	&.ic_nao_recebeu_seu_adesivo {
+	    		background-image: url("~assets/svg/ic_nao_recebeu_seu_adesivo.svg");
+			    width: 62px;
+			    height: 57px;
+	    	}		    	
+			}
+
+			.wrapper-xs {
+				position: relative;
+				width: 260px;
+				margin: 0px auto;
+				min-height: 44px;
+
+				.wrapper-xs-content {
+					padding-left: 60px;
+					text-align: left;
+
+					&.add {
+						padding-bottom: 20px;
+					}
+				}
+
+				.icon {
+			    position: absolute;
+			    background-size: 100%;
+
+		    	&.ic_ja_recebeu_adesivo {
+		    		background-image: url("~assets/svg/ic_ja_recebeu_adesivo.svg");
+				    top: -5px;
+				    left: 6px;
+				    width: 37px;
+				    height: 37px;
+		    	}
+
+		    	&.ic_nao_recebeu_seu_adesivo {
+		    		background-image: url("~assets/svg/ic_nao_recebeu_seu_adesivo.svg");
+				    top: -25px;
+				    left: 0px;
+				    width: 47px;
+				    height: 47px;
+		    	}
+
+		    	&.ic_comprou_um_adesivo {
+		    		background-image: url("~assets/svg/ic_comprou_um_adesivo.svg");
+				    top: 0px;
+				    left: 15px;
+				    width: 37px;
+				    height: 37px;
+		    	}
+				}
+			}
+
+		  .btn {
+		  	cursor: pointer;
+		    position: relative;
+		    border-radius: 100px;
+		    -moz-border-radius: 100px;
+		    -webkit-border-radius: 100px;
+				width: 220px;
+				padding: 15px 0;
+		    font-size: 14px;
+
+		    &.btn-boxed {
+		      border-color: #FF6A38;
+		      color: #fff;
+		      font-weight: bold;
+		      font-family: Lato;
+		      .transition;
+		      background-color: #FF6A38;;
+
+		      &:hover, body.mobile & {
+		        background-color: #FF6A38;
+		        color: #ffffff;
+		      }
+		    }
+
+		    &.btn-vazado {
+		      border-color: #4D5862;
+		    	background-color: #fff;
+		    	color: #4D5862;
+
+		      &:hover {
+		      	border-color: #FF6A38;
+		        background-color: #FF6A38;
+		        color: #ffffff;
+		      }
+				}
+
+				&.btn-comprou {
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 768px) {
+	.container-page {
+		padding: 60px 0px 80px 0px;
+
+		.container {
+			width: 960px;
+		}
+
+		.page-title {
+			font-size: 32px;
+			text-align: left;
+			border-bottom: solid 1px #e8e6e6;
+		}
+
+		.page-subtitle {
+			display: none;
+		}
+
+		.divisoria {
+			display: none;
+		}
+
+		.row-wrapper {
+			padding: 50px 0px;
+
+			.col-wrapper {
+
+				.col-icon {
+					display: block;
+				}
+
+				h4 {
+					display: block;
+					font-size: 18px;
+					font-weight: 300;
+
+					.icon {
+						display: none;
+					}
+				}
+
+				.wrapper-xs {
+					display: none;
+				}
+			}
+		}
+	}
+}

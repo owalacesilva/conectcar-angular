@@ -1,0 +1,24 @@
+<svg
+  [attr.height]="size"
+  [attr.width]="size"
+  class="progress-arc"
+>
+  <circle
+    [attr.cx]="size / 2"
+    [attr.cy]="size / 2"
+    [attr.r]="radius()"
+    [style.stroke]="progress > 0 ? emptyStrokeColor : 'transparent'"
+    fill="transparent"
+  ></circle>
+
+  <circle
+    [attr.cx]="size / 2"
+    [attr.cy]="size / 2"
+    [attr.r]="radius()"
+    fill="transparent"
+    stroke="#FF9268"
+    [style.stroke-width]="stroke"
+    [style.stroke-dasharray]="circunference()"
+    [style.stroke-dashoffset]="offset()"
+  ></circle>
+</svg>

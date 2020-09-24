@@ -1,0 +1,24 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="modal-title">Qual o endereço<br/>de <strong>cobrança?</strong></h4>
+</div>
+<div class="modal-body">
+	<button id="btn-close" type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="_activeModal.dismiss()"></button>
+	<h4 class="text-center text-title">Qual o endereço de <strong>cobrança?</strong></h4>
+	<div class="form-endereco">
+    <cc-address-form
+      #addressForm
+      [dadosEndereco]="dadosEndereco()"
+      tipoEndereco="Cobranca">
+    </cc-address-form>
+	</div>
+
+	<div class="row row-btns">
+		<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5">
+			<button class="btn btn-link" (click)="_activeModal.dismiss()">cancelar</button>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+			<button class="btn btn-default" (click)="_activeModal.close(addressForm)" [ngClass]="{ 'disabled': addressForm.checkDisabled() }">confirmar</button>
+		</div>
+	</div>
+</div>

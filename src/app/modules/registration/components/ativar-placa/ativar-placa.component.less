@@ -1,0 +1,99 @@
+.plaque-view {
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  fieldset {
+    display: inline-block;
+
+    &.placa-1 {
+      width: 40%;
+      margin-right: 5%;
+    }
+
+    &.placa-2 {
+      width: 52%;
+    }
+
+    div { position: absolute; }
+  }
+
+  .image {
+    width: 100%;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 45px;
+
+    .ic_placa {
+      background: url('~assets/svg/ic_Placa.svg') no-repeat;
+	    background-size: 100%;
+	    width: 300px;
+	    height: 110px;
+	    display: block;
+	    position: relative;
+	    margin: 0px auto;
+	    right: 0px;
+    }
+
+    .text {
+      position: absolute;
+      right: 0;
+      left:0;
+      bottom: 0;
+      top: 20px;
+      margin: auto;
+      height: 41px;
+      width:250px;
+
+      input {
+        font-size: 38px;
+        letter-spacing: 0.25em;
+        font-family: 'Droid Sans Mono';
+        color: #292F36;
+        font-weight: 200;
+        border-bottom: 1px solid #d8dbde;
+        padding-bottom: 2px;
+      }
+
+      ::placeholder {
+        color: #d8dbde;
+        font-weight: 50;
+      }
+    }
+  }
+
+	input::-webkit-input-placeholder {
+		line-height: 1 !important;
+	}
+}
+
+@media (min-width: 992px) {
+  .plaque-view {
+
+    .image {
+      .ic_placa {
+        width: 342px;
+        height: 126px;
+      }
+    }
+
+    .text {
+      width: 100% !important;
+      padding: 0 10px 0 25px;
+
+      input {
+        letter-spacing: 15px !important;
+        height: 40px !important;
+      }
+
+      .placa-1 {
+        width: 40%;
+        margin-right: 3%;
+      }
+
+      .placa-2 {
+        width: 51%;
+      }
+    }
+  }
+}

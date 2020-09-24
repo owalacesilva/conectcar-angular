@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+
+<div class="view placa-eixo-view">
+  <h2>
+  	<span>{{ R.R('ativacao_offline_placa_eixo_titulo_1') }}</span><br />
+  	<strong>veiculo</strong> e <strong>adesivo</strong>
+  </h2>
+
+  <div class="form-group">
+    <app-placa #gnplaca ></app-placa>
+
+    <div class="veiculos">
+      <div class="veiculo">
+        <div class="axle">
+        	<div class="axle-box">
+        		<div class="axle-box-avatar">
+		          <div class="image-container axle-{{categoriaSelecionada.CategoriaVeiculoId}}">
+		            <!-- <img [attr.src]="getAxleImage(veiculo.CategoriaId)" /> -->
+		            <span class="icon"></span>
+		          </div>
+		          <div class="description">
+	              <div class="title" >{{ categoriaSelecionada.Nome }}</div>
+	              <span>{{ categoriaSelecionada.Rodagem }}</span>
+		          </div>
+        		</div>
+        		<div class="axle-box-action">
+		          <div class="text-right divr">
+                <div
+                class="info-ico"
+                placement="left"
+                triggers="hover"
+                ngbTooltip="{{ R.R('tooltip_veiculo') }}"
+                ></div>
+			          <div class="edit-ico" placement="bottom" (click)="openEdicaoVeiculo()"></div>
+		          </div>
+        		</div>
+        	</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action">
+      <button
+        (click)="back($event)"
+        class="voltar"
+      >Voltar</button>
+
+      <button
+        (click)="submit($event)"
+        [ngClass]="{ adicionar: true, disabled: gnplaca.disabled }"
+        class="avancar"
+        id="next-button"
+      >Avançar</button>
+    </div>
+  </div>
+
+  <div></div>
+</div>
